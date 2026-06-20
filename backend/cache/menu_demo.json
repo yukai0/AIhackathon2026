@@ -1,0 +1,7553 @@
+{
+  "date": "2026-06-20",
+  "scraped_at": "2026-06-20T00:00:00Z",
+  "source": "seed_demo",
+  "locations": [
+    "Crossroads",
+    "Foothill"
+  ],
+  "items": [
+    {
+      "id": "7394457f503648b0",
+      "name": "Cinnamon Raisin Bagels",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 250.83,
+        "protein_g": 8.05,
+        "carb_g": 50.14,
+        "fat_g": 1.34,
+        "fiber_g": 2.69,
+        "sugar_g": 9.85,
+        "sodium_mg": 349.15,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "94cd91705135d284",
+      "name": "Everything Bagels",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 241.87,
+        "protein_g": 8.96,
+        "carb_g": 44.76,
+        "fat_g": 3.58,
+        "fiber_g": 2.69,
+        "sugar_g": 5.38,
+        "sodium_mg": 420.77,
+        "sat_fat_g": 0.89,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4a64758fea5b3f7d",
+      "name": "Plain Bagels",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.14,
+      "serving_desc": "3.35 oz",
+      "nutrition": {
+        "kcal": 260.09,
+        "protein_g": 8.99,
+        "carb_g": 50.98,
+        "fat_g": 2.0,
+        "fiber_g": 2.0,
+        "sugar_g": 6.0,
+        "sodium_mg": 499.85,
+        "sat_fat_g": 0.5,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "19417c9cb990cad5",
+      "name": "Whole Wheat Bagels",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 214.99,
+        "protein_g": 8.96,
+        "carb_g": 43.87,
+        "fat_g": 1.79,
+        "fiber_g": 6.27,
+        "sugar_g": 6.27,
+        "sodium_mg": 358.1,
+        "sat_fat_g": 0.45,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "75e849aeeeab1714",
+      "name": "Whipped Cream",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian",
+        "kosher"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.19,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 85.1,
+        "protein_g": 0.0,
+        "carb_g": 5.67,
+        "fat_g": 5.67,
+        "fiber_g": 0.0,
+        "sugar_g": 5.67,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 2.83,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 22.68,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "38ba31a335ffda8a",
+      "name": "Capers",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.25 oz",
+      "nutrition": {
+        "kcal": 0.16,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 101.48,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ffb84cc6ba6231f2",
+      "name": "Base - Arugula",
+      "station": "Bagel Station",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 28.46,
+        "protein_g": 2.93,
+        "carb_g": 4.14,
+        "fat_g": 0.75,
+        "fiber_g": 1.81,
+        "sugar_g": 2.32,
+        "sodium_mg": 30.62,
+        "sat_fat_g": 0.1,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "366838cff44ab8b9",
+      "name": "Mini Assorted Danish",
+      "station": "Bread & Pastries",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "treenut",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "1.5 oz",
+      "nutrition": {
+        "kcal": 182.97,
+        "protein_g": 3.02,
+        "carb_g": 19.43,
+        "fat_g": 10.72,
+        "fiber_g": 0.85,
+        "sugar_g": 8.08,
+        "sodium_mg": 126.72,
+        "sat_fat_g": 2.47,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 19.56,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0e0429249b76641c",
+      "name": "Mini Butter Croissant",
+      "station": "Bread & Pastries",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.04,
+      "serving_desc": "0.9 oz",
+      "nutrition": {
+        "kcal": 88.37,
+        "protein_g": 0.98,
+        "carb_g": 10.8,
+        "fat_g": 4.42,
+        "fiber_g": 0.0,
+        "sugar_g": 0.98,
+        "sodium_mg": 88.32,
+        "sat_fat_g": 2.45,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 9.81,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "31f2ca506fa9ef6b",
+      "name": "Pork Sausage Link",
+      "station": "Breakfast Entree",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "pork"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.56,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 253.29,
+        "protein_g": 7.09,
+        "carb_g": 0.0,
+        "fat_g": 24.3,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 577.12,
+        "sat_fat_g": 9.11,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 30.37,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "cb2c3759ec550fc2",
+      "name": "Scrambled Eggs",
+      "station": "Breakfast Entree",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.4,
+      "serving_desc": "3.93 oz",
+      "nutrition": {
+        "kcal": 184.98,
+        "protein_g": 13.92,
+        "carb_g": 2.32,
+        "fat_g": 12.88,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 167.04,
+        "sat_fat_g": 3.75,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 405.61,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "bf8bab26c278d299",
+      "name": "Poblano Fries",
+      "station": "Breakfast Entree",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "4.24 oz",
+      "nutrition": {
+        "kcal": 188.84,
+        "protein_g": 2.33,
+        "carb_g": 21.42,
+        "fat_g": 10.23,
+        "fiber_g": 1.53,
+        "sugar_g": 1.08,
+        "sodium_mg": 469.17,
+        "sat_fat_g": 1.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "869df455d7744a86",
+      "name": "Oatmeal",
+      "station": "Cereal/Hot Grains",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "5.96 oz",
+      "nutrition": {
+        "kcal": 93.37,
+        "protein_g": 2.94,
+        "carb_g": 16.2,
+        "fat_g": 1.47,
+        "fiber_g": 2.45,
+        "sugar_g": 0.0,
+        "sodium_mg": 196.4,
+        "sat_fat_g": 0.25,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "77ab925f3fe48f1e",
+      "name": "Brown Rice",
+      "station": "Cereal/Hot Grains",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 149.67,
+        "protein_g": 3.07,
+        "carb_g": 31.13,
+        "fat_g": 1.3,
+        "fiber_g": 1.47,
+        "sugar_g": 0.27,
+        "sodium_mg": 2.04,
+        "sat_fat_g": 0.24,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "187bdda1a886de8f",
+      "name": "Jasmine Rice",
+      "station": "Cereal/Hot Grains",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "3.2 oz",
+      "nutrition": {
+        "kcal": 125.69,
+        "protein_g": 2.79,
+        "carb_g": 27.91,
+        "fat_g": 0.0,
+        "fiber_g": 0.7,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a40dd0e37ff2f854",
+      "name": "Spinach Tofu Tomato Scramble",
+      "station": "Plant Forward Breakfast",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "3.81 oz",
+      "nutrition": {
+        "kcal": 124.27,
+        "protein_g": 12.64,
+        "carb_g": 6.35,
+        "fat_g": 5.55,
+        "fiber_g": 2.31,
+        "sugar_g": 0.41,
+        "sodium_mg": 140.29,
+        "sat_fat_g": 0.21,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7cef8293da1ed6ea",
+      "name": "Asparagus",
+      "station": "Plant Forward Breakfast",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "3.29 oz",
+      "nutrition": {
+        "kcal": 19.13,
+        "protein_g": 2.02,
+        "carb_g": 3.74,
+        "fat_g": 0.11,
+        "fiber_g": 1.97,
+        "sugar_g": 1.76,
+        "sodium_mg": 67.46,
+        "sat_fat_g": 0.04,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "94ca33d0030c62da",
+      "name": "Mung Bean Patty",
+      "station": "Plant Forward Breakfast",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 0.24,
+      "serving_desc": "3.4 oz",
+      "nutrition": {
+        "kcal": 169.21,
+        "protein_g": 11.84,
+        "carb_g": 1.69,
+        "fat_g": 11.84,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 439.67,
+        "sat_fat_g": 0.85,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c4f1fd2dea87cca2",
+      "name": "Non Fat Plain Greek Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 100.0,
+        "protein_g": 17.33,
+        "carb_g": 6.12,
+        "fat_g": 0.66,
+        "fiber_g": 0.0,
+        "sugar_g": 5.51,
+        "sodium_mg": 61.23,
+        "sat_fat_g": 0.2,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 8.5,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0575dc5d008f1862",
+      "name": "Low Fat Peach Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 130.16,
+        "protein_g": 6.0,
+        "carb_g": 22.01,
+        "fat_g": 2.01,
+        "fiber_g": 0.0,
+        "sugar_g": 21.01,
+        "sodium_mg": 85.05,
+        "sat_fat_g": 1.5,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a7c84006f9777176",
+      "name": "Low Fat Strawberry Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 149.69,
+        "protein_g": 5.0,
+        "carb_g": 30.02,
+        "fat_g": 1.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 75.05,
+        "sat_fat_g": 0.49,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 5.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "322ed40e51e53a51",
+      "name": "Low Fat Vanilla Greek Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 90.1,
+        "protein_g": 7.01,
+        "carb_g": 11.01,
+        "fat_g": 2.5,
+        "fiber_g": 0.0,
+        "sugar_g": 11.01,
+        "sodium_mg": 110.07,
+        "sat_fat_g": 1.5,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "b9851065b2f65d0e",
+      "name": "Low Fat Plain Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 158.85,
+        "protein_g": 5.29,
+        "carb_g": 31.76,
+        "fat_g": 1.51,
+        "fiber_g": 0.0,
+        "sugar_g": 24.95,
+        "sodium_mg": 79.38,
+        "sat_fat_g": 1.14,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 7.55,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "85ddd86fa48c803d",
+      "name": "Yogurt Dairy Free Vanilla VEGAN",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 106.59,
+        "protein_g": 0.67,
+        "carb_g": 13.34,
+        "fat_g": 5.34,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 6.67,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "6c7b6dc2c9ca4041",
+      "name": "Yogurt Greek Strawberry Non Fat RTE",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 136.16,
+        "protein_g": 13.61,
+        "carb_g": 21.55,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 17.01,
+        "sodium_mg": 68.04,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 5.66,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7ea61fe6b78c6db9",
+      "name": "Sliced Almond",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "treenut"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 81.05,
+        "protein_g": 3.04,
+        "carb_g": 3.04,
+        "fat_g": 7.09,
+        "fiber_g": 2.03,
+        "sugar_g": 0.47,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.51,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f09fc715fbfb949c",
+      "name": "Pumpkin Seeds",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 158.48,
+        "protein_g": 8.57,
+        "carb_g": 3.04,
+        "fat_g": 13.91,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.98,
+        "sat_fat_g": 2.46,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "07130a3721e53600",
+      "name": "Sunflower Seeds",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4a59a8844e5b7b41",
+      "name": "Chia Seeds",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 68.91,
+        "protein_g": 2.34,
+        "carb_g": 5.97,
+        "fat_g": 4.36,
+        "fiber_g": 4.88,
+        "sugar_g": 0.0,
+        "sodium_mg": 2.27,
+        "sat_fat_g": 0.47,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8a6f3b5e16f56e33",
+      "name": "Pineapple Chunks",
+      "station": "Yogurt Bar",
+      "location": "Crossroads",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 48.63,
+        "protein_g": 0.6,
+        "carb_g": 10.94,
+        "fat_g": 0.0,
+        "fiber_g": 1.22,
+        "sugar_g": 8.38,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fdadcd1248618649",
+      "name": "Bowtie Pasta with Artichoke, Kalamata Olives and Lemon",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.15,
+      "serving_desc": "4.41 oz",
+      "nutrition": {
+        "kcal": 216.47,
+        "protein_g": 5.16,
+        "carb_g": 26.43,
+        "fat_g": 10.08,
+        "fiber_g": 2.7,
+        "sugar_g": 2.49,
+        "sodium_mg": 414.98,
+        "sat_fat_g": 3.66,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 15.18,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0d132ec9606977a1",
+      "name": "Farfalle with Spinach and Gorgonzola Pasta",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.23,
+      "serving_desc": "4.14 oz",
+      "nutrition": {
+        "kcal": 193.49,
+        "protein_g": 7.29,
+        "carb_g": 19.49,
+        "fat_g": 10.07,
+        "fiber_g": 2.07,
+        "sugar_g": 1.27,
+        "sodium_mg": 350.28,
+        "sat_fat_g": 5.3,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 26.58,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "46b0391ba459b937",
+      "name": "Hawaiian Dinner Roll",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.04,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 91.18,
+        "protein_g": 3.04,
+        "carb_g": 15.19,
+        "fat_g": 2.02,
+        "fiber_g": 0.51,
+        "sugar_g": 5.06,
+        "sodium_mg": 75.94,
+        "sat_fat_g": 1.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 15.19,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "102f9a3b22e383ed",
+      "name": "Steamed Green Beans",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.2 oz",
+      "nutrition": {
+        "kcal": 32.8,
+        "protein_g": 1.09,
+        "carb_g": 6.55,
+        "fat_g": 0.0,
+        "fiber_g": 2.19,
+        "sugar_g": 3.2,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e6212eb4ee854066",
+      "name": "Roma Pesto Pizza",
+      "station": "Pizza",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.53,
+      "serving_desc": "4.24 oz",
+      "nutrition": {
+        "kcal": 282.49,
+        "protein_g": 11.08,
+        "carb_g": 30.92,
+        "fat_g": 13.07,
+        "fiber_g": 1.26,
+        "sugar_g": 0.9,
+        "sodium_mg": 460.89,
+        "sat_fat_g": 5.18,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 23.13,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c34c00478ffa2ee7",
+      "name": "Sausage and Onion Pizza",
+      "station": "Pizza",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten",
+        "pork"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.68,
+      "serving_desc": "4.46 oz",
+      "nutrition": {
+        "kcal": 317.49,
+        "protein_g": 14.44,
+        "carb_g": 32.13,
+        "fat_g": 14.82,
+        "fiber_g": 1.44,
+        "sugar_g": 0.97,
+        "sodium_mg": 574.64,
+        "sat_fat_g": 7.16,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 35.54,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7e600455fc21c9c2",
+      "name": "Red Red - Black Eyed Peas Stew",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 100.16,
+        "protein_g": 4.65,
+        "carb_g": 14.11,
+        "fat_g": 2.53,
+        "fiber_g": 3.08,
+        "sugar_g": 1.35,
+        "sodium_mg": 321.88,
+        "sat_fat_g": 0.29,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e2f13ea69a2348dc",
+      "name": "Tazanian Eggplant Misagaa",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "4.59 oz",
+      "nutrition": {
+        "kcal": 69.15,
+        "protein_g": 1.96,
+        "carb_g": 10.2,
+        "fat_g": 2.68,
+        "fiber_g": 2.54,
+        "sugar_g": 3.07,
+        "sodium_mg": 152.77,
+        "sat_fat_g": 0.33,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c42094d7c97b4cc8",
+      "name": "Yemeni Salata Salad",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "3.65 oz",
+      "nutrition": {
+        "kcal": 38.21,
+        "protein_g": 0.92,
+        "carb_g": 4.08,
+        "fat_g": 2.37,
+        "fiber_g": 1.39,
+        "sugar_g": 1.9,
+        "sodium_mg": 106.94,
+        "sat_fat_g": 0.2,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "80d01a50c0483064",
+      "name": "Broccoli Cheddar Soup",
+      "station": "Soup",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.75,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 268.64,
+        "protein_g": 10.18,
+        "carb_g": 11.11,
+        "fat_g": 21.3,
+        "fiber_g": 1.86,
+        "sugar_g": 0.0,
+        "sodium_mg": 552.63,
+        "sat_fat_g": 10.18,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 60.17,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "65e211fbf9a1af60",
+      "name": "Native Three Sisters Bean Soup",
+      "station": "Soup",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 0.25,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 149.78,
+        "protein_g": 4.99,
+        "carb_g": 24.95,
+        "fat_g": 3.99,
+        "fiber_g": 4.99,
+        "sugar_g": 6.8,
+        "sodium_mg": 648.64,
+        "sat_fat_g": 0.45,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e745a045386e8997",
+      "name": "Halal Rosemary Chicken",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "3.94 oz",
+      "nutrition": {
+        "kcal": 153.21,
+        "protein_g": 20.85,
+        "carb_g": 0.06,
+        "fat_g": 7.06,
+        "fiber_g": 0.04,
+        "sugar_g": 0.0,
+        "sodium_mg": 300.97,
+        "sat_fat_g": 1.43,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 99.03,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "04824012cd59e4e9",
+      "name": "Vegan Scrambled Egg",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2.07 oz",
+      "nutrition": {
+        "kcal": 95.2,
+        "protein_g": 5.97,
+        "carb_g": 1.39,
+        "fat_g": 7.15,
+        "fiber_g": 0.08,
+        "sugar_g": 0.06,
+        "sodium_mg": 201.81,
+        "sat_fat_g": 0.14,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "891a1d45c7f6385a",
+      "name": "Sauteed Green Beans",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.33 oz",
+      "nutrition": {
+        "kcal": 55.61,
+        "protein_g": 1.1,
+        "carb_g": 6.62,
+        "fat_g": 2.45,
+        "fiber_g": 2.19,
+        "sugar_g": 3.23,
+        "sodium_mg": 122.83,
+        "sat_fat_g": 0.28,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c0aca732542bc5d7",
+      "name": "Rice Congee",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "4.59 oz",
+      "nutrition": {
+        "kcal": 72.73,
+        "protein_g": 1.61,
+        "carb_g": 16.15,
+        "fat_g": 0.0,
+        "fiber_g": 0.4,
+        "sugar_g": 0.0,
+        "sodium_mg": 98.36,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f61101697d54927d",
+      "name": "Kimchi",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 5.07,
+        "protein_g": 1.01,
+        "carb_g": 1.01,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 162.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "16f94d1478d51692",
+      "name": "Sunflower Seeds",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "386b23ab4afe16a7",
+      "name": "Roasted Pumpkin Seeds",
+      "station": "Allergen Friendly - Lunch",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1.02 oz",
+      "nutrition": {
+        "kcal": 169.08,
+        "protein_g": 8.58,
+        "carb_g": 3.04,
+        "fat_g": 15.05,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.99,
+        "sat_fat_g": 2.59,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0573fc87407da7df",
+      "name": "Zhoug Sauce",
+      "station": "Sides",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "0.77 oz",
+      "nutrition": {
+        "kcal": 82.01,
+        "protein_g": 0.19,
+        "carb_g": 1.18,
+        "fat_g": 8.58,
+        "fiber_g": 0.42,
+        "sugar_g": 0.44,
+        "sodium_mg": 122.87,
+        "sat_fat_g": 1.23,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fbccc842b3584593",
+      "name": "Pita Bread",
+      "station": "Sides",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 129.27,
+        "protein_g": 3.98,
+        "carb_g": 26.86,
+        "fat_g": 1.49,
+        "fiber_g": 0.99,
+        "sugar_g": 0.0,
+        "sodium_mg": 198.95,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1b89dee893bbd946",
+      "name": "Yemeni Beef Stew",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 4.29,
+      "serving_desc": "4.5 oz",
+      "nutrition": {
+        "kcal": 176.13,
+        "protein_g": 22.9,
+        "carb_g": 2.47,
+        "fat_g": 8.32,
+        "fiber_g": 0.46,
+        "sugar_g": 0.56,
+        "sodium_mg": 278.54,
+        "sat_fat_g": 2.35,
+        "trans_fat_g": 0.24,
+        "cholesterol_mg": 66.11,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "bfe0f8f0f3b4ffc7",
+      "name": "Vegetable Yemeni Zurbian Basmati Rice",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "3.67 oz",
+      "nutrition": {
+        "kcal": 115.29,
+        "protein_g": 2.25,
+        "carb_g": 24.29,
+        "fat_g": 1.3,
+        "fiber_g": 0.97,
+        "sugar_g": 0.79,
+        "sodium_mg": 199.38,
+        "sat_fat_g": 0.16,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e9358a6c897d91a8",
+      "name": "Bell Pepper Brussels Sprout Mushroom and Zucchini",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "3.28 oz",
+      "nutrition": {
+        "kcal": 82.37,
+        "protein_g": 2.04,
+        "carb_g": 7.8,
+        "fat_g": 5.15,
+        "fiber_g": 2.03,
+        "sugar_g": 2.32,
+        "sodium_mg": 501.28,
+        "sat_fat_g": 0.6,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "05e7c7449a9c08b7",
+      "name": "Base - Mixed Greens",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 26.29,
+        "protein_g": 3.24,
+        "carb_g": 4.12,
+        "fat_g": 0.44,
+        "fiber_g": 2.49,
+        "sugar_g": 0.48,
+        "sodium_mg": 89.58,
+        "sat_fat_g": 0.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "268bd619969fcccb",
+      "name": "Baby Spinach",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 26.29,
+        "protein_g": 3.24,
+        "carb_g": 4.12,
+        "fat_g": 0.44,
+        "fiber_g": 2.49,
+        "sugar_g": 0.48,
+        "sodium_mg": 89.58,
+        "sat_fat_g": 0.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "99e11f37a6182fad",
+      "name": "Romaine Lettuce",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 19.52,
+        "protein_g": 1.39,
+        "carb_g": 3.73,
+        "fat_g": 0.34,
+        "fiber_g": 2.38,
+        "sugar_g": 1.35,
+        "sodium_mg": 9.07,
+        "sat_fat_g": 0.05,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "32e1aaba426876f8",
+      "name": "Sliced Red Beets",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 48.78,
+        "protein_g": 1.83,
+        "carb_g": 10.84,
+        "fat_g": 0.19,
+        "fiber_g": 3.18,
+        "sugar_g": 7.67,
+        "sodium_mg": 88.45,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2492ff396ab0185f",
+      "name": "Red Beets",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 48.78,
+        "protein_g": 1.83,
+        "carb_g": 10.84,
+        "fat_g": 0.19,
+        "fiber_g": 3.18,
+        "sugar_g": 7.67,
+        "sodium_mg": 88.45,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ce45f0cc8c995a04",
+      "name": "Shredded Carrots",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 23.45,
+        "protein_g": 0.53,
+        "carb_g": 5.43,
+        "fat_g": 0.14,
+        "fiber_g": 1.59,
+        "sugar_g": 2.69,
+        "sodium_mg": 39.12,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4df2f644279f14c2",
+      "name": "Shredded Rainbow Carrots",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 19.65,
+        "protein_g": 0.36,
+        "carb_g": 4.67,
+        "fat_g": 0.07,
+        "fiber_g": 1.64,
+        "sugar_g": 2.7,
+        "sodium_mg": 44.23,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "acdfcce51759b5c1",
+      "name": "Sliced Cucumber",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 8.81,
+        "protein_g": 0.37,
+        "carb_g": 2.06,
+        "fat_g": 0.06,
+        "fiber_g": 0.28,
+        "sugar_g": 0.95,
+        "sodium_mg": 1.13,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7f0e4e1180a5366d",
+      "name": "Diced Cucumbers",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 8.81,
+        "protein_g": 0.37,
+        "carb_g": 2.06,
+        "fat_g": 0.06,
+        "fiber_g": 0.28,
+        "sugar_g": 0.95,
+        "sodium_mg": 1.13,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7dc622d8e315389b",
+      "name": "Cherry Tomatoes",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 10.03,
+        "protein_g": 0.5,
+        "carb_g": 2.21,
+        "fat_g": 0.11,
+        "fiber_g": 0.68,
+        "sugar_g": 1.49,
+        "sodium_mg": 2.83,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7c687ccb9a23997a",
+      "name": "Grape Tomato",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1.25 oz",
+      "nutrition": {
+        "kcal": 6.27,
+        "protein_g": 0.31,
+        "carb_g": 1.38,
+        "fat_g": 0.07,
+        "fiber_g": 0.43,
+        "sugar_g": 0.93,
+        "sodium_mg": 1.77,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ae53a710ffdbb876",
+      "name": "Sliced Radish",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 4.47,
+        "protein_g": 0.19,
+        "carb_g": 0.96,
+        "fat_g": 0.03,
+        "fiber_g": 0.45,
+        "sugar_g": 0.53,
+        "sodium_mg": 11.06,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fd1caead64799121",
+      "name": "Cooked Quinoa",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 57.63,
+        "protein_g": 2.03,
+        "carb_g": 9.83,
+        "fat_g": 0.84,
+        "fiber_g": 1.01,
+        "sugar_g": 0.13,
+        "sodium_mg": 148.77,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "648854e9146637eb",
+      "name": "Paprika Rosemary Tofu",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 91.9,
+        "protein_g": 8.41,
+        "carb_g": 4.16,
+        "fat_g": 4.64,
+        "fiber_g": 1.27,
+        "sugar_g": 0.31,
+        "sodium_mg": 52.71,
+        "sat_fat_g": 0.4,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "b0a5a81be7f08c3a",
+      "name": "Garlic Cheese Crouton",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 60.79,
+        "protein_g": 2.03,
+        "carb_g": 10.13,
+        "fat_g": 2.03,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 172.12,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "6f91f96ee3adc3ec",
+      "name": "Dried Cranberry",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "1.25 oz",
+      "nutrition": {
+        "kcal": 139.69,
+        "protein_g": 0.0,
+        "carb_g": 35.44,
+        "fat_g": 0.0,
+        "fiber_g": 3.22,
+        "sugar_g": 24.81,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7c372c5d465498f0",
+      "name": "Raisins",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "1.5 oz",
+      "nutrition": {
+        "kcal": 138.29,
+        "protein_g": 1.06,
+        "carb_g": 32.96,
+        "fat_g": 0.0,
+        "fiber_g": 2.13,
+        "sugar_g": 25.51,
+        "sodium_mg": 10.63,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "9a27926beebddf3b",
+      "name": "Sunflower Seeds",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8e26a4ae4b074db1",
+      "name": "Pumpkin Seeds",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 158.48,
+        "protein_g": 8.57,
+        "carb_g": 3.04,
+        "fat_g": 13.91,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.98,
+        "sat_fat_g": 2.46,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "37629976f9ed1fde",
+      "name": "Sliced Almond",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "treenut"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 81.05,
+        "protein_g": 3.04,
+        "carb_g": 3.04,
+        "fat_g": 7.09,
+        "fiber_g": 2.03,
+        "sugar_g": 0.47,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.51,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "188217eee311507e",
+      "name": "Olive Oil",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 127.66,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 2.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fa4392a56cb48eac",
+      "name": "Balsamic Vinegar",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 12.5,
+        "protein_g": 0.07,
+        "carb_g": 2.41,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 2.12,
+        "sodium_mg": 3.26,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "39279b9cf7f34e2f",
+      "name": "Apple Cider Vinegar",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.53 oz",
+      "nutrition": {
+        "kcal": 3.16,
+        "protein_g": 0.0,
+        "carb_g": 0.14,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.06,
+        "sodium_mg": 0.75,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0be3e997f1c253db",
+      "name": "Ranch Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.18,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 97.81,
+        "protein_g": 0.98,
+        "carb_g": 0.0,
+        "fat_g": 9.77,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 234.62,
+        "sat_fat_g": 1.47,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "eee8e32a156d489b",
+      "name": "Caesar Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "egg",
+        "fish",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 127.17,
+        "protein_g": 0.98,
+        "carb_g": 1.96,
+        "fat_g": 13.69,
+        "fiber_g": 0.0,
+        "sugar_g": 0.98,
+        "sodium_mg": 351.93,
+        "sat_fat_g": 2.44,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 9.77,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fbdd2ab7ee85c44b",
+      "name": "Balsamic Vinaigrette",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 54.91,
+        "protein_g": 0.0,
+        "carb_g": 4.57,
+        "fat_g": 4.57,
+        "fiber_g": 0.0,
+        "sugar_g": 3.66,
+        "sodium_mg": 182.9,
+        "sat_fat_g": 0.46,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fb0faff37b23fc62",
+      "name": "1000 Island Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1.16 oz",
+      "nutrition": {
+        "kcal": 120.69,
+        "protein_g": 0.0,
+        "carb_g": 7.67,
+        "fat_g": 9.87,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 241.16,
+        "sat_fat_g": 1.64,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "33490b78358141fb",
+      "name": "Asian Sesame Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan",
+        "halal"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1.08 oz",
+      "nutrition": {
+        "kcal": 87.53,
+        "protein_g": 0.0,
+        "carb_g": 12.25,
+        "fat_g": 4.38,
+        "fiber_g": 0.0,
+        "sugar_g": 10.5,
+        "sodium_mg": 332.42,
+        "sat_fat_g": 0.44,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d2b798a82a7ab5b7",
+      "name": "Blue Cheese Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.17,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 131.71,
+        "protein_g": 1.01,
+        "carb_g": 1.01,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 1.01,
+        "sodium_mg": 243.0,
+        "sat_fat_g": 3.04,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.12,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "28cf2b68e3f4067f",
+      "name": "Italian Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 35.46,
+        "protein_g": 0.0,
+        "carb_g": 5.32,
+        "fat_g": 1.77,
+        "fiber_g": 0.0,
+        "sugar_g": 1.77,
+        "sodium_mg": 380.95,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "caba4895a7213002",
+      "name": "Poppy Seed Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 128.11,
+        "protein_g": 0.0,
+        "carb_g": 9.15,
+        "fat_g": 10.06,
+        "fiber_g": 0.0,
+        "sugar_g": 8.23,
+        "sodium_mg": 310.93,
+        "sat_fat_g": 1.83,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 4.57,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "71881f31a1c5f24f",
+      "name": "Blood Orange Vinaigrette",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 79.78,
+        "protein_g": 0.0,
+        "carb_g": 5.32,
+        "fat_g": 6.2,
+        "fiber_g": 0.0,
+        "sugar_g": 4.43,
+        "sodium_mg": 168.33,
+        "sat_fat_g": 0.89,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "98d40a487ca9a26f",
+      "name": "Salad Egg HALAL",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian",
+        "halal"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.42,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 267.6,
+        "protein_g": 12.25,
+        "carb_g": 0.41,
+        "fat_g": 23.82,
+        "fiber_g": 0.19,
+        "sugar_g": 0.0,
+        "sodium_mg": 396.92,
+        "sat_fat_g": 4.85,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 342.36,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7e9dba097ee1b2ee",
+      "name": "Chicken Salad",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 228.92,
+        "protein_g": 0.07,
+        "carb_g": 0.48,
+        "fat_g": 24.91,
+        "fiber_g": 0.12,
+        "sugar_g": 0.22,
+        "sodium_mg": 593.78,
+        "sat_fat_g": 3.37,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 21.19,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "27be53ee488a9cfa",
+      "name": "Salad Tuna Simple HALAL",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [
+        "egg",
+        "fish"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.22,
+      "serving_desc": "1.9 oz",
+      "nutrition": {
+        "kcal": 110.57,
+        "protein_g": 9.07,
+        "carb_g": 0.85,
+        "fat_g": 8.16,
+        "fiber_g": 0.12,
+        "sugar_g": 0.45,
+        "sodium_mg": 241.36,
+        "sat_fat_g": 1.39,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 14.95,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1383056de4a2af46",
+      "name": "Sliced Vegan Cheese",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.74 oz",
+      "nutrition": {
+        "kcal": 62.98,
+        "protein_g": 1.05,
+        "carb_g": 5.24,
+        "fat_g": 4.72,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 120.63,
+        "sat_fat_g": 2.1,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a8d7b573018b0219",
+      "name": "Sliced Pickle",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan",
+        "kosher"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 5.07,
+        "protein_g": 0.0,
+        "carb_g": 1.01,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 364.49,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "72062c97b3bc54e8",
+      "name": "Stuffed Green Olive",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 18.91,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 1.89,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 264.6,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "502a13f503baa263",
+      "name": "Hummus",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy",
+        "sesame"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 122.46,
+        "protein_g": 4.08,
+        "carb_g": 12.24,
+        "fat_g": 7.14,
+        "fiber_g": 4.08,
+        "sugar_g": 0.0,
+        "sodium_mg": 285.55,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8483cabc3012c289",
+      "name": "Peach",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "5.5 oz",
+      "nutrition": {
+        "kcal": 61.48,
+        "protein_g": 1.42,
+        "carb_g": 14.87,
+        "fat_g": 0.39,
+        "fiber_g": 2.34,
+        "sugar_g": 13.08,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "32afbd324693ae89",
+      "name": "Nectarine",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "5 oz",
+      "nutrition": {
+        "kcal": 0.0,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": true,
+        "confidence": "low"
+      }
+    },
+    {
+      "id": "5192d55749e39718",
+      "name": "Penne Pasta",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "4.03 oz",
+      "nutrition": {
+        "kcal": 168.95,
+        "protein_g": 5.58,
+        "carb_g": 33.43,
+        "fat_g": 1.86,
+        "fiber_g": 1.59,
+        "sugar_g": 1.62,
+        "sodium_mg": 393.13,
+        "sat_fat_g": 0.15,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c65e33613587a43e",
+      "name": "Shrimp Pesto Alfredo Sauce",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "shellfish"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 1.27,
+      "serving_desc": "3.61 oz",
+      "nutrition": {
+        "kcal": 190.58,
+        "protein_g": 9.0,
+        "carb_g": 3.63,
+        "fat_g": 15.38,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 597.23,
+        "sat_fat_g": 4.14,
+        "trans_fat_g": 0.01,
+        "cholesterol_mg": 74.13,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d5596bf198830cc1",
+      "name": "Marinara Sauce",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "2.84 oz",
+      "nutrition": {
+        "kcal": 33.11,
+        "protein_g": 1.29,
+        "carb_g": 5.54,
+        "fat_g": 0.82,
+        "fiber_g": 1.29,
+        "sugar_g": 0.21,
+        "sodium_mg": 217.17,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "46b0391ba459b937",
+      "name": "Hawaiian Dinner Roll",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.04,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 91.18,
+        "protein_g": 3.04,
+        "carb_g": 15.19,
+        "fat_g": 2.02,
+        "fiber_g": 0.51,
+        "sugar_g": 5.06,
+        "sodium_mg": 75.94,
+        "sat_fat_g": 1.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 15.19,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "16529e48e5373c33",
+      "name": "Braised Kale",
+      "station": "Pasta",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "4.14 oz",
+      "nutrition": {
+        "kcal": 99.59,
+        "protein_g": 4.07,
+        "carb_g": 10.09,
+        "fat_g": 5.76,
+        "fiber_g": 3.51,
+        "sugar_g": 3.22,
+        "sodium_mg": 231.74,
+        "sat_fat_g": 0.66,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e6212eb4ee854066",
+      "name": "Roma Pesto Pizza",
+      "station": "Pizza",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.53,
+      "serving_desc": "4.24 oz",
+      "nutrition": {
+        "kcal": 282.49,
+        "protein_g": 11.08,
+        "carb_g": 30.92,
+        "fat_g": 13.07,
+        "fiber_g": 1.26,
+        "sugar_g": 0.9,
+        "sodium_mg": 460.89,
+        "sat_fat_g": 5.18,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 23.13,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c34c00478ffa2ee7",
+      "name": "Sausage and Onion Pizza",
+      "station": "Pizza",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten",
+        "pork"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.68,
+      "serving_desc": "4.46 oz",
+      "nutrition": {
+        "kcal": 317.49,
+        "protein_g": 14.44,
+        "carb_g": 32.13,
+        "fat_g": 14.82,
+        "fiber_g": 1.44,
+        "sugar_g": 0.97,
+        "sodium_mg": 574.64,
+        "sat_fat_g": 7.16,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 35.54,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8706ef352ac90753",
+      "name": "Tofu Thai Curry (Vegan)",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.28,
+      "serving_desc": "6.24 oz",
+      "nutrition": {
+        "kcal": 254.42,
+        "protein_g": 19.64,
+        "carb_g": 13.44,
+        "fat_g": 14.05,
+        "fiber_g": 4.35,
+        "sugar_g": 1.63,
+        "sodium_mg": 223.05,
+        "sat_fat_g": 6.16,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "5cc7dc7e90194bce",
+      "name": "Brown Rice",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 149.67,
+        "protein_g": 3.07,
+        "carb_g": 31.13,
+        "fat_g": 1.3,
+        "fiber_g": 1.47,
+        "sugar_g": 0.27,
+        "sodium_mg": 2.04,
+        "sat_fat_g": 0.24,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "451d96b6a96e9a4c",
+      "name": "Braised Bok Choy",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "5.09 oz",
+      "nutrition": {
+        "kcal": 42.05,
+        "protein_g": 2.12,
+        "carb_g": 4.14,
+        "fat_g": 2.47,
+        "fiber_g": 1.49,
+        "sugar_g": 1.95,
+        "sodium_mg": 481.09,
+        "sat_fat_g": 0.2,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "df10c4f3642dbc64",
+      "name": "Vegetable Spring Rolls",
+      "station": "Plant Forward",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "2.2 oz",
+      "nutrition": {
+        "kcal": 179.45,
+        "protein_g": 2.21,
+        "carb_g": 14.9,
+        "fat_g": 12.86,
+        "fiber_g": 1.1,
+        "sugar_g": 0.0,
+        "sodium_mg": 309.08,
+        "sat_fat_g": 0.99,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "80d01a50c0483064",
+      "name": "Broccoli Cheddar Soup",
+      "station": "Soup",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.75,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 268.64,
+        "protein_g": 10.18,
+        "carb_g": 11.11,
+        "fat_g": 21.3,
+        "fiber_g": 1.86,
+        "sugar_g": 0.0,
+        "sodium_mg": 552.63,
+        "sat_fat_g": 10.18,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 60.17,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "597790648951ac0e",
+      "name": "Potato and Carrot Korma",
+      "station": "Soup",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.2,
+      "serving_desc": "4.79 oz",
+      "nutrition": {
+        "kcal": 73.37,
+        "protein_g": 1.66,
+        "carb_g": 12.9,
+        "fat_g": 1.37,
+        "fiber_g": 2.17,
+        "sugar_g": 3.65,
+        "sodium_mg": 405.35,
+        "sat_fat_g": 0.18,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "cdf0b708866f32b6",
+      "name": "Banana Creme Pie",
+      "station": "Dessert",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.17,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 172.87,
+        "protein_g": 0.88,
+        "carb_g": 21.7,
+        "fat_g": 9.3,
+        "fiber_g": 0.44,
+        "sugar_g": 13.36,
+        "sodium_mg": 128.46,
+        "sat_fat_g": 6.2,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "08d15593f304e1de",
+      "name": "Black Forest Cake",
+      "station": "Dessert",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 163.29,
+        "protein_g": 1.42,
+        "carb_g": 18.43,
+        "fat_g": 9.21,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 127.57,
+        "sat_fat_g": 4.25,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 38.98,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d5df5c162a7c626e",
+      "name": "Vegan Lemon Sugar Cookies",
+      "station": "Dessert",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 74.7,
+        "protein_g": 0.94,
+        "carb_g": 17.01,
+        "fat_g": 4.73,
+        "fiber_g": 0.19,
+        "sugar_g": 10.4,
+        "sodium_mg": 45.36,
+        "sat_fat_g": 2.36,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "48a630b402b09848",
+      "name": "Halal Rosemary Roasted Chicken Thigh",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 0.48,
+      "serving_desc": "4.04 oz",
+      "nutrition": {
+        "kcal": 153.99,
+        "protein_g": 21.44,
+        "carb_g": 0.24,
+        "fat_g": 6.79,
+        "fiber_g": 0.06,
+        "sugar_g": 0.06,
+        "sodium_mg": 398.75,
+        "sat_fat_g": 1.47,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 102.44,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2477f86e6603e250",
+      "name": "Garlic Green Beans",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.11,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 105.22,
+        "protein_g": 2.62,
+        "carb_g": 7.93,
+        "fat_g": 6.57,
+        "fiber_g": 2.61,
+        "sugar_g": 3.92,
+        "sodium_mg": 901.37,
+        "sat_fat_g": 0.94,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e6c2ae7e7cf4930a",
+      "name": "Kimchi",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 5.07,
+        "protein_g": 1.01,
+        "carb_g": 1.01,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 162.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "cba9dfa5a60ad330",
+      "name": "Sunflower Seeds",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4af718ae8226c8e5",
+      "name": "Pumpkin Seeds",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 158.48,
+        "protein_g": 8.57,
+        "carb_g": 3.04,
+        "fat_g": 13.91,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.98,
+        "sat_fat_g": 2.46,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "506988ed0cd0a24b",
+      "name": "Vegan Italian \"Sausage\"",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "3.5 oz",
+      "nutrition": {
+        "kcal": 248.22,
+        "protein_g": 16.87,
+        "carb_g": 7.94,
+        "fat_g": 15.88,
+        "fiber_g": 2.98,
+        "sugar_g": 9.92,
+        "sodium_mg": 535.81,
+        "sat_fat_g": 6.95,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "860cf5b3456fbdc6",
+      "name": "Quinoa",
+      "station": "Allergen Friendly - Dinner",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "5.58 oz",
+      "nutrition": {
+        "kcal": 200.71,
+        "protein_g": 6.06,
+        "carb_g": 29.27,
+        "fat_g": 5.74,
+        "fiber_g": 3.04,
+        "sugar_g": 0.4,
+        "sodium_mg": 98.6,
+        "sat_fat_g": 0.46,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "3a7060223884008e",
+      "name": "Halal Coconut Curry Chicken Breast",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.11,
+      "serving_desc": "6.56 oz",
+      "nutrition": {
+        "kcal": 268.68,
+        "protein_g": 19.68,
+        "carb_g": 6.86,
+        "fat_g": 17.61,
+        "fiber_g": 2.03,
+        "sugar_g": 1.6,
+        "sodium_mg": 433.56,
+        "sat_fat_g": 7.09,
+        "trans_fat_g": 0.09,
+        "cholesterol_mg": 58.02,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "25cffd6a400913eb",
+      "name": "Jasmine Rice",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "3.2 oz",
+      "nutrition": {
+        "kcal": 125.69,
+        "protein_g": 2.79,
+        "carb_g": 27.91,
+        "fat_g": 0.0,
+        "fiber_g": 0.7,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "13cbb012f662fe5e",
+      "name": "Sauteed Green Beans with Garlic and Ginger",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.55 oz",
+      "nutrition": {
+        "kcal": 53.91,
+        "protein_g": 1.33,
+        "carb_g": 7.89,
+        "fat_g": 1.63,
+        "fiber_g": 2.37,
+        "sugar_g": 3.4,
+        "sodium_mg": 246.15,
+        "sat_fat_g": 0.19,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "036b98875a4f8d76",
+      "name": "Lemongrass Chicken Potsticker",
+      "station": "Entree",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "fish",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1.6 oz",
+      "nutrition": {
+        "kcal": 79.8,
+        "protein_g": 4.49,
+        "carb_g": 11.46,
+        "fat_g": 1.75,
+        "fiber_g": 0.5,
+        "sugar_g": 0.5,
+        "sodium_mg": 219.32,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 12.46,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "05e7c7449a9c08b7",
+      "name": "Base - Mixed Greens",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 26.29,
+        "protein_g": 3.24,
+        "carb_g": 4.12,
+        "fat_g": 0.44,
+        "fiber_g": 2.49,
+        "sugar_g": 0.48,
+        "sodium_mg": 89.58,
+        "sat_fat_g": 0.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "268bd619969fcccb",
+      "name": "Baby Spinach",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 26.29,
+        "protein_g": 3.24,
+        "carb_g": 4.12,
+        "fat_g": 0.44,
+        "fiber_g": 2.49,
+        "sugar_g": 0.48,
+        "sodium_mg": 89.58,
+        "sat_fat_g": 0.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "99e11f37a6182fad",
+      "name": "Romaine Lettuce",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 19.52,
+        "protein_g": 1.39,
+        "carb_g": 3.73,
+        "fat_g": 0.34,
+        "fiber_g": 2.38,
+        "sugar_g": 1.35,
+        "sodium_mg": 9.07,
+        "sat_fat_g": 0.05,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "32e1aaba426876f8",
+      "name": "Sliced Red Beets",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 48.78,
+        "protein_g": 1.83,
+        "carb_g": 10.84,
+        "fat_g": 0.19,
+        "fiber_g": 3.18,
+        "sugar_g": 7.67,
+        "sodium_mg": 88.45,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2492ff396ab0185f",
+      "name": "Red Beets",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 48.78,
+        "protein_g": 1.83,
+        "carb_g": 10.84,
+        "fat_g": 0.19,
+        "fiber_g": 3.18,
+        "sugar_g": 7.67,
+        "sodium_mg": 88.45,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ce45f0cc8c995a04",
+      "name": "Shredded Carrots",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 23.45,
+        "protein_g": 0.53,
+        "carb_g": 5.43,
+        "fat_g": 0.14,
+        "fiber_g": 1.59,
+        "sugar_g": 2.69,
+        "sodium_mg": 39.12,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4df2f644279f14c2",
+      "name": "Shredded Rainbow Carrots",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 19.65,
+        "protein_g": 0.36,
+        "carb_g": 4.67,
+        "fat_g": 0.07,
+        "fiber_g": 1.64,
+        "sugar_g": 2.7,
+        "sodium_mg": 44.23,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "acdfcce51759b5c1",
+      "name": "Sliced Cucumber",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 8.81,
+        "protein_g": 0.37,
+        "carb_g": 2.06,
+        "fat_g": 0.06,
+        "fiber_g": 0.28,
+        "sugar_g": 0.95,
+        "sodium_mg": 1.13,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7f0e4e1180a5366d",
+      "name": "Diced Cucumbers",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 8.81,
+        "protein_g": 0.37,
+        "carb_g": 2.06,
+        "fat_g": 0.06,
+        "fiber_g": 0.28,
+        "sugar_g": 0.95,
+        "sodium_mg": 1.13,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7dc622d8e315389b",
+      "name": "Cherry Tomatoes",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 10.03,
+        "protein_g": 0.5,
+        "carb_g": 2.21,
+        "fat_g": 0.11,
+        "fiber_g": 0.68,
+        "sugar_g": 1.49,
+        "sodium_mg": 2.83,
+        "sat_fat_g": 0.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7c687ccb9a23997a",
+      "name": "Grape Tomato",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1.25 oz",
+      "nutrition": {
+        "kcal": 6.27,
+        "protein_g": 0.31,
+        "carb_g": 1.38,
+        "fat_g": 0.07,
+        "fiber_g": 0.43,
+        "sugar_g": 0.93,
+        "sodium_mg": 1.77,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ae53a710ffdbb876",
+      "name": "Sliced Radish",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 4.47,
+        "protein_g": 0.19,
+        "carb_g": 0.96,
+        "fat_g": 0.03,
+        "fiber_g": 0.45,
+        "sugar_g": 0.53,
+        "sodium_mg": 11.06,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fd1caead64799121",
+      "name": "Cooked Quinoa",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 57.63,
+        "protein_g": 2.03,
+        "carb_g": 9.83,
+        "fat_g": 0.84,
+        "fiber_g": 1.01,
+        "sugar_g": 0.13,
+        "sodium_mg": 148.77,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "648854e9146637eb",
+      "name": "Paprika Rosemary Tofu",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 91.9,
+        "protein_g": 8.41,
+        "carb_g": 4.16,
+        "fat_g": 4.64,
+        "fiber_g": 1.27,
+        "sugar_g": 0.31,
+        "sodium_mg": 52.71,
+        "sat_fat_g": 0.4,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "b0a5a81be7f08c3a",
+      "name": "Garlic Cheese Crouton",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 60.79,
+        "protein_g": 2.03,
+        "carb_g": 10.13,
+        "fat_g": 2.03,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 172.12,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "6f91f96ee3adc3ec",
+      "name": "Dried Cranberry",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "1.25 oz",
+      "nutrition": {
+        "kcal": 139.69,
+        "protein_g": 0.0,
+        "carb_g": 35.44,
+        "fat_g": 0.0,
+        "fiber_g": 3.22,
+        "sugar_g": 24.81,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7c372c5d465498f0",
+      "name": "Raisins",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "1.5 oz",
+      "nutrition": {
+        "kcal": 138.29,
+        "protein_g": 1.06,
+        "carb_g": 32.96,
+        "fat_g": 0.0,
+        "fiber_g": 2.13,
+        "sugar_g": 25.51,
+        "sodium_mg": 10.63,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "9a27926beebddf3b",
+      "name": "Sunflower Seeds",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8e26a4ae4b074db1",
+      "name": "Pumpkin Seeds",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 158.48,
+        "protein_g": 8.57,
+        "carb_g": 3.04,
+        "fat_g": 13.91,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.98,
+        "sat_fat_g": 2.46,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "37629976f9ed1fde",
+      "name": "Sliced Almond",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "treenut"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 81.05,
+        "protein_g": 3.04,
+        "carb_g": 3.04,
+        "fat_g": 7.09,
+        "fiber_g": 2.03,
+        "sugar_g": 0.47,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.51,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "188217eee311507e",
+      "name": "Olive Oil",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 127.66,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 2.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fa4392a56cb48eac",
+      "name": "Balsamic Vinegar",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 12.5,
+        "protein_g": 0.07,
+        "carb_g": 2.41,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 2.12,
+        "sodium_mg": 3.26,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "39279b9cf7f34e2f",
+      "name": "Apple Cider Vinegar",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.53 oz",
+      "nutrition": {
+        "kcal": 3.16,
+        "protein_g": 0.0,
+        "carb_g": 0.14,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.06,
+        "sodium_mg": 0.75,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0be3e997f1c253db",
+      "name": "Ranch Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.18,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 97.81,
+        "protein_g": 0.98,
+        "carb_g": 0.0,
+        "fat_g": 9.77,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 234.62,
+        "sat_fat_g": 1.47,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "eee8e32a156d489b",
+      "name": "Caesar Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "egg",
+        "fish",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 127.17,
+        "protein_g": 0.98,
+        "carb_g": 1.96,
+        "fat_g": 13.69,
+        "fiber_g": 0.0,
+        "sugar_g": 0.98,
+        "sodium_mg": 351.93,
+        "sat_fat_g": 2.44,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 9.77,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fbdd2ab7ee85c44b",
+      "name": "Balsamic Vinaigrette",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 54.91,
+        "protein_g": 0.0,
+        "carb_g": 4.57,
+        "fat_g": 4.57,
+        "fiber_g": 0.0,
+        "sugar_g": 3.66,
+        "sodium_mg": 182.9,
+        "sat_fat_g": 0.46,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "fb0faff37b23fc62",
+      "name": "1000 Island Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1.16 oz",
+      "nutrition": {
+        "kcal": 120.69,
+        "protein_g": 0.0,
+        "carb_g": 7.67,
+        "fat_g": 9.87,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 241.16,
+        "sat_fat_g": 1.64,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "33490b78358141fb",
+      "name": "Asian Sesame Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan",
+        "halal"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1.08 oz",
+      "nutrition": {
+        "kcal": 87.53,
+        "protein_g": 0.0,
+        "carb_g": 12.25,
+        "fat_g": 4.38,
+        "fiber_g": 0.0,
+        "sugar_g": 10.5,
+        "sodium_mg": 332.42,
+        "sat_fat_g": 0.44,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d2b798a82a7ab5b7",
+      "name": "Blue Cheese Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.17,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 131.71,
+        "protein_g": 1.01,
+        "carb_g": 1.01,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 1.01,
+        "sodium_mg": 243.0,
+        "sat_fat_g": 3.04,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.12,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "28cf2b68e3f4067f",
+      "name": "Italian Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 35.46,
+        "protein_g": 0.0,
+        "carb_g": 5.32,
+        "fat_g": 1.77,
+        "fiber_g": 0.0,
+        "sugar_g": 1.77,
+        "sodium_mg": 380.95,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "caba4895a7213002",
+      "name": "Poppy Seed Dressing",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 128.11,
+        "protein_g": 0.0,
+        "carb_g": 9.15,
+        "fat_g": 10.06,
+        "fiber_g": 0.0,
+        "sugar_g": 8.23,
+        "sodium_mg": 310.93,
+        "sat_fat_g": 1.83,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 4.57,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "71881f31a1c5f24f",
+      "name": "Blood Orange Vinaigrette",
+      "station": "Salad Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 79.78,
+        "protein_g": 0.0,
+        "carb_g": 5.32,
+        "fat_g": 6.2,
+        "fiber_g": 0.0,
+        "sugar_g": 4.43,
+        "sodium_mg": 168.33,
+        "sat_fat_g": 0.89,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "98d40a487ca9a26f",
+      "name": "Salad Egg HALAL",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian",
+        "halal"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.42,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 267.6,
+        "protein_g": 12.25,
+        "carb_g": 0.41,
+        "fat_g": 23.82,
+        "fiber_g": 0.19,
+        "sugar_g": 0.0,
+        "sodium_mg": 396.92,
+        "sat_fat_g": 4.85,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 342.36,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7e9dba097ee1b2ee",
+      "name": "Chicken Salad",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 228.92,
+        "protein_g": 0.07,
+        "carb_g": 0.48,
+        "fat_g": 24.91,
+        "fiber_g": 0.12,
+        "sugar_g": 0.22,
+        "sodium_mg": 593.78,
+        "sat_fat_g": 3.37,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 21.19,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "27be53ee488a9cfa",
+      "name": "Salad Tuna Simple HALAL",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [
+        "egg",
+        "fish"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.22,
+      "serving_desc": "1.9 oz",
+      "nutrition": {
+        "kcal": 110.57,
+        "protein_g": 9.07,
+        "carb_g": 0.85,
+        "fat_g": 8.16,
+        "fiber_g": 0.12,
+        "sugar_g": 0.45,
+        "sodium_mg": 241.36,
+        "sat_fat_g": 1.39,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 14.95,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1383056de4a2af46",
+      "name": "Sliced Vegan Cheese",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.74 oz",
+      "nutrition": {
+        "kcal": 62.98,
+        "protein_g": 1.05,
+        "carb_g": 5.24,
+        "fat_g": 4.72,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 120.63,
+        "sat_fat_g": 2.1,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a8d7b573018b0219",
+      "name": "Sliced Pickle",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan",
+        "kosher"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 5.07,
+        "protein_g": 0.0,
+        "carb_g": 1.01,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 364.49,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "72062c97b3bc54e8",
+      "name": "Stuffed Green Olive",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 18.91,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 1.89,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 264.6,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "502a13f503baa263",
+      "name": "Hummus",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy",
+        "sesame"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 122.46,
+        "protein_g": 4.08,
+        "carb_g": 12.24,
+        "fat_g": 7.14,
+        "fiber_g": 4.08,
+        "sugar_g": 0.0,
+        "sodium_mg": 285.55,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "8483cabc3012c289",
+      "name": "Peach",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "5.5 oz",
+      "nutrition": {
+        "kcal": 61.48,
+        "protein_g": 1.42,
+        "carb_g": 14.87,
+        "fat_g": 0.39,
+        "fiber_g": 2.34,
+        "sugar_g": 13.08,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "32afbd324693ae89",
+      "name": "Nectarine",
+      "station": "Deli Bar",
+      "location": "Crossroads",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "5 oz",
+      "nutrition": {
+        "kcal": 0.0,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": true,
+        "confidence": "low"
+      }
+    },
+    {
+      "id": "7508214ee818f439",
+      "name": "Assorted Mini Donuts",
+      "station": "Pastry",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1.25 oz",
+      "nutrition": {
+        "kcal": 131.47,
+        "protein_g": 2.02,
+        "carb_g": 15.19,
+        "fat_g": 7.09,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 192.37,
+        "sat_fat_g": 3.04,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a2fa274e79c4cfc3",
+      "name": "Plain Bagels",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.14,
+      "serving_desc": "3.35 oz",
+      "nutrition": {
+        "kcal": 260.09,
+        "protein_g": 8.99,
+        "carb_g": 50.98,
+        "fat_g": 2.0,
+        "fiber_g": 2.0,
+        "sugar_g": 6.0,
+        "sodium_mg": 499.85,
+        "sat_fat_g": 0.5,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d4290d7fb92e8850",
+      "name": "Everything Bagels",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 241.87,
+        "protein_g": 8.96,
+        "carb_g": 44.76,
+        "fat_g": 3.58,
+        "fiber_g": 2.69,
+        "sugar_g": 5.38,
+        "sodium_mg": 420.77,
+        "sat_fat_g": 0.89,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "506e7465ac6120ad",
+      "name": "Whole Wheat Bagels",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 214.99,
+        "protein_g": 8.96,
+        "carb_g": 43.87,
+        "fat_g": 1.79,
+        "fiber_g": 6.27,
+        "sugar_g": 6.27,
+        "sodium_mg": 358.1,
+        "sat_fat_g": 0.45,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4a2e48bda5070bb7",
+      "name": "Whipped Cream Cheese",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 182.37,
+        "protein_g": 4.05,
+        "carb_g": 4.05,
+        "fat_g": 18.22,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 192.37,
+        "sat_fat_g": 12.15,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 60.75,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "71444c89f17dfa16",
+      "name": "Chive Cream Cheese",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.68,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 253.71,
+        "protein_g": 5.81,
+        "carb_g": 5.89,
+        "fat_g": 25.2,
+        "fiber_g": 0.17,
+        "sugar_g": 0.13,
+        "sodium_mg": 265.68,
+        "sat_fat_g": 16.78,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 83.83,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "207989dab5403e1b",
+      "name": "Capers",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.25 oz",
+      "nutrition": {
+        "kcal": 0.16,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 101.48,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "427faed03488c339",
+      "name": "Sliced Red Onion",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 11.35,
+        "protein_g": 0.31,
+        "carb_g": 2.65,
+        "fat_g": 0.03,
+        "fiber_g": 0.48,
+        "sugar_g": 1.2,
+        "sodium_mg": 1.13,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0c2c922495c73902",
+      "name": "Tomato Sliced",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.95 oz",
+      "nutrition": {
+        "kcal": 4.76,
+        "protein_g": 0.24,
+        "carb_g": 1.05,
+        "fat_g": 0.05,
+        "fiber_g": 0.32,
+        "sugar_g": 0.71,
+        "sodium_mg": 1.35,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "23783ae9f065db2a",
+      "name": "Preserves Strawberry Jelly",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "0.7 oz",
+      "nutrition": {
+        "kcal": 39.72,
+        "protein_g": 0.0,
+        "carb_g": 9.92,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 7.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "7a62610590bc980a",
+      "name": "Butter Unsalted HALAL",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian",
+        "halal"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.16,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 101.31,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 11.14,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 7.09,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 30.38,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2a99cabd21b809fc",
+      "name": "Sunflower Butter",
+      "station": "Bagel Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1.1 oz",
+      "nutrition": {
+        "kcal": 192.36,
+        "protein_g": 5.39,
+        "carb_g": 7.27,
+        "fat_g": 17.21,
+        "fiber_g": 1.78,
+        "sugar_g": 3.29,
+        "sodium_mg": 103.22,
+        "sat_fat_g": 1.46,
+        "trans_fat_g": 0.01,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "28f59a3c42457ef4",
+      "name": "Non Fat Plain Greek Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 100.0,
+        "protein_g": 17.33,
+        "carb_g": 6.12,
+        "fat_g": 0.66,
+        "fiber_g": 0.0,
+        "sugar_g": 5.51,
+        "sodium_mg": 61.23,
+        "sat_fat_g": 0.2,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 8.5,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1c95246237a9581d",
+      "name": "Low Fat Vanilla Greek Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.49,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 90.1,
+        "protein_g": 7.01,
+        "carb_g": 11.01,
+        "fat_g": 2.5,
+        "fiber_g": 0.0,
+        "sugar_g": 11.01,
+        "sodium_mg": 110.07,
+        "sat_fat_g": 1.5,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f128d5dea1914ebc",
+      "name": "Low Fat Strawberry Yogurt",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "6 oz",
+      "nutrition": {
+        "kcal": 149.69,
+        "protein_g": 5.0,
+        "carb_g": 30.02,
+        "fat_g": 1.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 75.05,
+        "sat_fat_g": 0.49,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 5.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c14d51452444c17e",
+      "name": "Chia Seeds",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 68.91,
+        "protein_g": 2.34,
+        "carb_g": 5.97,
+        "fat_g": 4.36,
+        "fiber_g": 4.88,
+        "sugar_g": 0.0,
+        "sodium_mg": 2.27,
+        "sat_fat_g": 0.47,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "703568ee0c5a808d",
+      "name": "Gluten Free Granola",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "alcohol"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 113.47,
+        "protein_g": 2.83,
+        "carb_g": 20.41,
+        "fat_g": 1.98,
+        "fiber_g": 2.27,
+        "sugar_g": 5.67,
+        "sodium_mg": 18.43,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "5079a194c67a7923",
+      "name": "Raisins",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 92.2,
+        "protein_g": 0.71,
+        "carb_g": 21.97,
+        "fat_g": 0.0,
+        "fiber_g": 1.42,
+        "sugar_g": 17.01,
+        "sodium_mg": 7.09,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "bf0515f04579babe",
+      "name": "Pumpkin Seeds",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 158.48,
+        "protein_g": 8.57,
+        "carb_g": 3.04,
+        "fat_g": 13.91,
+        "fiber_g": 1.7,
+        "sugar_g": 0.4,
+        "sodium_mg": 1.98,
+        "sat_fat_g": 2.46,
+        "trans_fat_g": 0.02,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2280222500e2ffc7",
+      "name": "Sliced Almond",
+      "station": "Yogurt Bar",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "treenut"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 81.05,
+        "protein_g": 3.04,
+        "carb_g": 3.04,
+        "fat_g": 7.09,
+        "fiber_g": 2.03,
+        "sugar_g": 0.47,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.51,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f4aaba42cd9797ed",
+      "name": "Oatmeal",
+      "station": "Cereal/Hot Grain",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "5.96 oz",
+      "nutrition": {
+        "kcal": 93.37,
+        "protein_g": 2.94,
+        "carb_g": 16.2,
+        "fat_g": 1.47,
+        "fiber_g": 2.45,
+        "sugar_g": 0.0,
+        "sodium_mg": 196.4,
+        "sat_fat_g": 0.25,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "d8e55c79b1304d24",
+      "name": "Scrambled Eggs",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.4,
+      "serving_desc": "3.93 oz",
+      "nutrition": {
+        "kcal": 184.98,
+        "protein_g": 13.92,
+        "carb_g": 2.32,
+        "fat_g": 12.88,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 167.04,
+        "sat_fat_g": 3.75,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 405.61,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "aeefa57ec76981f9",
+      "name": "Soyrizo Scramble",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.19,
+      "serving_desc": "4.58 oz",
+      "nutrition": {
+        "kcal": 318.3,
+        "protein_g": 16.54,
+        "carb_g": 22.31,
+        "fat_g": 18.4,
+        "fiber_g": 7.89,
+        "sugar_g": 3.18,
+        "sodium_mg": 624.63,
+        "sat_fat_g": 2.09,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "a01a237257c70e92",
+      "name": "Turkey Sausage Patty",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.25,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 88.26,
+        "protein_g": 10.08,
+        "carb_g": 0.95,
+        "fat_g": 5.67,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 403.19,
+        "sat_fat_g": 2.52,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 31.5,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "28792bb125d49315",
+      "name": "Belgian Waffle",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.17,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 300.37,
+        "protein_g": 5.0,
+        "carb_g": 45.03,
+        "fat_g": 10.0,
+        "fiber_g": 1.67,
+        "sugar_g": 8.33,
+        "sodium_mg": 617.02,
+        "sat_fat_g": 1.67,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 50.03,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "dd1a2ae6e82d5dbe",
+      "name": "Basmati Rice",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "2.96 oz",
+      "nutrition": {
+        "kcal": 90.78,
+        "protein_g": 1.81,
+        "carb_g": 21.17,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "6ed46d9fa95f5460",
+      "name": "Home Fries",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "3.01 oz",
+      "nutrition": {
+        "kcal": 135.06,
+        "protein_g": 1.81,
+        "carb_g": 17.95,
+        "fat_g": 6.02,
+        "fiber_g": 0.91,
+        "sugar_g": 0.01,
+        "sodium_mg": 488.03,
+        "sat_fat_g": 0.59,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ba30f03b9ce412db",
+      "name": "Sauteed Kale Onion and Mushroom",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Brunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "3.95 oz",
+      "nutrition": {
+        "kcal": 68.27,
+        "protein_g": 4.17,
+        "carb_g": 10.13,
+        "fat_g": 2.33,
+        "fiber_g": 2.92,
+        "sugar_g": 2.4,
+        "sodium_mg": 78.67,
+        "sat_fat_g": 0.26,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "b65399eb2a4a1281",
+      "name": "Housemade Hummus",
+      "station": "Deli Bar",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "sesame"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.33,
+      "serving_desc": "5 oz",
+      "nutrition": {
+        "kcal": 319.17,
+        "protein_g": 5.67,
+        "carb_g": 18.14,
+        "fat_g": 25.29,
+        "fiber_g": 3.23,
+        "sugar_g": 2.49,
+        "sodium_mg": 367.68,
+        "sat_fat_g": 3.39,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e3284d286fc5cc47",
+      "name": "Vegan Midnight Cookie",
+      "station": "Dessert",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 65.77,
+        "protein_g": 1.01,
+        "carb_g": 15.19,
+        "fat_g": 4.05,
+        "fiber_g": 1.01,
+        "sugar_g": 0.0,
+        "sodium_mg": 58.72,
+        "sat_fat_g": 2.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "198bafaf8275c35c",
+      "name": "Chocolate Chunk Brownies",
+      "station": "Dessert",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.26,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 252.16,
+        "protein_g": 3.15,
+        "carb_g": 29.93,
+        "fat_g": 13.39,
+        "fiber_g": 2.36,
+        "sugar_g": 20.5,
+        "sodium_mg": 78.75,
+        "sat_fat_g": 7.09,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 43.31,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "58c08a275e33907c",
+      "name": "Split Pea Soup",
+      "station": "Soup",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.14,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 231.58,
+        "protein_g": 16.67,
+        "carb_g": 36.11,
+        "fat_g": 1.86,
+        "fiber_g": 6.49,
+        "sugar_g": 2.77,
+        "sodium_mg": 777.59,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "dc9d02d8ae2f87be",
+      "name": "Chicken Green Chile Chowder",
+      "station": "Soup",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 1.02,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 203.8,
+        "protein_g": 10.18,
+        "carb_g": 17.6,
+        "fat_g": 10.18,
+        "fiber_g": 0.93,
+        "sugar_g": 1.86,
+        "sodium_mg": 675.76,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 32.41,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "3ae37ba7b02c7a05",
+      "name": "Halal North African-style Roasted Chicken",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 0.48,
+      "serving_desc": "4.15 oz",
+      "nutrition": {
+        "kcal": 327.52,
+        "protein_g": 19.14,
+        "carb_g": 0.42,
+        "fat_g": 27.06,
+        "fiber_g": 0.71,
+        "sugar_g": 0.01,
+        "sodium_mg": 175.86,
+        "sat_fat_g": 6.79,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 77.34,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "3196a90677d8695d",
+      "name": "Red Red - Black Eyed Peas Stew",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 100.16,
+        "protein_g": 4.65,
+        "carb_g": 14.11,
+        "fat_g": 2.53,
+        "fiber_g": 3.08,
+        "sugar_g": 1.35,
+        "sodium_mg": 321.88,
+        "sat_fat_g": 0.29,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "07b6a94d2702a7b6",
+      "name": "Steamed Broccoli",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "3.84 oz",
+      "nutrition": {
+        "kcal": 30.7,
+        "protein_g": 3.24,
+        "carb_g": 5.51,
+        "fat_g": 0.38,
+        "fiber_g": 2.5,
+        "sugar_g": 1.61,
+        "sodium_mg": 29.39,
+        "sat_fat_g": 0.05,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e34b561c60fcc403",
+      "name": "Roasted Carrot Zucchini Eggplant and Onion",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "3.87 oz",
+      "nutrition": {
+        "kcal": 65.72,
+        "protein_g": 1.11,
+        "carb_g": 7.32,
+        "fat_g": 3.84,
+        "fiber_g": 2.31,
+        "sugar_g": 3.83,
+        "sodium_mg": 219.91,
+        "sat_fat_g": 0.46,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "71ad2a982ea32d92",
+      "name": "Brown Rice",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 149.67,
+        "protein_g": 3.07,
+        "carb_g": 31.13,
+        "fat_g": 1.3,
+        "fiber_g": 1.47,
+        "sugar_g": 0.27,
+        "sodium_mg": 2.04,
+        "sat_fat_g": 0.24,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "22fae792da0b3356",
+      "name": "Chicken Tenders",
+      "station": "Iron &  Ember",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "4.22 oz",
+      "nutrition": {
+        "kcal": 292.95,
+        "protein_g": 7.37,
+        "carb_g": 10.65,
+        "fat_g": 9.09,
+        "fiber_g": 0.81,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.17,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 20.47,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1a8713383218168e",
+      "name": "Halal Vegan Chicken Tenders",
+      "station": "Iron &  Ember",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.03,
+      "serving_desc": "4.02 oz",
+      "nutrition": {
+        "kcal": 318.91,
+        "protein_g": 15.13,
+        "carb_g": 22.7,
+        "fat_g": 18.62,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 469.14,
+        "sat_fat_g": 1.87,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2b0abba26cb0a180",
+      "name": "Regular Fries",
+      "station": "Iron &  Ember",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.22 oz",
+      "nutrition": {
+        "kcal": 187.52,
+        "protein_g": 2.03,
+        "carb_g": 22.28,
+        "fat_g": 10.05,
+        "fiber_g": 1.01,
+        "sugar_g": 0.0,
+        "sodium_mg": 436.85,
+        "sat_fat_g": 0.94,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ed7f1034c10c9339",
+      "name": "Vegetable Deluxe Pizza",
+      "station": "Fire & Flour",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.6,
+      "serving_desc": "5.41 oz",
+      "nutrition": {
+        "kcal": 337.55,
+        "protein_g": 13.44,
+        "carb_g": 33.86,
+        "fat_g": 16.53,
+        "fiber_g": 2.04,
+        "sugar_g": 1.5,
+        "sodium_mg": 474.61,
+        "sat_fat_g": 6.9,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 26.96,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "adb25d645b103541",
+      "name": "Sausage Pizza",
+      "station": "Fire & Flour",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten",
+        "pork"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.61,
+      "serving_desc": "3.78 oz",
+      "nutrition": {
+        "kcal": 283.27,
+        "protein_g": 11.98,
+        "carb_g": 30.14,
+        "fat_g": 12.86,
+        "fiber_g": 1.1,
+        "sugar_g": 0.56,
+        "sodium_mg": 486.8,
+        "sat_fat_g": 5.95,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 29.49,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "efa8db2a200fa114",
+      "name": "Italian Ragu Ground Lamb",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "alcohol"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 2.38,
+      "serving_desc": "4.12 oz",
+      "nutrition": {
+        "kcal": 205.7,
+        "protein_g": 10.15,
+        "carb_g": 5.06,
+        "fat_g": 15.03,
+        "fiber_g": 1.32,
+        "sugar_g": 1.28,
+        "sodium_mg": 84.03,
+        "sat_fat_g": 6.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 41.36,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "102b473a008a1bc9",
+      "name": "Vegan Italian \"Sausage\" with Peppers and Onions",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "5.56 oz",
+      "nutrition": {
+        "kcal": 302.57,
+        "protein_g": 17.7,
+        "carb_g": 11.49,
+        "fat_g": 20.03,
+        "fiber_g": 3.77,
+        "sugar_g": 11.76,
+        "sodium_mg": 603.73,
+        "sat_fat_g": 7.42,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f5eb7c682f6f372f",
+      "name": "Savory Polenta",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "3.37 oz",
+      "nutrition": {
+        "kcal": 49.96,
+        "protein_g": 0.91,
+        "carb_g": 10.89,
+        "fat_g": 0.23,
+        "fiber_g": 0.45,
+        "sugar_g": 0.34,
+        "sodium_mg": 131.12,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ea2b2c79e679d496",
+      "name": "Italian Vegetable Blend",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.84 oz",
+      "nutrition": {
+        "kcal": 51.26,
+        "protein_g": 2.56,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 2.56,
+        "sodium_mg": 76.85,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "37640112e35073df",
+      "name": "Sauteed Mushroom",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "3.98 oz",
+      "nutrition": {
+        "kcal": 46.95,
+        "protein_g": 3.38,
+        "carb_g": 3.66,
+        "fat_g": 2.82,
+        "fiber_g": 1.12,
+        "sugar_g": 2.19,
+        "sodium_mg": 87.44,
+        "sat_fat_g": 0.34,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "609478f166818d87",
+      "name": "Nutritional Yeast",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "0.3 oz",
+      "nutrition": {
+        "kcal": 34.04,
+        "protein_g": 5.1,
+        "carb_g": 3.4,
+        "fat_g": 0.0,
+        "fiber_g": 1.7,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "3ee85880152dd8c5",
+      "name": "Basil",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "0.1 oz",
+      "nutrition": {
+        "kcal": 0.64,
+        "protein_g": 0.09,
+        "carb_g": 0.08,
+        "fat_g": 0.02,
+        "fiber_g": 0.05,
+        "sugar_g": 0.01,
+        "sodium_mg": 0.11,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "360fdc50cdfb72e5",
+      "name": "Cherry Pepper",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 10.13,
+        "protein_g": 1.01,
+        "carb_g": 2.02,
+        "fat_g": 0.0,
+        "fiber_g": 2.02,
+        "sugar_g": 1.67,
+        "sodium_mg": 313.87,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f4cbe3528cfe7a5d",
+      "name": "Black Olive",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Lunch",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 53.19,
+        "protein_g": 0.0,
+        "carb_g": 1.77,
+        "fat_g": 4.43,
+        "fiber_g": 1.77,
+        "sugar_g": 0.0,
+        "sodium_mg": 230.34,
+        "sat_fat_g": 0.89,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "058fa67ae062228e",
+      "name": "Romaine Lettuce",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 4.88,
+        "protein_g": 0.35,
+        "carb_g": 0.93,
+        "fat_g": 0.09,
+        "fiber_g": 0.6,
+        "sugar_g": 0.34,
+        "sodium_mg": 2.27,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "bdcb6581bcad0004",
+      "name": "Base - Mixed Greens",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 26.29,
+        "protein_g": 3.24,
+        "carb_g": 4.12,
+        "fat_g": 0.44,
+        "fiber_g": 2.49,
+        "sugar_g": 0.48,
+        "sodium_mg": 89.58,
+        "sat_fat_g": 0.07,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "86095755917a29d1",
+      "name": "Gold Beets",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 48.78,
+        "protein_g": 1.83,
+        "carb_g": 10.84,
+        "fat_g": 0.19,
+        "fiber_g": 3.18,
+        "sugar_g": 7.67,
+        "sodium_mg": 88.45,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "cc9640a6928b3e3d",
+      "name": "Shredded Carrots",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "4 oz",
+      "nutrition": {
+        "kcal": 46.89,
+        "protein_g": 1.05,
+        "carb_g": 10.86,
+        "fat_g": 0.27,
+        "fiber_g": 3.18,
+        "sugar_g": 5.38,
+        "sodium_mg": 78.24,
+        "sat_fat_g": 0.05,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "081fb497707bc4d2",
+      "name": "Sliced Cucumber",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 4.4,
+        "protein_g": 0.18,
+        "carb_g": 1.03,
+        "fat_g": 0.03,
+        "fiber_g": 0.14,
+        "sugar_g": 0.47,
+        "sodium_mg": 0.57,
+        "sat_fat_g": 0.01,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "9021ee033080a894",
+      "name": "Cherry Tomatoes",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "3 oz",
+      "nutrition": {
+        "kcal": 15.05,
+        "protein_g": 0.75,
+        "carb_g": 3.31,
+        "fat_g": 0.17,
+        "fiber_g": 1.02,
+        "sugar_g": 2.24,
+        "sodium_mg": 4.25,
+        "sat_fat_g": 0.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "3f9f16892f1168de",
+      "name": "Sunflower Seeds",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.12,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 162.11,
+        "protein_g": 5.67,
+        "carb_g": 5.67,
+        "fat_g": 14.58,
+        "fiber_g": 2.43,
+        "sugar_g": 0.94,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 1.22,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "72631d9232459471",
+      "name": "Garlic Cheese Crouton",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.07,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 60.79,
+        "protein_g": 2.03,
+        "carb_g": 10.13,
+        "fat_g": 2.03,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 172.12,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "0f0b204f3aa3384b",
+      "name": "Olive Oil",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.09,
+      "serving_desc": "0.5 oz",
+      "nutrition": {
+        "kcal": 127.66,
+        "protein_g": 0.0,
+        "carb_g": 0.0,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 2.03,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "1c9da8a18aba75f1",
+      "name": "Balsamic Vinaigrette",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 54.91,
+        "protein_g": 0.0,
+        "carb_g": 4.57,
+        "fat_g": 4.57,
+        "fiber_g": 0.0,
+        "sugar_g": 3.66,
+        "sodium_mg": 182.9,
+        "sat_fat_g": 0.46,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "b01e447565def6f8",
+      "name": "Caesar Dressing",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "egg",
+        "fish",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.1,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 127.17,
+        "protein_g": 0.98,
+        "carb_g": 1.96,
+        "fat_g": 13.69,
+        "fiber_g": 0.0,
+        "sugar_g": 0.98,
+        "sodium_mg": 351.93,
+        "sat_fat_g": 2.44,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 9.77,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "12c7a1ef3eb5ca7c",
+      "name": "Ranch Dressing",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.18,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 97.81,
+        "protein_g": 0.98,
+        "carb_g": 0.0,
+        "fat_g": 9.77,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 234.62,
+        "sat_fat_g": 1.47,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "284a514a35ad6986",
+      "name": "Blue Cheese Dressing",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "sesame"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.17,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 131.71,
+        "protein_g": 1.01,
+        "carb_g": 1.01,
+        "fat_g": 14.17,
+        "fiber_g": 0.0,
+        "sugar_g": 1.01,
+        "sodium_mg": 243.0,
+        "sat_fat_g": 3.04,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 10.12,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4da70069c9be4554",
+      "name": "1000 Island Dressing",
+      "station": "Salad Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "egg"
+      ],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1.16 oz",
+      "nutrition": {
+        "kcal": 120.69,
+        "protein_g": 0.0,
+        "carb_g": 7.67,
+        "fat_g": 9.87,
+        "fiber_g": 0.0,
+        "sugar_g": 0.0,
+        "sodium_mg": 241.16,
+        "sat_fat_g": 1.64,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e3ca9468e1e6bf76",
+      "name": "Deli Meat Smoked Turkey Kosher",
+      "station": "Deli Bar",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "kosher"
+      ],
+      "allergens": [],
+      "carbon": "high",
+      "carbon_kg_co2": 0.25,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 65.82,
+        "protein_g": 12.93,
+        "carb_g": 2.39,
+        "fat_g": 0.5,
+        "fiber_g": 0.28,
+        "sugar_g": 1.99,
+        "sodium_mg": 437.72,
+        "sat_fat_g": 0.19,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 24.95,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e3284d286fc5cc47",
+      "name": "Vegan Midnight Cookie",
+      "station": "Dessert",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": null,
+      "carbon_kg_co2": null,
+      "serving_desc": "1 oz",
+      "nutrition": {
+        "kcal": 65.77,
+        "protein_g": 1.01,
+        "carb_g": 15.19,
+        "fat_g": 4.05,
+        "fiber_g": 1.01,
+        "sugar_g": 0.0,
+        "sodium_mg": 58.72,
+        "sat_fat_g": 2.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "198bafaf8275c35c",
+      "name": "Chocolate Chunk Brownies",
+      "station": "Dessert",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "egg",
+        "wheat",
+        "soy",
+        "gluten",
+        "alcohol"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.26,
+      "serving_desc": "2 oz",
+      "nutrition": {
+        "kcal": 252.16,
+        "protein_g": 3.15,
+        "carb_g": 29.93,
+        "fat_g": 13.39,
+        "fiber_g": 2.36,
+        "sugar_g": 20.5,
+        "sodium_mg": 78.75,
+        "sat_fat_g": 7.09,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 43.31,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "58c08a275e33907c",
+      "name": "Split Pea Soup",
+      "station": "Soup",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.14,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 231.58,
+        "protein_g": 16.67,
+        "carb_g": 36.11,
+        "fat_g": 1.86,
+        "fiber_g": 6.49,
+        "sugar_g": 2.77,
+        "sodium_mg": 777.59,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "dc9d02d8ae2f87be",
+      "name": "Chicken Green Chile Chowder",
+      "station": "Soup",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 1.02,
+      "serving_desc": "8 oz",
+      "nutrition": {
+        "kcal": 203.8,
+        "protein_g": 10.18,
+        "carb_g": 17.6,
+        "fat_g": 10.18,
+        "fiber_g": 0.93,
+        "sugar_g": 1.86,
+        "sodium_mg": 675.76,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 32.41,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "c11f87f8bc412f90",
+      "name": "Baja Fish Taco",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "egg",
+        "fish",
+        "wheat",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.23,
+      "serving_desc": "7.46 oz",
+      "nutrition": {
+        "kcal": 530.88,
+        "protein_g": 9.96,
+        "carb_g": 27.49,
+        "fat_g": 42.7,
+        "fiber_g": 2.47,
+        "sugar_g": 3.87,
+        "sodium_mg": 690.76,
+        "sat_fat_g": 5.77,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 56.02,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ccc1e8e4696b0d16",
+      "name": "Vegan Crispy Potato Soyrizo Taco",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.18,
+      "serving_desc": "4.42 oz",
+      "nutrition": {
+        "kcal": 275.77,
+        "protein_g": 13.7,
+        "carb_g": 29.11,
+        "fat_g": 12.18,
+        "fiber_g": 6.74,
+        "sugar_g": 2.14,
+        "sodium_mg": 522.66,
+        "sat_fat_g": 1.24,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "cc758f6db5c4e938",
+      "name": "Sauteed Onion Peppers",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.01,
+      "serving_desc": "1.34 oz",
+      "nutrition": {
+        "kcal": 25.88,
+        "protein_g": 0.36,
+        "carb_g": 2.54,
+        "fat_g": 1.67,
+        "fiber_g": 0.62,
+        "sugar_g": 1.21,
+        "sodium_mg": 1.27,
+        "sat_fat_g": 0.21,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "67e4469932787347",
+      "name": "Red Beans and Rice",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "3.41 oz",
+      "nutrition": {
+        "kcal": 80.48,
+        "protein_g": 2.36,
+        "carb_g": 13.94,
+        "fat_g": 1.44,
+        "fiber_g": 2.47,
+        "sugar_g": 1.94,
+        "sodium_mg": 123.27,
+        "sat_fat_g": 0.21,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e77330086f55277e",
+      "name": "Cilantro and Lime Rice",
+      "station": "Chef's Table",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "5.78 oz",
+      "nutrition": {
+        "kcal": 118.37,
+        "protein_g": 2.13,
+        "carb_g": 23.4,
+        "fat_g": 1.67,
+        "fiber_g": 0.95,
+        "sugar_g": 0.33,
+        "sodium_mg": 102.84,
+        "sat_fat_g": 0.2,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "00cca4e0048e3083",
+      "name": "Halal American Beef Burger",
+      "station": "Iron & Ember",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "halal"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 4.93,
+      "serving_desc": "7.21 oz",
+      "nutrition": {
+        "kcal": 566.39,
+        "protein_g": 39.04,
+        "carb_g": 41.51,
+        "fat_g": 25.12,
+        "fiber_g": 1.35,
+        "sugar_g": 4.05,
+        "sodium_mg": 736.33,
+        "sat_fat_g": 10.38,
+        "trans_fat_g": 1.08,
+        "cholesterol_mg": 113.36,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "2afd54113083156d",
+      "name": "Vegan Beyond Burger",
+      "station": "Iron & Ember",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [
+        "wheat",
+        "gluten",
+        "sesame"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.37,
+      "serving_desc": "5.89 oz",
+      "nutrition": {
+        "kcal": 422.86,
+        "protein_g": 25.1,
+        "carb_g": 32.49,
+        "fat_g": 22.54,
+        "fiber_g": 3.02,
+        "sugar_g": 3.06,
+        "sodium_mg": 634.45,
+        "sat_fat_g": 5.99,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "db121767c9a224e0",
+      "name": "Steak Fries",
+      "station": "Iron & Ember",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "3.99 oz",
+      "nutrition": {
+        "kcal": 179.95,
+        "protein_g": 2.59,
+        "carb_g": 24.65,
+        "fat_g": 7.9,
+        "fiber_g": 1.3,
+        "sugar_g": 0.0,
+        "sodium_mg": 143.75,
+        "sat_fat_g": 0.28,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "e4d12877fae424d1",
+      "name": "Margherita Pizza",
+      "station": "Fire & Flour",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegetarian"
+      ],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.48,
+      "serving_desc": "3.34 oz",
+      "nutrition": {
+        "kcal": 245.02,
+        "protein_g": 9.98,
+        "carb_g": 29.92,
+        "fat_g": 9.66,
+        "fiber_g": 1.11,
+        "sugar_g": 0.56,
+        "sodium_mg": 365.72,
+        "sat_fat_g": 4.62,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 19.39,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "4c4af062a31e0404",
+      "name": "BBQ Chicken Pizza",
+      "station": "Fire & Flour",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "milk",
+        "wheat",
+        "soy",
+        "gluten"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 0.64,
+      "serving_desc": "5.77 oz",
+      "nutrition": {
+        "kcal": 315.57,
+        "protein_g": 17.32,
+        "carb_g": 40.73,
+        "fat_g": 9.49,
+        "fiber_g": 1.34,
+        "sugar_g": 14.51,
+        "sodium_mg": 835.81,
+        "sat_fat_g": 4.76,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 39.59,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "efa8db2a200fa114",
+      "name": "Italian Ragu Ground Lamb",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [],
+      "allergens": [
+        "alcohol"
+      ],
+      "carbon": "high",
+      "carbon_kg_co2": 2.38,
+      "serving_desc": "4.12 oz",
+      "nutrition": {
+        "kcal": 205.7,
+        "protein_g": 10.15,
+        "carb_g": 5.06,
+        "fat_g": 15.03,
+        "fiber_g": 1.32,
+        "sugar_g": 1.28,
+        "sodium_mg": 84.03,
+        "sat_fat_g": 6.02,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 41.36,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "102b473a008a1bc9",
+      "name": "Vegan Italian \"Sausage\" with Peppers and Onions",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "medium",
+      "carbon_kg_co2": 0.13,
+      "serving_desc": "5.56 oz",
+      "nutrition": {
+        "kcal": 302.57,
+        "protein_g": 17.7,
+        "carb_g": 11.49,
+        "fat_g": 20.03,
+        "fiber_g": 3.77,
+        "sugar_g": 11.76,
+        "sodium_mg": 603.73,
+        "sat_fat_g": 7.42,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "f5eb7c682f6f372f",
+      "name": "Savory Polenta",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.02,
+      "serving_desc": "3.37 oz",
+      "nutrition": {
+        "kcal": 49.96,
+        "protein_g": 0.91,
+        "carb_g": 10.89,
+        "fat_g": 0.23,
+        "fiber_g": 0.45,
+        "sugar_g": 0.34,
+        "sodium_mg": 131.12,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "ea2b2c79e679d496",
+      "name": "Italian Vegetable Blend",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.05,
+      "serving_desc": "3.84 oz",
+      "nutrition": {
+        "kcal": 51.26,
+        "protein_g": 2.56,
+        "carb_g": 0.0,
+        "fat_g": 0.0,
+        "fiber_g": 0.0,
+        "sugar_g": 2.56,
+        "sodium_mg": 76.85,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "37640112e35073df",
+      "name": "Sauteed Mushroom",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.06,
+      "serving_desc": "3.98 oz",
+      "nutrition": {
+        "kcal": 46.95,
+        "protein_g": 3.38,
+        "carb_g": 3.66,
+        "fat_g": 2.82,
+        "fiber_g": 1.12,
+        "sugar_g": 2.19,
+        "sodium_mg": 87.44,
+        "sat_fat_g": 0.34,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    },
+    {
+      "id": "609478f166818d87",
+      "name": "Nutritional Yeast",
+      "station": "Pure Plates",
+      "location": "Foothill",
+      "meal_period": "Dinner",
+      "date": "2026-06-20",
+      "diet_flags": [
+        "vegan"
+      ],
+      "allergens": [],
+      "carbon": "low",
+      "carbon_kg_co2": 0.08,
+      "serving_desc": "0.3 oz",
+      "nutrition": {
+        "kcal": 34.04,
+        "protein_g": 5.1,
+        "carb_g": 3.4,
+        "fat_g": 0.0,
+        "fiber_g": 1.7,
+        "sugar_g": 0.0,
+        "sodium_mg": 0.0,
+        "sat_fat_g": 0.0,
+        "trans_fat_g": 0.0,
+        "cholesterol_mg": 0.0,
+        "estimated": false,
+        "confidence": "high"
+      }
+    }
+  ]
+}
