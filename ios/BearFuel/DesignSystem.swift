@@ -69,18 +69,18 @@ struct MacroRow: View {
     var compact = false
 
     var body: some View {
-        HStack(spacing: compact ? 6 : 8) {
+        FlowLayout(spacing: compact ? 6 : 8) {
             MacroChip(icon: "flame.fill",
                       value: "\(Int(totals.kcal)) kcal",
                       color: .orange)
             MacroChip(icon: "bolt.fill",
-                      value: "\(Int(totals.proteinG))g P",
+                      value: "\(Int(totals.proteinG))g protein",
                       color: .berkeleyBlue)
             MacroChip(icon: "leaf.fill",
-                      value: "\(Int(totals.carbG))g C",
+                      value: "\(Int(totals.carbG))g carbs",
                       color: .green)
             MacroChip(icon: "drop.fill",
-                      value: "\(Int(totals.fatG))g F",
+                      value: "\(Int(totals.fatG))g fat",
                       color: .berkeleyGold)
         }
     }
@@ -116,11 +116,18 @@ struct DietBadge: View {
 
     private var label: String {
         switch flag {
-        case "vegan": return "VE"
-        case "vegetarian": return "V"
-        case "halal": return "H"
-        case "kosher": return "K"
-        default: return flag.prefix(2).uppercased()
+        case "vegan": return "Vegan"
+        case "vegetarian": return "Vegetarian"
+        case "halal": return "Halal"
+        case "kosher": return "Kosher"
+        default: return flag.replacingOccurrences(of: "_", with: " ").capitalized
+        }
+    }
+    private var icon: String {
+        switch flag {
+        case "vegan", "vegetarian": return "leaf.fill"
+        case "halal", "kosher": return "checkmark.seal.fill"
+        default: return "tag.fill"
         }
     }
     private var color: Color {
@@ -134,13 +141,73 @@ struct DietBadge: View {
     }
 
     var body: some View {
-        Text(label)
-            .font(.system(size: 10, weight: .bold))
+        HStack(spacing: 4) {
+            Image(systemName: icon)
+                .font(.system(size: 9, weight: .bold))
+            Text(label)
+                .font(.system(size: 10, weight: .bold))
+        }
+        .foregroundColor(color)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 4)
+        .background(color.opacity(0.12))
+        .cornerRadius(8)
+    }
+}
+
+// MARK: - Food avatar
+
+struct FoodAvatar: View {
+    let item: MenuItem
+
+    var body: some View {
+        Image(systemName: symbol)
+            .font(.system(size: 18, weight: .semibold))
             .foregroundColor(color)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 3)
-            .background(color.opacity(0.12))
-            .cornerRadius(6)
+            .frame(width: 42, height: 42)
+            .background(color.opacity(0.14))
+            .clipShape(Circle())
+            .accessibilityHidden(true)
+    }
+
+    private var symbol: String {
+        let text = "\(item.name) \(item.station)".lowercased()
+        if text.contains("salad") || text.contains("greens") || text.contains("bok choy") {
+            return "leaf.fill"
+        }
+        if text.contains("chicken") || text.contains("beef") || text.contains("egg") || text.contains("tofu") {
+            return "fork.knife"
+        }
+        if text.contains("rice") || text.contains("quinoa") || text.contains("pasta") {
+            return "takeoutbag.and.cup.and.straw.fill"
+        }
+        if text.contains("bagel") || text.contains("roll") {
+            return "circle.grid.cross.fill"
+        }
+        if text.contains("yogurt") {
+            return "cup.and.saucer.fill"
+        }
+        if text.contains("almond") || text.contains("seed") {
+            return "circle.hexagongrid.fill"
+        }
+        return "fork.knife.circle.fill"
+    }
+
+    private var color: Color {
+        let text = "\(item.name) \(item.station)".lowercased()
+        if text.contains("salad") || text.contains("greens") || text.contains("bok choy") {
+            return .green
+        }
+        if text.contains("chicken") || text.contains("beef") || text.contains("egg") || text.contains("tofu") {
+            return .berkeleyBlue
+        }
+        if text.contains("rice") || text.contains("quinoa") || text.contains("pasta") || text.contains("bagel") || text.contains("roll") {
+            return .orange
+        }
+        if text.contains("yogurt") {
+            return .purple
+        }
+        return .berkeleyGold
     }
 }
 
@@ -153,5 +220,46 @@ struct SectionHeader: View {
             .font(.headline)
             .foregroundColor(.primary)
             .padding(.horizontal)
+    }
+}
+
+// MARK: - Simple flow layout for chips
+
+struct FlowLayout: Layout {
+    var spacing: CGFloat = 8
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = proposal.width ?? .infinity
+        var currentX: CGFloat = 0
+        var currentY: CGFloat = 0
+        var rowHeight: CGFloat = 0
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if currentX + size.width > width, currentX > 0 {
+                currentY += rowHeight + spacing
+                currentX = 0
+                rowHeight = 0
+            }
+            currentX += size.width + spacing
+            rowHeight = max(rowHeight, size.height)
+        }
+        return CGSize(width: width, height: currentY + rowHeight)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var currentX: CGFloat = bounds.minX
+        var currentY: CGFloat = bounds.minY
+        var rowHeight: CGFloat = 0
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if currentX + size.width > bounds.maxX, currentX > bounds.minX {
+                currentY += rowHeight + spacing
+                currentX = bounds.minX
+                rowHeight = 0
+            }
+            subview.place(at: CGPoint(x: currentX, y: currentY), proposal: ProposedViewSize(size))
+            currentX += size.width + spacing
+            rowHeight = max(rowHeight, size.height)
+        }
     }
 }

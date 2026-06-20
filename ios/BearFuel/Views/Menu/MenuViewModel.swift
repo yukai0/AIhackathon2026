@@ -5,6 +5,7 @@ final class MenuViewModel: ObservableObject {
     @Published var items: [MenuItem] = []
     @Published var isLoading = false
     @Published var errorMessage: String? = nil
+    @Published var isShowingFallback = false
     @Published var selectedLocation: String = "All"
     @Published var searchText: String = ""
 
@@ -43,8 +44,11 @@ final class MenuViewModel: ObservableObject {
         errorMessage = nil
         do {
             items = try await api.fetchMenu()
+            isShowingFallback = false
         } catch {
-            errorMessage = error.localizedDescription
+            items = DemoData.menuItems
+            isShowingFallback = true
+            errorMessage = nil
         }
         isLoading = false
     }

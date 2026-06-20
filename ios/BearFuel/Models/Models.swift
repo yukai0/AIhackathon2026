@@ -44,6 +44,24 @@ struct MacroTotals: Codable, Equatable {
     }
 }
 
+extension MacroTotals {
+    static let zero = MacroTotals(kcal: 0, proteinG: 0, carbG: 0, fatG: 0)
+
+    mutating func add(_ nutrition: NutritionInfo) {
+        kcal += nutrition.kcal
+        proteinG += nutrition.proteinG
+        carbG += nutrition.carbG
+        fatG += nutrition.fatG
+    }
+
+    mutating func add(_ totals: MacroTotals) {
+        kcal += totals.kcal
+        proteinG += totals.proteinG
+        carbG += totals.carbG
+        fatG += totals.fatG
+    }
+}
+
 // MARK: - MenuItem
 
 struct MenuItem: Codable, Identifiable, Equatable {
@@ -85,7 +103,7 @@ struct UserProfile: Codable, Equatable {
     var preferredLocations: [String] = []
 
     enum CodingKeys: String, CodingKey {
-        case age, sex, nutrition
+        case age, sex
         case heightCm = "height_cm"
         case weightKg = "weight_kg"
         case activityLevel = "activity_level"
@@ -129,4 +147,288 @@ struct MealPlan: Codable, Identifiable {
 struct PlanRequest: Codable {
     var profile: UserProfile
     var date: String
+}
+
+// MARK: - Demo fallback data
+
+enum DemoData {
+    static let menuItems: [MenuItem] = [
+        item(
+            id: "4a64758fea5b3f7d",
+            name: "Plain Bagels",
+            station: "Bagel Station",
+            mealPeriod: "Brunch",
+            servingDesc: "3.35 oz",
+            dietFlags: ["vegan"],
+            allergens: ["wheat", "soy", "gluten"],
+            carbon: "medium",
+            carbonKgCo2: 0.14,
+            nutrition: nutrition(260.09, 8.99, 50.98, 2.0, 2.0, 6.0, 499.85, 0.5, 0.0, 0.0)
+        ),
+        item(
+            id: "cb2c3759ec550fc2",
+            name: "Scrambled Eggs",
+            station: "Breakfast Entree",
+            mealPeriod: "Brunch",
+            servingDesc: "3.93 oz",
+            dietFlags: ["vegetarian"],
+            allergens: ["egg"],
+            carbon: "high",
+            carbonKgCo2: 0.4,
+            nutrition: nutrition(184.98, 13.92, 2.32, 12.88, 0.0, 0.0, 167.04, 3.75, 0.0, 405.61)
+        ),
+        item(
+            id: "a40dd0e37ff2f854",
+            name: "Spinach Tofu Tomato Scramble",
+            station: "Plant Forward Breakfast",
+            mealPeriod: "Brunch",
+            servingDesc: "3.81 oz",
+            dietFlags: ["vegan"],
+            allergens: ["soy"],
+            carbon: "low",
+            carbonKgCo2: 0.03,
+            nutrition: nutrition(124.27, 12.64, 6.35, 5.55, 2.31, 0.41, 140.29, 0.21, 0.0, 0.0)
+        ),
+        item(
+            id: "94ca33d0030c62da",
+            name: "Mung Bean Patty",
+            station: "Plant Forward Breakfast",
+            mealPeriod: "Brunch",
+            servingDesc: "3.4 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "high",
+            carbonKgCo2: 0.24,
+            nutrition: nutrition(169.21, 11.84, 1.69, 11.84, 0.0, 0.0, 439.67, 0.85, 0.0, 0.0)
+        ),
+        item(
+            id: "c4f1fd2dea87cca2",
+            name: "Non Fat Plain Greek Yogurt",
+            station: "Yogurt Bar",
+            mealPeriod: "Brunch",
+            servingDesc: "6 oz",
+            dietFlags: ["vegetarian"],
+            allergens: ["milk"],
+            carbon: "high",
+            carbonKgCo2: 0.49,
+            nutrition: nutrition(100.0, 17.33, 6.12, 0.66, 0.0, 5.51, 61.23, 0.2, 0.02, 8.5)
+        ),
+        item(
+            id: "7ea61fe6b78c6db9",
+            name: "Sliced Almond",
+            station: "Yogurt Bar",
+            mealPeriod: "Brunch",
+            servingDesc: "0.5 oz",
+            dietFlags: ["vegan"],
+            allergens: ["treenut"],
+            carbon: "low",
+            carbonKgCo2: 0.06,
+            nutrition: nutrition(81.05, 3.04, 3.04, 7.09, 2.03, 0.47, 0.0, 0.51, 0.0, 0.0)
+        ),
+        item(
+            id: "46b0391ba459b937",
+            name: "Hawaiian Dinner Roll",
+            station: "Pasta",
+            mealPeriod: "Lunch",
+            servingDesc: "1 oz",
+            dietFlags: ["vegetarian"],
+            allergens: ["milk", "egg", "wheat", "soy", "gluten"],
+            carbon: "low",
+            carbonKgCo2: 0.04,
+            nutrition: nutrition(91.18, 3.04, 15.19, 2.02, 0.51, 5.06, 75.94, 1.01, 0.0, 15.19)
+        ),
+        item(
+            id: "e745a045386e8997",
+            name: "Halal Rosemary Chicken",
+            station: "Allergen Friendly - Lunch",
+            mealPeriod: "Lunch",
+            servingDesc: "3.94 oz",
+            dietFlags: ["halal"],
+            allergens: [],
+            carbon: "low",
+            carbonKgCo2: 0.06,
+            nutrition: nutrition(153.21, 20.85, 0.06, 7.06, 0.04, 0.0, 300.97, 1.43, 0.02, 99.03)
+        ),
+        item(
+            id: "1b89dee893bbd946",
+            name: "Yemeni Beef Stew",
+            station: "Entree",
+            mealPeriod: "Lunch",
+            servingDesc: "4.5 oz",
+            dietFlags: [],
+            allergens: [],
+            carbon: "high",
+            carbonKgCo2: 4.29,
+            nutrition: nutrition(176.13, 22.9, 2.47, 8.32, 0.46, 0.56, 278.54, 2.35, 0.24, 66.11)
+        ),
+        item(
+            id: "bfe0f8f0f3b4ffc7",
+            name: "Vegetable Yemeni Zurbian Basmati Rice",
+            station: "Entree",
+            mealPeriod: "Lunch",
+            servingDesc: "3.67 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "medium",
+            carbonKgCo2: 0.1,
+            nutrition: nutrition(115.29, 2.25, 24.29, 1.3, 0.97, 0.79, 199.38, 0.16, 0.0, 0.0)
+        ),
+        item(
+            id: "05e7c7449a9c08b7",
+            name: "Base - Mixed Greens",
+            station: "Salad Bar",
+            mealPeriod: "Lunch",
+            servingDesc: "4 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "low",
+            carbonKgCo2: 0.06,
+            nutrition: nutrition(26.29, 3.24, 4.12, 0.44, 2.49, 0.48, 89.58, 0.07, 0.0, 0.0)
+        ),
+        item(
+            id: "8e26a4ae4b074db1",
+            name: "Pumpkin Seeds",
+            station: "Salad Bar",
+            mealPeriod: "Lunch",
+            servingDesc: "1 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "medium",
+            carbonKgCo2: 0.12,
+            nutrition: nutrition(158.48, 8.57, 3.04, 13.91, 1.7, 0.4, 1.98, 2.46, 0.02, 0.0)
+        ),
+        item(
+            id: "fbdd2ab7ee85c44b",
+            name: "Balsamic Vinaigrette",
+            station: "Salad Bar",
+            mealPeriod: "Lunch",
+            servingDesc: "1 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "low",
+            carbonKgCo2: 0.05,
+            nutrition: nutrition(54.91, 0.0, 4.57, 4.57, 0.0, 3.66, 182.9, 0.46, 0.0, 0.0)
+        ),
+        item(
+            id: "5192d55749e39718",
+            name: "Penne Pasta",
+            station: "Pasta",
+            mealPeriod: "Dinner",
+            servingDesc: "4.03 oz",
+            dietFlags: ["vegan"],
+            allergens: ["wheat", "gluten"],
+            carbon: "low",
+            carbonKgCo2: 0.08,
+            nutrition: nutrition(168.95, 5.58, 33.43, 1.86, 1.59, 1.62, 393.13, 0.15, 0.0, 0.0)
+        ),
+        item(
+            id: "451d96b6a96e9a4c",
+            name: "Braised Bok Choy",
+            station: "Plant Forward",
+            mealPeriod: "Dinner",
+            servingDesc: "5.09 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "medium",
+            carbonKgCo2: 0.1,
+            nutrition: nutrition(42.05, 2.12, 4.14, 2.47, 1.49, 1.95, 481.09, 0.2, 0.0, 0.0)
+        ),
+        item(
+            id: "48a630b402b09848",
+            name: "Halal Rosemary Roasted Chicken Thigh",
+            station: "Allergen Friendly - Dinner",
+            mealPeriod: "Dinner",
+            servingDesc: "4.04 oz",
+            dietFlags: ["halal"],
+            allergens: [],
+            carbon: "high",
+            carbonKgCo2: 0.48,
+            nutrition: nutrition(153.99, 21.44, 0.24, 6.79, 0.06, 0.06, 398.75, 1.47, 0.02, 102.44)
+        ),
+        item(
+            id: "860cf5b3456fbdc6",
+            name: "Quinoa",
+            station: "Allergen Friendly - Dinner",
+            mealPeriod: "Dinner",
+            servingDesc: "5.58 oz",
+            dietFlags: ["vegan"],
+            allergens: [],
+            carbon: "medium",
+            carbonKgCo2: 0.09,
+            nutrition: nutrition(200.71, 6.06, 29.27, 5.74, 3.04, 0.4, 98.6, 0.46, 0.0, 0.0)
+        ),
+        item(
+            id: "3a7060223884008e",
+            name: "Halal Coconut Curry Chicken Breast",
+            station: "Entree",
+            mealPeriod: "Dinner",
+            servingDesc: "6.56 oz",
+            dietFlags: ["halal"],
+            allergens: [],
+            carbon: "medium",
+            carbonKgCo2: 0.11,
+            nutrition: nutrition(268.68, 19.68, 6.86, 17.61, 2.03, 1.6, 433.56, 7.09, 0.09, 58.02)
+        )
+    ]
+
+    static let menuItemsByID: [String: MenuItem] = Dictionary(
+        menuItems.map { ($0.id, $0) },
+        uniquingKeysWith: { first, _ in first }
+    )
+
+    private static func item(
+        id: String,
+        name: String,
+        station: String,
+        mealPeriod: String,
+        servingDesc: String,
+        dietFlags: [String],
+        allergens: [String],
+        carbon: String?,
+        carbonKgCo2: Double?,
+        nutrition: NutritionInfo
+    ) -> MenuItem {
+        MenuItem(
+            id: id,
+            name: name,
+            station: station,
+            location: "Crossroads",
+            mealPeriod: mealPeriod,
+            date: "2026-06-20",
+            dietFlags: dietFlags,
+            allergens: allergens,
+            carbon: carbon,
+            carbonKgCo2: carbonKgCo2,
+            servingDesc: servingDesc,
+            nutrition: nutrition
+        )
+    }
+
+    private static func nutrition(
+        _ kcal: Double,
+        _ proteinG: Double,
+        _ carbG: Double,
+        _ fatG: Double,
+        _ fiberG: Double,
+        _ sugarG: Double,
+        _ sodiumMg: Double,
+        _ satFatG: Double,
+        _ transFatG: Double,
+        _ cholesterolMg: Double
+    ) -> NutritionInfo {
+        NutritionInfo(
+            kcal: kcal,
+            proteinG: proteinG,
+            carbG: carbG,
+            fatG: fatG,
+            fiberG: fiberG,
+            sugarG: sugarG,
+            sodiumMg: sodiumMg,
+            satFatG: satFatG,
+            transFatG: transFatG,
+            cholesterolMg: cholesterolMg,
+            estimated: false,
+            confidence: "high"
+        )
+    }
 }

@@ -67,12 +67,17 @@ struct ProfileView: View {
                 Section("Dining Halls") {
                     ForEach(diningHalls, id: \.self) { hall in
                         Toggle(hall, isOn: Binding(
-                            get: { profile.preferredLocations.contains(hall) },
-                            set: { on in
-                                if on { profile.preferredLocations.append(hall) }
-                                else { profile.preferredLocations.removeAll { $0 == hall } }
-                            }
-                        ))
+	                            get: { profile.preferredLocations.contains(hall) },
+	                            set: { on in
+	                                if on {
+	                                    if !profile.preferredLocations.contains(hall) {
+	                                        profile.preferredLocations.append(hall)
+	                                    }
+	                                } else {
+	                                    profile.preferredLocations.removeAll { $0 == hall }
+	                                }
+	                            }
+	                        ))
                     }
                 }
 
@@ -105,6 +110,9 @@ struct ProfileView: View {
                 }
             }
             .onAppear { profile = store.profile }
+            .onChange(of: profile) { _, newProfile in
+                store.profile = newProfile
+            }
         }
     }
 
@@ -136,10 +144,15 @@ struct FlowToggleSection: View {
             ForEach(options, id: \.self) { option in
                 let isSelected = selected.contains(option)
                 Button(action: {
-                    if isSelected { selected.removeAll { $0 == option } }
-                    else { selected.append(option) }
+                    toggle(option)
                 }) {
-                    Text(option.capitalized)
+                    HStack(spacing: 5) {
+                        if isSelected {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 10, weight: .bold))
+                        }
+                        Text(label(for: option))
+                    }
                         .font(.caption)
                         .fontWeight(isSelected ? .semibold : .regular)
                         .padding(.horizontal, 12)
@@ -148,8 +161,24 @@ struct FlowToggleSection: View {
                         .foregroundColor(isSelected ? .white : .primary)
                         .cornerRadius(CornerRadius.chip)
                 }
+                .buttonStyle(.plain)
             }
         }
         .padding(.vertical, 4)
+    }
+
+    private func toggle(_ option: String) {
+        if selected.contains(option) {
+            selected.removeAll { $0 == option }
+        } else {
+            selected.append(option)
+        }
+    }
+
+    private func label(for option: String) -> String {
+        switch option {
+        case "treenut": return "Tree Nut"
+        default: return option.replacingOccurrences(of: "_", with: " ").capitalized
+        }
     }
 }

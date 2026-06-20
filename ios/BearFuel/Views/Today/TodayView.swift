@@ -11,8 +11,21 @@ struct TodayView: View {
                     headerCard
                     if let plan = vm.plan {
                         targetsCard(plan: plan)
+                        if !vm.limitWarnings.isEmpty {
+                            warningCard(warnings: vm.limitWarnings)
+                        }
                         ForEach(plan.meals) { meal in
-                            MealCard(meal: meal, itemMap: vm.menuItems)
+                            MealCard(
+                                meal: meal,
+                                itemMap: vm.menuItems,
+                                isEaten: { vm.isEaten(itemID: $0, in: meal) },
+                                onToggleEaten: { vm.toggleEaten(itemID: $0, in: meal) },
+                                onDelete: { vm.deleteItem(itemID: $0, from: meal) },
+                                alternatives: { vm.alternatives(for: $0, in: meal) },
+                                onSubstitute: { itemID, replacement in
+                                    vm.substitute(itemID: itemID, with: replacement, in: meal)
+                                }
+                            )
                         }
                         if !plan.disclaimer.isEmpty {
                             disclaimerBanner(text: plan.disclaimer)
@@ -75,38 +88,51 @@ struct TodayView: View {
     }
 
     private func targetsCard(plan: MealPlan) -> some View {
-        CardView {
+        let totals = vm.progressTotals
+        return CardView {
             VStack(alignment: .leading, spacing: 14) {
                 Text("Daily Progress")
                     .font(.headline)
-                HStack(spacing: 20) {
+                HStack(spacing: 22) {
                     ringWithLabel(
-                        current: plan.dayTotals.kcal,
+                        current: totals.kcal,
                         target: plan.targets.kcal,
                         label: "kcal",
                         color: .orange
                     )
                     ringWithLabel(
-                        current: plan.dayTotals.proteinG,
+                        current: totals.proteinG,
                         target: plan.targets.proteinG,
                         label: "protein",
                         color: .berkeleyBlue
                     )
                     ringWithLabel(
-                        current: plan.dayTotals.carbG,
+                        current: totals.carbG,
                         target: plan.targets.carbG,
                         label: "carbs",
                         color: .green
                     )
                     ringWithLabel(
-                        current: plan.dayTotals.fatG,
+                        current: totals.fatG,
                         target: plan.targets.fatG,
                         label: "fat",
                         color: .berkeleyGold
                     )
                 }
-                if !plan.notes.isEmpty {
-                    Text(plan.notes)
+                .frame(maxWidth: .infinity)
+            }
+            .padding()
+        }
+    }
+
+    private func warningCard(warnings: [NutritionLimitWarning]) -> some View {
+        CardView {
+            VStack(alignment: .leading, spacing: 8) {
+                Label("Target Warnings", systemImage: "exclamationmark.triangle.fill")
+                    .font(.headline)
+                    .foregroundColor(.orange)
+                ForEach(warnings) { warning in
+                    Text(warning.message)
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -122,15 +148,21 @@ struct TodayView: View {
                 ProgressRing(current: current, target: target, color: color)
                     .frame(width: 60, height: 60)
                 VStack(spacing: 1) {
-                    Text("\(Int(current))")
-                        .font(.system(size: 13, weight: .bold))
-                    Text("/ \(Int(target))")
-                        .font(.system(size: 9))
+                    Text(Int(current).formatted(.number))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
+                    Text("/ \(Int(target).formatted(.number))")
+                        .font(.system(size: 9, weight: .semibold))
                         .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
                 }
+                .frame(width: 44)
             }
             Text(label)
-                .font(.caption2)
+                .font(.caption)
                 .foregroundColor(.secondary)
         }
     }
@@ -157,6 +189,7 @@ struct TodayView: View {
                     .background(Color.berkeleyBlue)
                     .cornerRadius(CornerRadius.button)
             }
+            .disabled(vm.isLoading)
             .padding(.horizontal)
         }
         .padding(.top, 40)
@@ -167,6 +200,7 @@ struct TodayView: View {
             Image(systemName: "arrow.clockwise.circle.fill")
                 .foregroundColor(.berkeleyBlue)
         }
+        .disabled(vm.isLoading)
     }
 
     private var loadingOverlay: some View {
@@ -199,6 +233,11 @@ struct TodayView: View {
 struct MealCard: View {
     let meal: MealSlot
     let itemMap: [String: MenuItem]
+    let isEaten: (String) -> Bool
+    let onToggleEaten: (String) -> Void
+    let onDelete: (String) -> Void
+    let alternatives: (String) -> [MenuItem]
+    let onSubstitute: (String, MenuItem) -> Void
 
     var body: some View {
         CardView {
@@ -216,19 +255,17 @@ struct MealCard: View {
                 Divider()
                 ForEach(meal.items, id: \.self) { itemId in
                     if let item = itemMap[itemId] {
-                        DishRow(item: item)
+                        DishRow(
+                            item: item,
+                            isEaten: isEaten(itemId),
+                            onToggleEaten: { onToggleEaten(itemId) },
+                            onDelete: { onDelete(itemId) },
+                            alternatives: alternatives(itemId),
+                            onSubstitute: { replacement in onSubstitute(itemId, replacement) }
+                        )
                     } else {
-                        Text(itemId)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        MissingDishRow()
                     }
-                }
-                if !meal.rationale.isEmpty {
-                    Text(meal.rationale)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .italic()
-                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .padding()
@@ -249,9 +286,25 @@ struct MealCard: View {
 
 struct DishRow: View {
     let item: MenuItem
+    var isEaten: Bool? = nil
+    var onToggleEaten: (() -> Void)? = nil
+    var onDelete: (() -> Void)? = nil
+    var alternatives: [MenuItem] = []
+    var onSubstitute: ((MenuItem) -> Void)? = nil
 
     var body: some View {
-        HStack(alignment: .top, spacing: 8) {
+        HStack(alignment: .top, spacing: 12) {
+            if let onToggleEaten {
+                Button(action: onToggleEaten) {
+                    Image(systemName: isEaten == true ? "checkmark.circle.fill" : "circle")
+                        .font(.title3)
+                        .foregroundColor(isEaten == true ? .green : .secondary)
+                        .frame(width: 28, height: 42)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(isEaten == true ? "Mark uneaten" : "Mark eaten")
+            }
+            FoodAvatar(item: item)
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 4) {
                     Text(item.name)
@@ -272,21 +325,66 @@ struct DishRow: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
-                HStack(spacing: 4) {
+                FlowLayout(spacing: 4) {
                     ForEach(item.dietFlags, id: \.self) { flag in
                         DietBadge(flag: flag)
                     }
                 }
             }
             Spacer()
-            VStack(alignment: .trailing, spacing: 2) {
+            VStack(alignment: .trailing, spacing: 6) {
                 Text("\(Int(item.nutrition.kcal)) kcal")
                     .font(.caption)
                     .fontWeight(.semibold)
                 Text("\(Int(item.nutrition.proteinG))g P")
                     .font(.caption)
                     .foregroundColor(.berkeleyBlue)
+                if onDelete != nil || onSubstitute != nil {
+                    Menu {
+                        if let onSubstitute {
+                            if alternatives.isEmpty {
+                                Text("No alternatives")
+                            } else {
+                                Section("Substitute") {
+                                    ForEach(alternatives) { replacement in
+                                        Button(replacement.name) {
+                                            onSubstitute(replacement)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if let onDelete {
+                            Button(role: .destructive, action: onDelete) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.title3)
+                            .foregroundColor(.secondary)
+                    }
+                }
             }
         }
+        .padding(.vertical, 4)
+    }
+}
+
+struct MissingDishRow: View {
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "fork.knife")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.secondary)
+                .frame(width: 42, height: 42)
+                .background(Color.secondary.opacity(0.12))
+                .clipShape(Circle())
+            Text("Menu item unavailable")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Spacer()
+        }
+        .padding(.vertical, 4)
     }
 }

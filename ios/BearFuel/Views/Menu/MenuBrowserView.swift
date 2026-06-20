@@ -9,6 +9,13 @@ struct MenuBrowserView: View {
                 if vm.isLoading && vm.items.isEmpty {
                     ProgressView("Loading today's menu…")
                         .frame(maxHeight: .infinity)
+                } else if vm.groupedItems.isEmpty {
+                    ContentUnavailableView(
+                        "No Dishes Found",
+                        systemImage: "magnifyingglass",
+                        description: Text("Try a different search or location.")
+                    )
+                    .frame(maxHeight: .infinity)
                 } else {
                     List {
                         ForEach(vm.groupedItems, id: \.0) { station, items in
@@ -48,26 +55,35 @@ struct MenuItemRow: View {
     let item: MenuItem
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .top) {
-                Text(item.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .fixedSize(horizontal: false, vertical: true)
-                Spacer()
-                carbonDot
-            }
-            HStack(spacing: 6) {
-                ForEach(item.dietFlags, id: \.self) { flag in
-                    DietBadge(flag: flag)
+        HStack(alignment: .top, spacing: 12) {
+            FoodAvatar(item: item)
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .top) {
+                    Text(item.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Spacer()
+                    carbonDot
                 }
-                Spacer()
-                Text("\(Int(item.nutrition.kcal)) kcal · \(Int(item.nutrition.proteinG))g P")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                HStack(spacing: 6) {
+                    Label(item.station, systemImage: "tray.full")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text("\(Int(item.nutrition.kcal)) kcal")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                }
+                FlowLayout(spacing: 4) {
+                    ForEach(item.dietFlags, id: \.self) { flag in
+                        DietBadge(flag: flag)
+                    }
+                }
             }
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 4)
     }
 
     @ViewBuilder
