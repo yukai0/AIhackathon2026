@@ -9,12 +9,40 @@ extension Color {
     static let subtleBackground = Color(.secondarySystemBackground)
 }
 
+// MARK: - Gradients
+
+extension LinearGradient {
+    static let berkeleyHero = LinearGradient(
+        colors: [Color.berkeleyBlue, Color(red: 0.04, green: 0.38, blue: 0.52)],
+        startPoint: .topLeading, endPoint: .bottomTrailing
+    )
+    static let berkeleyGold = LinearGradient(
+        colors: [Color(red: 1.0, green: 0.72, blue: 0.08), Color.berkeleyGold],
+        startPoint: .topLeading, endPoint: .bottomTrailing
+    )
+}
+
+// MARK: - Meal gradient helper
+
+func mealGradient(for label: String) -> LinearGradient {
+    switch label.lowercased() {
+    case "breakfast", "brunch":
+        return LinearGradient(colors: [Color(red: 1.0, green: 0.55, blue: 0.0), Color.berkeleyGold], startPoint: .topLeading, endPoint: .bottomTrailing)
+    case "lunch":
+        return LinearGradient(colors: [Color.berkeleyBlue, Color(red: 0.04, green: 0.45, blue: 0.60)], startPoint: .topLeading, endPoint: .bottomTrailing)
+    case "dinner":
+        return LinearGradient(colors: [Color(red: 0.25, green: 0.05, blue: 0.45), Color(red: 0.45, green: 0.15, blue: 0.65)], startPoint: .topLeading, endPoint: .bottomTrailing)
+    default:
+        return LinearGradient(colors: [Color.berkeleyBlue, Color(red: 0.04, green: 0.45, blue: 0.60)], startPoint: .topLeading, endPoint: .bottomTrailing)
+    }
+}
+
 // MARK: - Corner radii
 
 enum CornerRadius {
-    static let card: CGFloat = 16
+    static let card: CGFloat = 20
     static let chip: CGFloat = 20
-    static let button: CGFloat = 14
+    static let button: CGFloat = 16
 }
 
 // MARK: - Shadows
@@ -25,7 +53,61 @@ extension View {
     }
 }
 
-// MARK: - Card container
+// MARK: - Card entrance animation
+
+struct CardEntrance: ViewModifier {
+    let delay: Double
+    @State private var appeared = false
+    func body(content: Content) -> some View {
+        content
+            .opacity(appeared ? 1 : 0)
+            .offset(y: appeared ? 0 : 44)
+            .scaleEffect(appeared ? 1 : 0.96)
+            .onAppear {
+                withAnimation(.spring(response: 0.65, dampingFraction: 0.75).delay(delay)) {
+                    appeared = true
+                }
+            }
+    }
+}
+
+extension View {
+    func cardEntrance(delay: Double = 0) -> some View {
+        modifier(CardEntrance(delay: delay))
+    }
+}
+
+// MARK: - Shimmer effect
+
+struct Shimmer: ViewModifier {
+    @State private var phase: CGFloat = -1.5
+    func body(content: Content) -> some View {
+        content.overlay(
+            GeometryReader { geo in
+                LinearGradient(
+                    colors: [.clear, Color.white.opacity(0.25), .clear],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .frame(width: geo.size.width)
+                .offset(x: phase * geo.size.width)
+            }
+            .clipped()
+            .allowsHitTesting(false)
+        )
+        .onAppear {
+            withAnimation(.linear(duration: 2.8).delay(0.4).repeatForever(autoreverses: false)) {
+                phase = 1.5
+            }
+        }
+    }
+}
+
+extension View {
+    func shimmer() -> some View { modifier(Shimmer()) }
+}
+
+// MARK: - Card container (liquid glass)
 
 struct CardView<Content: View>: View {
     let content: Content
@@ -33,9 +115,95 @@ struct CardView<Content: View>: View {
 
     var body: some View {
         content
-            .background(Color.cardBackground)
+            .background(Color.white.opacity(0.13))
+            .background(.ultraThinMaterial)
+            .overlay(
+                RoundedRectangle(cornerRadius: CornerRadius.card)
+                    .stroke(
+                        LinearGradient(
+                            colors: [Color.white.opacity(0.5), Color.white.opacity(0.10)],
+                            startPoint: .topLeading, endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 0.8
+                    )
+            )
             .cornerRadius(CornerRadius.card)
-            .cardShadow()
+            .shadow(color: .black.opacity(0.30), radius: 18, x: 0, y: 8)
+    }
+}
+
+// MARK: - Gradient card container
+
+struct GradientCardView<Content: View>: View {
+    let gradient: LinearGradient
+    let content: Content
+    init(gradient: LinearGradient = .berkeleyHero, @ViewBuilder content: () -> Content) {
+        self.gradient = gradient
+        self.content = content()
+    }
+    var body: some View {
+        content
+            .background(gradient)
+            .cornerRadius(20)
+            .shadow(color: Color.berkeleyBlue.opacity(0.35), radius: 16, x: 0, y: 8)
+    }
+}
+
+// MARK: - Animated counter
+
+struct AnimatedCounter: View {
+    let value: Double
+    let format: String
+    let color: Color
+    @State private var displayed: Double = 0
+
+    var body: some View {
+        Text(String(format: format, displayed))
+            .onAppear { withAnimation(.easeOut(duration: 1.0)) { displayed = value } }
+            .onChange(of: value) { _, new in withAnimation(.easeOut(duration: 0.8)) { displayed = new } }
+            .foregroundColor(color)
+    }
+}
+
+// MARK: - Gradient progress ring
+
+struct GradientProgressRing: View {
+    let current: Double
+    let target: Double
+    let colors: [Color]
+    var lineWidth: CGFloat = 12
+    var animDelay: Double = 0
+
+    @State private var drawn: Double = 0
+
+    var body: some View {
+        let target_fraction = min(current / max(target, 1), 1.0)
+        ZStack {
+            Circle()
+                .stroke(colors[0].opacity(0.18), lineWidth: lineWidth)
+            Circle()
+                .trim(from: 0, to: drawn)
+                .stroke(
+                    AngularGradient(
+                        colors: colors,
+                        center: .center,
+                        startAngle: .degrees(-90),
+                        endAngle: .degrees(360 * drawn - 90)
+                    ),
+                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
+                )
+                .rotationEffect(.degrees(-90))
+        }
+        .onAppear {
+            withAnimation(.spring(response: 1.1, dampingFraction: 0.72).delay(animDelay)) {
+                drawn = target_fraction
+            }
+        }
+        .onChange(of: target_fraction) { _, new in
+            withAnimation(.spring(response: 0.8, dampingFraction: 0.7)) {
+                drawn = new
+            }
+        }
     }
 }
 
@@ -86,7 +254,7 @@ struct MacroRow: View {
     }
 }
 
-// MARK: - Progress ring
+// MARK: - Progress ring (kept for backward compatibility)
 
 struct ProgressRing: View {
     let current: Double
@@ -220,6 +388,80 @@ struct SectionHeader: View {
             .font(.headline)
             .foregroundColor(.primary)
             .padding(.horizontal)
+    }
+}
+
+// MARK: - Animated Berkeley background
+
+struct BerkeleyBackground: View {
+    @State private var animate = false
+
+    var body: some View {
+        ZStack {
+            // Berkeley Blue gradient base — medium brightness so it reads clearly as blue
+            LinearGradient(
+                colors: [
+                    Color(red: 0.02, green: 0.28, blue: 0.56),
+                    Color(red: 0.0, green: 0.20, blue: 0.46),
+                    Color(red: 0.0, green: 0.14, blue: 0.36)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+
+            // Gold glow — top right, clearly visible
+            Ellipse()
+                .fill(Color.berkeleyGold.opacity(0.55))
+                .frame(width: 240, height: 180)
+                .blur(radius: 45)
+                .offset(x: animate ? 115 : 90, y: animate ? -210 : -180)
+
+            // Teal/cyan accent — mid left
+            Circle()
+                .fill(Color(red: 0.05, green: 0.65, blue: 0.88).opacity(0.45))
+                .frame(width: 200, height: 200)
+                .blur(radius: 45)
+                .offset(x: animate ? -65 : -90, y: animate ? 90 : 65)
+
+            // Floating shapes (like the loading screen)
+            GeometryReader { geo in
+                Group {
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.berkeleyGold.opacity(0.22))
+                        .frame(width: 64, height: 22)
+                        .rotationEffect(.degrees(animate ? -18 : -28))
+                        .position(x: geo.size.width * 0.15, y: geo.size.height * 0.12)
+                        .offset(y: animate ? -10 : 10)
+                        .animation(.easeInOut(duration: 3.2).repeatForever(autoreverses: true), value: animate)
+
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white.opacity(0.13))
+                        .frame(width: 44, height: 44)
+                        .rotationEffect(.degrees(animate ? 22 : 12))
+                        .position(x: geo.size.width * 0.82, y: geo.size.height * 0.18)
+                        .offset(y: animate ? 10 : -10)
+                        .animation(.easeInOut(duration: 2.8).delay(0.4).repeatForever(autoreverses: true), value: animate)
+
+                    Circle()
+                        .fill(Color.berkeleyGold.opacity(0.20))
+                        .frame(width: 38, height: 38)
+                        .position(x: geo.size.width * 0.88, y: geo.size.height * 0.52)
+                        .offset(y: animate ? -12 : 12)
+                        .animation(.easeInOut(duration: 3.6).delay(0.2).repeatForever(autoreverses: true), value: animate)
+
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.white.opacity(0.10))
+                        .frame(width: 52, height: 18)
+                        .rotationEffect(.degrees(animate ? 30 : 20))
+                        .position(x: geo.size.width * 0.12, y: geo.size.height * 0.68)
+                        .offset(y: animate ? 10 : -10)
+                        .animation(.easeInOut(duration: 2.5).delay(0.7).repeatForever(autoreverses: true), value: animate)
+                }
+            }
+            .ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .onAppear { animate = true }
     }
 }
 

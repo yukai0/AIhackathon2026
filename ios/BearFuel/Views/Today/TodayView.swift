@@ -6,16 +6,17 @@ struct TodayView: View {
 
     var body: some View {
         ZStack {
+            BerkeleyBackground()
             NavigationStack {
                 ScrollView {
                     VStack(spacing: 20) {
-                        headerCard
+                        heroCard
                         if let plan = vm.plan {
                             targetsCard(plan: plan)
                             if !vm.allWarnings.isEmpty {
-                                warningCard(warnings: vm.allWarnings)
+                                planWarningsCard(warnings: vm.allWarnings)
                             }
-                            ForEach(plan.meals) { meal in
+                            ForEach(Array(plan.meals.enumerated()), id: \.element.id) { index, meal in
                                 MealCard(
                                     meal: meal,
                                     itemMap: vm.menuItems,
@@ -25,11 +26,13 @@ struct TodayView: View {
                                     alternatives: { vm.alternatives(for: $0, in: meal) },
                                     onSubstitute: { itemID, replacement in
                                         vm.substitute(itemID: itemID, with: replacement, in: meal)
-                                    }
+                                    },
+                                    entranceDelay: Double(index) * 0.10 + 0.25
                                 )
                             }
                             if !plan.disclaimer.isEmpty {
                                 disclaimerBanner(text: plan.disclaimer)
+                                    .padding(.top, 8)
                             }
                         } else if !vm.isLoading {
                             emptyState
@@ -37,7 +40,8 @@ struct TodayView: View {
                     }
                     .padding()
                 }
-                .background(Color.subtleBackground.ignoresSafeArea())
+                .scrollContentBackground(.hidden)
+                .background(.clear)
                 .navigationTitle("BearFuel")
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
@@ -52,81 +56,167 @@ struct TodayView: View {
                     Text(vm.errorMessage ?? "")
                 }
             }
+            .colorScheme(.dark)
             if vm.isLoading {
                 loadingOverlay
             }
         }
     }
 
-    // MARK: - Subviews
+    // MARK: - Hero card
 
-    private var headerCard: some View {
-        CardView {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Today")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Text(vm.displayDate)
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                    }
-                    Spacer()
-                    Image(systemName: "fork.knife.circle.fill")
-                        .font(.largeTitle)
-                        .foregroundColor(.berkeleyGold)
-                }
-                if let plan = vm.plan {
-                    let locs = Set(plan.meals.map { $0.location })
-                    Text(locs.joined(separator: " · "))
+    private var heroCard: some View {
+        GradientCardView(gradient: .berkeleyHero) {
+            HStack(alignment: .center) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(timeOfDayGreeting)
                         .font(.subheadline)
-                        .foregroundColor(.berkeleyBlue)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white.opacity(0.75))
+                    Text(vm.displayDate)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    if let plan = vm.plan {
+                        let locs = Set(plan.meals.map { $0.location }).sorted()
+                        HStack(spacing: 6) {
+                            ForEach(locs, id: \.self) { loc in
+                                Label(loc, systemImage: "mappin.circle.fill")
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .background(Color.white.opacity(0.18))
+                                    .foregroundColor(.white)
+                                    .clipShape(Capsule())
+                            }
+                        }
+                    }
                 }
+                Spacer()
+                Image(systemName: "fork.knife.circle.fill")
+                    .font(.system(size: 52))
+                    .foregroundColor(.berkeleyGold)
+                    .shadow(color: Color.berkeleyGold.opacity(0.5), radius: 12)
             }
-            .padding()
+            .padding(20)
+        }
+        .shimmer()
+        .cardEntrance(delay: 0.05)
+    }
+
+    private var timeOfDayGreeting: String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        switch hour {
+        case 0..<12: return "Good morning ☀️"
+        case 12..<17: return "Good afternoon 🌤️"
+        default: return "Good evening 🌙"
         }
     }
 
+    // MARK: - Targets / progress card
+
     private func targetsCard(plan: MealPlan) -> some View {
-        let totals = vm.progressTotals
+        let eaten = vm.progressTotals
         return CardView {
-            VStack(alignment: .leading, spacing: 14) {
-                Text("Daily Progress")
-                    .font(.headline)
-                HStack(spacing: 22) {
-                    ringWithLabel(
-                        current: totals.kcal,
-                        target: plan.targets.kcal,
-                        label: "kcal",
-                        color: .orange
-                    )
-                    ringWithLabel(
-                        current: totals.proteinG,
-                        target: plan.targets.proteinG,
-                        label: "protein",
-                        color: .berkeleyBlue
-                    )
-                    ringWithLabel(
-                        current: totals.carbG,
-                        target: plan.targets.carbG,
-                        label: "carbs",
-                        color: .green
-                    )
-                    ringWithLabel(
-                        current: totals.fatG,
-                        target: plan.targets.fatG,
-                        label: "fat",
-                        color: .berkeleyGold
-                    )
+            VStack(spacing: 18) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Daily Progress")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        Text("Tap items below to mark as eaten")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    let pct = Int(min(eaten.kcal / max(plan.targets.kcal, 1), 1.0) * 100)
+                    Text("\(pct)%")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Color.berkeleyBlue)
+                        .clipShape(Capsule())
+                }
+
+                HStack(spacing: 24) {
+                    ZStack {
+                        GradientProgressRing(
+                            current: eaten.kcal,
+                            target: plan.targets.kcal,
+                            colors: [.berkeleyBlue, Color(red: 0.04, green: 0.6, blue: 0.9)],
+                            lineWidth: 14,
+                            animDelay: 0.15
+                        )
+                        .frame(width: 110, height: 110)
+                        VStack(spacing: 2) {
+                            AnimatedCounter(value: eaten.kcal, format: "%.0f", color: .primary)
+                                .font(.system(size: 22, weight: .bold))
+                            Text("/ \(Int(plan.targets.kcal))")
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundColor(.secondary)
+                            Text("kcal")
+                                .font(.system(size: 10))
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    VStack(spacing: 14) {
+                        smallRing(
+                            current: eaten.proteinG,
+                            target: plan.targets.proteinG,
+                            label: "protein",
+                            colors: [Color(red: 0.1, green: 0.5, blue: 1.0), Color(red: 0.0, green: 0.7, blue: 0.9)],
+                            animDelay: 0.25
+                        )
+                        smallRing(
+                            current: eaten.carbG,
+                            target: plan.targets.carbG,
+                            label: "carbs",
+                            colors: [.green, Color(red: 0.0, green: 0.8, blue: 0.4)],
+                            animDelay: 0.35
+                        )
+                        smallRing(
+                            current: eaten.fatG,
+                            target: plan.targets.fatG,
+                            label: "fat",
+                            colors: [Color.berkeleyGold, Color(red: 1.0, green: 0.55, blue: 0.0)],
+                            animDelay: 0.45
+                        )
+                    }
                 }
                 .frame(maxWidth: .infinity)
             }
-            .padding()
+            .padding(20)
+        }
+        .cardEntrance(delay: 0.15)
+    }
+
+    private func smallRing(current: Double, target: Double, label: String, colors: [Color], animDelay: Double = 0) -> some View {
+        HStack(spacing: 10) {
+            ZStack {
+                GradientProgressRing(current: current, target: target, colors: colors, lineWidth: 7, animDelay: animDelay)
+                    .frame(width: 40, height: 40)
+                Text(Int(current / max(target, 1) * 100).description + "%")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundColor(.primary)
+            }
+            VStack(alignment: .leading, spacing: 1) {
+                AnimatedCounter(value: current, format: "%.0f", color: .primary)
+                    .font(.system(size: 13, weight: .bold))
+                Text("/ \(Int(target))g \(label)")
+                    .font(.system(size: 11))
+                    .foregroundColor(.secondary)
+            }
+            Spacer()
         }
     }
 
-    private func warningCard(warnings: [NutritionLimitWarning]) -> some View {
+    // MARK: - Warnings card
+
+    private func planWarningsCard(warnings: [NutritionLimitWarning]) -> some View {
         CardView {
             VStack(alignment: .leading, spacing: 8) {
                 Label("Plan Warnings", systemImage: "exclamationmark.triangle.fill")
@@ -141,72 +231,76 @@ struct TodayView: View {
             }
             .padding()
         }
+        .cardEntrance(delay: 0.20)
     }
 
-    private func ringWithLabel(current: Double, target: Double, label: String, color: Color) -> some View {
-        VStack(spacing: 6) {
-            ZStack {
-                ProgressRing(current: current, target: target, color: color)
-                    .frame(width: 60, height: 60)
-                VStack(spacing: 1) {
-                    Text(Int(current).formatted(.number))
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.75)
-                    Text("/ \(Int(target).formatted(.number))")
-                        .font(.system(size: 9, weight: .semibold))
-                        .foregroundColor(.secondary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.75)
-                }
-                .frame(width: 44)
-            }
-            Text(label)
-                .font(.caption)
-                .foregroundColor(.secondary)
-        }
-    }
+    // MARK: - Empty state
 
     private var emptyState: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "figure.run")
-                .font(.system(size: 56))
-                .foregroundColor(.berkeleyBlue.opacity(0.4))
-            Text("Ready to fuel your day?")
-                .font(.title3)
-                .fontWeight(.semibold)
-            Text("Generate your personalized meal plan using today's real Berkeley dining menu.")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-            Button(action: { Task { await vm.generatePlan() } }) {
-                Label("Generate Today's Plan", systemImage: "sparkles")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.berkeleyBlue)
-                    .cornerRadius(CornerRadius.button)
+        VStack(spacing: 24) {
+            ZStack {
+                Circle()
+                    .fill(LinearGradient(
+                        colors: [Color.berkeleyBlue.opacity(0.1), Color.berkeleyGold.opacity(0.08)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .frame(width: 120, height: 120)
+                Image(systemName: "sparkles")
+                    .font(.system(size: 48, weight: .light))
+                    .foregroundColor(.berkeleyBlue.opacity(0.6))
             }
+            VStack(spacing: 8) {
+                Text("Ready to fuel your day?")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                Text("Generate your personalized meal plan\nusing today's real Berkeley dining menu.")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(3)
+            }
+            Button(action: { Task { await vm.generatePlan() } }) {
+                HStack(spacing: 10) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 16, weight: .semibold))
+                    Text("Generate Today's Plan")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(LinearGradient.berkeleyHero)
+                .cornerRadius(CornerRadius.button)
+                .shadow(color: Color.berkeleyBlue.opacity(0.4), radius: 12, x: 0, y: 6)
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 4)
             .disabled(vm.isLoading)
-            .padding(.horizontal)
         }
-        .padding(.top, 40)
+        .padding(.horizontal, 8)
+        .padding(.top, 32)
     }
+
+    // MARK: - Generate button
 
     private var generateButton: some View {
         Button(action: { Task { await vm.generatePlan() } }) {
             Image(systemName: "arrow.clockwise.circle.fill")
-                .foregroundColor(.berkeleyBlue)
+                .font(.title2)
+                .foregroundStyle(LinearGradient.berkeleyHero)
         }
         .disabled(vm.isLoading)
     }
 
+    // MARK: - Loading overlay
+
     private var loadingOverlay: some View {
         AnalyzingLoadingOverlay()
     }
+
+    // MARK: - Disclaimer banner
 
     private func disclaimerBanner(text: String) -> some View {
         Text(text)
@@ -217,6 +311,8 @@ struct TodayView: View {
             .padding(.bottom, 8)
     }
 }
+
+// MARK: - AnalyzingLoadingOverlay
 
 struct AnalyzingLoadingOverlay: View {
     @State private var animate = false
@@ -447,21 +543,51 @@ struct MealCard: View {
     let onDelete: (String) -> Void
     let alternatives: (String) -> [MenuItem]
     let onSubstitute: (String, MenuItem) -> Void
+    var entranceDelay: Double = 0
+    @State private var appeared = false
 
     var body: some View {
-        CardView {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Label(meal.label, systemImage: mealIcon(meal.label))
-                        .font(.headline)
-                        .foregroundColor(.berkeleyBlue)
+        VStack(spacing: 0) {
+            // Gradient header with shimmer
+            ZStack(alignment: .bottomLeading) {
+                mealGradient(for: meal.label)
+                    .frame(height: 76)
+                // Glass specular highlight on header
+                LinearGradient(
+                    colors: [Color.white.opacity(0.18), .clear],
+                    startPoint: .top, endPoint: .bottom
+                )
+                .frame(height: 76)
+                HStack(alignment: .bottom) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(meal.label)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Text(meal.location)
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
                     Spacer()
-                    Text(meal.location)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    Image(systemName: mealIcon(meal.label))
+                        .font(.system(size: 28, weight: .semibold))
+                        .foregroundColor(.white.opacity(0.9))
+                        .shadow(color: .white.opacity(0.3), radius: 8)
                 }
-                MacroRow(totals: meal.totals, compact: true)
-                Divider()
+                .padding(.horizontal, 16)
+                .padding(.bottom, 12)
+            }
+
+            // Macro summary strip — glass
+            MacroRow(totals: meal.totals, compact: true)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(.ultraThinMaterial)
+
+            Divider().opacity(0.3)
+
+            // Dish list — dark glass body
+            VStack(spacing: 0) {
                 ForEach(meal.items, id: \.self) { itemId in
                     if let item = itemMap[itemId] {
                         DishRow(
@@ -472,18 +598,38 @@ struct MealCard: View {
                             alternatives: alternatives(itemId),
                             onSubstitute: { replacement in onSubstitute(itemId, replacement) }
                         )
+                        .padding(.horizontal, 16)
+                        if itemId != meal.items.last {
+                            Divider().padding(.leading, 70).opacity(0.25)
+                        }
                     } else {
                         MissingDishRow()
+                            .padding(.horizontal, 16)
                     }
                 }
             }
-            .padding()
+            .background(.ultraThinMaterial)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white.opacity(0.15), lineWidth: 0.75)
+        )
+        .shadow(color: .black.opacity(0.35), radius: 18, x: 0, y: 8)
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 44)
+        .scaleEffect(appeared ? 1 : 0.96)
+        .onAppear {
+            withAnimation(.spring(response: 0.65, dampingFraction: 0.75).delay(entranceDelay)) {
+                appeared = true
+            }
         }
     }
 
     private func mealIcon(_ label: String) -> String {
         switch label.lowercased() {
-        case "brunch", "breakfast": return "sunrise.fill"
+        case "breakfast": return "sunrise.fill"
+        case "brunch": return "sun.haze.fill"
         case "lunch": return "sun.max.fill"
         case "dinner": return "moon.stars.fill"
         default: return "fork.knife"
@@ -508,6 +654,8 @@ struct DishRow: View {
                     Image(systemName: isEaten == true ? "checkmark.circle.fill" : "circle")
                         .font(.title3)
                         .foregroundColor(isEaten == true ? .green : .secondary)
+                        .scaleEffect(isEaten == true ? 1.15 : 1.0)
+                        .animation(.spring(response: 0.35, dampingFraction: 0.5), value: isEaten)
                         .frame(width: 28, height: 42)
                 }
                 .buttonStyle(.plain)
@@ -574,7 +722,7 @@ struct DishRow: View {
                 }
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 10)
     }
 }
 
@@ -592,6 +740,6 @@ struct MissingDishRow: View {
                 .foregroundColor(.secondary)
             Spacer()
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 10)
     }
 }
