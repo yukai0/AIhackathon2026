@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import Combine
 
 struct NutritionLimitWarning: Identifiable {
     let id: String
@@ -16,6 +17,26 @@ final class TodayViewModel: ObservableObject {
 
     private let api = APIClient.shared
     private let profileStore = ProfileStore.shared
+    private let planStore = PlanStore.shared
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        if let saved = PlanStore.shared.todayPlan {
+            plan = saved
+        }
+        NotificationCenter.default.publisher(for: .bearfuelRegeneratePlan)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                Task { await self.generatePlan() }
+            }
+            .store(in: &cancellables)
+    }
+
+    func restoreMenuItemsIfNeeded() async {
+        guard let plan, menuItems.isEmpty else { return }
+        await loadMenuItems(for: plan)
+    }
 
     var todayString: String {
         let fmt = DateFormatter()
@@ -42,6 +63,7 @@ final class TodayViewModel: ObservableObject {
                 date: todayString
             )
             plan = fetchedPlan
+            planStore.save(fetchedPlan)
             eatenItemKeys = []
             await loadMenuItems(for: fetchedPlan)
         } catch {
@@ -177,6 +199,7 @@ final class TodayViewModel: ObservableObject {
               let data = try? Data(contentsOf: url),
               let fallback = try? JSONDecoder().decode(MealPlan.self, from: data) else { return false }
         plan = fallback
+        planStore.save(fallback)
         menuItems = DemoData.menuItemsByID
         eatenItemKeys = []
         return true

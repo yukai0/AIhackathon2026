@@ -121,7 +121,7 @@ def _discover_xml_urls(target_date: str) -> list[str]:
 def _fallback_xml_urls(target_date: str) -> list[str]:
     """Known location names when discovery fails."""
     date_str = target_date.replace("-", "")
-    known_locations = ["Crossroads", "ClarkKerr", "Foothill", "Den", "Unit1"]
+    known_locations = ["Crossroads", "ClarkKerr", "Foothill", "Cafe3", "Den", "Unit1"]
     base_path = f"{BASE_URL}/wp-content/uploads/menus-exportimport"
     urls = []
     for loc in known_locations:

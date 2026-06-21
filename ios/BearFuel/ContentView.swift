@@ -7,19 +7,15 @@ private enum AppTab: Hashable {
 }
 
 struct ContentView: View {
+    @AppStorage("bearfuel.isLoggedIn") private var isLoggedIn = false
     @State private var selectedTab: AppTab = .today
-    @State private var hasBypassedLogin = false
 
     var body: some View {
         Group {
-            if hasBypassedLogin {
+            if isLoggedIn {
                 mainTabs
             } else {
-                SignInBypassView {
-                    withAnimation(.spring(response: 0.45, dampingFraction: 0.9)) {
-                        hasBypassedLogin = true
-                    }
-                }
+                LoginView { isLoggedIn = true }
             }
         }
     }
@@ -27,33 +23,34 @@ struct ContentView: View {
     private var mainTabs: some View {
         TabView(selection: $selectedTab) {
             TodayView()
-                .tabItem {
-                    Label("Today", systemImage: "sun.max.fill")
-                }
+                .tabItem { Label("Today", systemImage: "sun.max.fill") }
                 .tag(AppTab.today)
             MenuBrowserView()
-                .tabItem {
-                    Label("Menu", systemImage: "fork.knife")
-                }
+                .tabItem { Label("Menu", systemImage: "fork.knife") }
                 .tag(AppTab.menu)
             ProfileView {
-                withAnimation {
-                    selectedTab = .today
-                }
+                withAnimation { selectedTab = .today }
             }
-            .tabItem {
-                Label("Profile", systemImage: "person.fill")
-            }
+            .tabItem { Label("Profile", systemImage: "person.fill") }
             .tag(AppTab.profile)
         }
         .tint(.berkeleyBlue)
     }
 }
 
-private struct SignInBypassView: View {
-    @State private var isSigningIn = false
+// MARK: - LoginView
+
+private struct LoginView: View {
+    let onLogin: () -> Void
+
+    @State private var username = ""
+    @State private var password = ""
+    @State private var shake = false
+    @State private var errorMsg: String? = nil
     @State private var animate = false
-    let onBypass: () -> Void
+
+    private let correctUsername = "admin"
+    private let correctPassword = "calhacks123"
 
     var body: some View {
         ZStack {
@@ -74,9 +71,7 @@ private struct SignInBypassView: View {
                     LoginShape(color: .green, size: 92, position: CGPoint(x: proxy.size.width * 0.84, y: proxy.size.height * 0.24), animate: animate, delay: 0.2)
                     LoginShape(color: .white, size: 118, position: CGPoint(x: proxy.size.width * 0.15, y: proxy.size.height * 0.78), animate: animate, delay: 0.35)
                     LoginShape(color: .berkeleyGold, size: 72, position: CGPoint(x: proxy.size.width * 0.82, y: proxy.size.height * 0.82), animate: animate, delay: 0.1)
-
                     LoginSymbol(symbol: "fork.knife.circle.fill", color: .berkeleyGold, position: CGPoint(x: proxy.size.width * 0.24, y: proxy.size.height * 0.33), animate: animate)
-                    LoginSymbol(symbol: "person.crop.circle.badge.checkmark", color: .white, position: CGPoint(x: proxy.size.width * 0.73, y: proxy.size.height * 0.36), animate: animate, delay: 0.2)
                     LoginSymbol(symbol: "leaf.fill", color: .green, position: CGPoint(x: proxy.size.width * 0.23, y: proxy.size.height * 0.63), animate: animate, delay: 0.35)
                     LoginSymbol(symbol: "sparkles", color: .white, position: CGPoint(x: proxy.size.width * 0.76, y: proxy.size.height * 0.64), animate: animate, delay: 0.1)
                 }
@@ -103,7 +98,7 @@ private struct SignInBypassView: View {
                     }
                     .animation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true), value: animate)
 
-                    VStack(spacing: 8) {
+                    VStack(spacing: 6) {
                         Text("BearFuel")
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -116,32 +111,41 @@ private struct SignInBypassView: View {
                 }
 
                 VStack(spacing: 12) {
-                    SignInButton(
-                        title: isSigningIn ? "Signing in..." : "Continue with Apple",
-                        symbol: "apple.logo",
-                        foreground: .black,
-                        background: .white,
-                        isLoading: isSigningIn,
-                        action: bypassSignIn
-                    )
-                    SignInButton(
-                        title: "Continue with Berkeley",
-                        symbol: "graduationcap.fill",
-                        foreground: .white,
-                        background: Color.berkeleyBlue.opacity(0.86),
-                        isLoading: false,
-                        action: bypassSignIn
-                    )
-                    Button(action: bypassSignIn) {
-                        Text("Continue as Guest")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
+                    VStack(spacing: 10) {
+                        TextField("Username", text: $username)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                            .padding(14)
+                            .background(Color.white.opacity(0.15), in: RoundedRectangle(cornerRadius: 14))
                             .foregroundColor(.white)
+                            .tint(.white)
+
+                        SecureField("Password", text: $password)
+                            .padding(14)
+                            .background(Color.white.opacity(0.15), in: RoundedRectangle(cornerRadius: 14))
+                            .foregroundColor(.white)
+                            .tint(.white)
+                            .onSubmit { attemptLogin() }
+                    }
+
+                    if let errorMsg {
+                        Text(errorMsg)
+                            .font(.caption)
+                            .foregroundColor(.red.opacity(0.9))
+                            .padding(.horizontal, 4)
+                    }
+
+                    Button(action: attemptLogin) {
+                        Text("Sign In")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.berkeleyBlue)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
+                            .padding(.vertical, 15)
+                            .background(Color.white, in: RoundedRectangle(cornerRadius: 16))
                     }
                     .buttonStyle(.plain)
-                    .disabled(isSigningIn)
+                    .offset(x: shake ? -8 : 0)
                 }
                 .padding(18)
                 .background(Color.black.opacity(0.2), in: RoundedRectangle(cornerRadius: 28))
@@ -151,7 +155,7 @@ private struct SignInBypassView: View {
                 )
 
                 HStack(spacing: 10) {
-                    LoginBadge(symbol: "lock.fill", text: "demo auth")
+                    LoginBadge(symbol: "lock.fill", text: "secure login")
                     LoginBadge(symbol: "sparkles", text: "AI ready")
                 }
 
@@ -159,50 +163,25 @@ private struct SignInBypassView: View {
             }
             .padding(.horizontal, 26)
         }
-        .onAppear {
-            animate = true
-        }
+        .onAppear { animate = true }
     }
 
-    private func bypassSignIn() {
-        guard !isSigningIn else { return }
-        isSigningIn = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            onBypass()
-        }
-    }
-}
-
-private struct SignInButton: View {
-    let title: String
-    let symbol: String
-    let foreground: Color
-    let background: Color
-    let isLoading: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 10) {
-                if isLoading {
-                    ProgressView()
-                        .tint(foreground)
-                } else {
-                    Image(systemName: symbol)
-                        .font(.system(size: 17, weight: .semibold))
-                }
-                Text(title)
-                    .font(.headline)
-                    .fontWeight(.semibold)
+    private func attemptLogin() {
+        if username == correctUsername && password == correctPassword {
+            withAnimation(.spring(response: 0.45, dampingFraction: 0.9)) {
+                onLogin()
             }
-            .foregroundColor(foreground)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 15)
-            .background(background, in: RoundedRectangle(cornerRadius: 16))
+        } else {
+            errorMsg = "Incorrect username or password."
+            withAnimation(.default.repeatCount(3, autoreverses: true).speed(6)) {
+                shake = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { shake = false }
         }
-        .buttonStyle(.plain)
     }
 }
+
+// MARK: - Shared helpers
 
 private struct LoginBadge: View {
     let symbol: String

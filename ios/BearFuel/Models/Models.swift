@@ -143,7 +143,7 @@ struct UserProfile: Codable, Equatable {
     var mealsPerDay: Int = 3
     var dietRestrictions: [String] = []
     var excludeAllergens: [String] = []
-    var preferredLocations: [String] = []
+    var preferredLocations: [String] = ["Crossroads"]
     var dislikedFoods: [String] = []
 
     init(
@@ -158,7 +158,7 @@ struct UserProfile: Codable, Equatable {
         mealsPerDay: Int = 3,
         dietRestrictions: [String] = [],
         excludeAllergens: [String] = [],
-        preferredLocations: [String] = [],
+        preferredLocations: [String] = ["Crossroads"],
         dislikedFoods: [String] = []
     ) {
         self.heightCm = heightCm

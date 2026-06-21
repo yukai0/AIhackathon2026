@@ -11,7 +11,12 @@ struct ProfileView: View {
     private let goalTypes = ["cut", "maintain", "lean_gain", "recomp", "athletic_performance"]
     private let goalLabels = ["Cut", "Maintain", "Lean Gain", "Recomp", "Athletic Performance"]
     private let sexOptions = ["male", "female", "unspecified"]
-    private let diningHalls = ["Crossroads", "Foothill", "Clark Kerr", "Unit 1", "Unit 2"]
+    private let diningHalls: [(display: String, apiName: String)] = [
+        ("Crossroads", "Crossroads"),
+        ("Foothill", "Foothill"),
+        ("Clark Kerr", "ClarkKerr"),
+        ("Café 3", "Cafe3"),
+    ]
     private let dietaryOptions = ["vegan", "vegetarian", "halal", "kosher"]
     private let allergenOptions = ["milk", "egg", "fish", "shellfish", "treenut", "wheat", "peanut", "soy", "sesame", "gluten", "pork"]
     private let dislikedFoodOptions = ["beef", "pork", "chicken", "eggs", "fish", "tofu", "beans", "rice", "pasta", "cheese", "yogurt", "cake", "dessert", "spicy"]
@@ -22,16 +27,7 @@ struct ProfileView: View {
                 Section("Body Stats") {
                     LabeledContent("Height") {
                         HStack {
-                            Slider(
-                                value: $profile.heightCm,
-                                in: 140...220,
-                                step: 1,
-                                onEditingChanged: { editing in
-                                    if !editing {
-                                        commitBodyStatsAndReturn()
-                                    }
-                                }
-                            )
+                            Slider(value: $profile.heightCm, in: 140...220, step: 1)
                             Text("\(Int(profile.heightCm)) cm")
                                 .frame(width: 60, alignment: .trailing)
                                 .monospacedDigit()
@@ -39,32 +35,17 @@ struct ProfileView: View {
                     }
                     LabeledContent("Weight") {
                         HStack {
-                            Slider(
-                                value: $profile.weightKg,
-                                in: 40...150,
-                                step: 0.5,
-                                onEditingChanged: { editing in
-                                    if !editing {
-                                        commitBodyStatsAndReturn()
-                                    }
-                                }
-                            )
+                            Slider(value: $profile.weightKg, in: 40...150, step: 0.5)
                             Text("\(profile.weightKg, specifier: "%.1f") kg")
                                 .frame(width: 60, alignment: .trailing)
                                 .monospacedDigit()
                         }
                     }
                     Stepper("Age: \(profile.age)", value: $profile.age, in: 13...100)
-                        .onChange(of: profile.age) { _, _ in
-                            commitBodyStatsAndReturn()
-                        }
                     Picker("Sex", selection: $profile.sex) {
                         ForEach(sexOptions, id: \.self) { s in
                             Text(s.capitalized).tag(s)
                         }
-                    }
-                    .onChange(of: profile.sex) { _, _ in
-                        commitBodyStatsAndReturn()
                     }
                 }
 
@@ -114,20 +95,14 @@ struct ProfileView: View {
                         .foregroundColor(.secondary)
                 }
 
-                Section("Dining Halls") {
-                    ForEach(diningHalls, id: \.self) { hall in
-                        Toggle(hall, isOn: Binding(
-	                            get: { profile.preferredLocations.contains(hall) },
-	                            set: { on in
-	                                if on {
-	                                    if !profile.preferredLocations.contains(hall) {
-	                                        profile.preferredLocations.append(hall)
-	                                    }
-	                                } else {
-	                                    profile.preferredLocations.removeAll { $0 == hall }
-	                                }
-	                            }
-	                        ))
+                Section("Dining Hall") {
+                    Picker("Location", selection: Binding(
+                        get: { profile.preferredLocations.first ?? "Crossroads" },
+                        set: { profile.preferredLocations = [$0] }
+                    )) {
+                        ForEach(diningHalls, id: \.apiName) { hall in
+                            Text(hall.display).tag(hall.apiName)
+                        }
                     }
                 }
 
@@ -171,20 +146,19 @@ struct ProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        commitBodyStatsAndReturn()
+                        saveAndRegenerate()
                     }
                     .fontWeight(.semibold)
                 }
             }
             .onAppear { profile = store.profile }
-            .onChange(of: profile) { _, newProfile in
-                store.profile = newProfile
-            }
         }
     }
 
-    private func commitBodyStatsAndReturn() {
+    private func saveAndRegenerate() {
         store.profile = profile
+        PlanStore.shared.clear()
+        NotificationCenter.default.post(name: .bearfuelRegeneratePlan, object: nil)
         onBodyStatsEntered()
     }
 

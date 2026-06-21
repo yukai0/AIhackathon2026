@@ -5,54 +5,55 @@ struct TodayView: View {
     @State private var showDisclaimer = false
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 20) {
-                    headerCard
-                    if let plan = vm.plan {
-                        targetsCard(plan: plan)
-                        if !vm.allWarnings.isEmpty {
-                            warningCard(warnings: vm.allWarnings)
+        ZStack {
+            NavigationStack {
+                ScrollView {
+                    VStack(spacing: 20) {
+                        headerCard
+                        if let plan = vm.plan {
+                            targetsCard(plan: plan)
+                            if !vm.allWarnings.isEmpty {
+                                warningCard(warnings: vm.allWarnings)
+                            }
+                            ForEach(plan.meals) { meal in
+                                MealCard(
+                                    meal: meal,
+                                    itemMap: vm.menuItems,
+                                    isEaten: { vm.isEaten(itemID: $0, in: meal) },
+                                    onToggleEaten: { vm.toggleEaten(itemID: $0, in: meal) },
+                                    onDelete: { vm.deleteItem(itemID: $0, from: meal) },
+                                    alternatives: { vm.alternatives(for: $0, in: meal) },
+                                    onSubstitute: { itemID, replacement in
+                                        vm.substitute(itemID: itemID, with: replacement, in: meal)
+                                    }
+                                )
+                            }
+                            if !plan.disclaimer.isEmpty {
+                                disclaimerBanner(text: plan.disclaimer)
+                            }
+                        } else if !vm.isLoading {
+                            emptyState
                         }
-                        ForEach(plan.meals) { meal in
-                            MealCard(
-                                meal: meal,
-                                itemMap: vm.menuItems,
-                                isEaten: { vm.isEaten(itemID: $0, in: meal) },
-                                onToggleEaten: { vm.toggleEaten(itemID: $0, in: meal) },
-                                onDelete: { vm.deleteItem(itemID: $0, from: meal) },
-                                alternatives: { vm.alternatives(for: $0, in: meal) },
-                                onSubstitute: { itemID, replacement in
-                                    vm.substitute(itemID: itemID, with: replacement, in: meal)
-                                }
-                            )
-                        }
-                        if !plan.disclaimer.isEmpty {
-                            disclaimerBanner(text: plan.disclaimer)
-                        }
-                    } else if !vm.isLoading {
-                        emptyState
+                    }
+                    .padding()
+                }
+                .background(Color.subtleBackground.ignoresSafeArea())
+                .navigationTitle("BearFuel")
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        generateButton
                     }
                 }
-                .padding()
-            }
-            .background(Color.subtleBackground.ignoresSafeArea())
-            .navigationTitle("BearFuel")
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    generateButton
+                .onAppear { Task { await vm.restoreMenuItemsIfNeeded() } }
+                .alert("Error", isPresented: .constant(vm.errorMessage != nil)) {
+                    Button("OK") { vm.errorMessage = nil }
+                } message: {
+                    Text(vm.errorMessage ?? "")
                 }
             }
-            .overlay {
-                if vm.isLoading {
-                    loadingOverlay
-                }
-            }
-            .alert("Error", isPresented: .constant(vm.errorMessage != nil)) {
-                Button("OK") { vm.errorMessage = nil }
-            } message: {
-                Text(vm.errorMessage ?? "")
+            if vm.isLoading {
+                loadingOverlay
             }
         }
     }
@@ -224,9 +225,9 @@ struct AnalyzingLoadingOverlay: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color.berkeleyBlue.opacity(0.92),
-                    Color(red: 0.04, green: 0.45, blue: 0.55).opacity(0.9),
-                    Color(red: 0.96, green: 0.42, blue: 0.17).opacity(0.88)
+                    Color.berkeleyBlue,
+                    Color(red: 0.04, green: 0.45, blue: 0.55),
+                    Color(red: 0.96, green: 0.42, blue: 0.17)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -336,9 +337,7 @@ struct AnalyzingLoadingOverlay: View {
                     LoadingBadge(symbol: "chart.bar.fill", text: "macros")
                 }
 
-                ProgressView()
-                    .scaleEffect(1.35)
-                    .tint(.white)
+                IndeterminateProgressBar()
                     .padding(.top, 4)
             }
             .padding(28)
@@ -411,6 +410,30 @@ private struct LoadingBadge: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 7)
         .background(Color.white.opacity(0.16), in: Capsule())
+    }
+}
+
+private struct IndeterminateProgressBar: View {
+    @State private var offset: CGFloat = -0.38
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(Color.white.opacity(0.25))
+                Capsule()
+                    .fill(Color.white)
+                    .frame(width: geo.size.width * 0.38)
+                    .offset(x: offset * geo.size.width)
+            }
+            .clipped()
+        }
+        .frame(height: 6)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: false)) {
+                offset = 1.0
+            }
+        }
     }
 }
 

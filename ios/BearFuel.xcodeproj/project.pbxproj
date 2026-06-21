@@ -11,6 +11,7 @@
 		214368347C58D688E22528A4 /* BearFuelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEFEADA8A15430187BB368 /* BearFuelApp.swift */; };
 		245C3585E4EB969918AB9BBA /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268600E4DEA23EA061B7CBF3 /* DishDetailView.swift */; };
 		344D9741D8BE1ACD2062241A /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDF885B2B9E9CFFE2CC483F /* MenuViewModel.swift */; };
+		362DA9405D900F7A20E91894 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D886435FCA3F3C5906C2 /* PlanStore.swift */; };
 		3919E846391A862616DECBCB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C52A89295BA435F44DFB9E /* APIClient.swift */; };
 		3E17BC12656A769D19994691 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5C72ED3F6CCFF71E9E423 /* TodayViewModel.swift */; };
 		49C2F746F451A67B046435E5 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435ECB97B336F4F4F229D4C7 /* DesignSystem.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A65D886435FCA3F3C5906C2 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		1A65FFB9E02F37EA025090F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1DB67F116353D3EFA52BB189 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		268600E4DEA23EA061B7CBF3 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		A6A3517CB2EB28D86AD67BC1 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				1A65D886435FCA3F3C5906C2 /* PlanStore.swift */,
 				895B082FD16F369870A10750 /* TodayView.swift */,
 				BFD5C72ED3F6CCFF71E9E423 /* TodayViewModel.swift */,
 			);
@@ -217,6 +220,7 @@
 				5DDAC635F63F9E40B4C3ABD5 /* MenuBrowserView.swift in Sources */,
 				344D9741D8BE1ACD2062241A /* MenuViewModel.swift in Sources */,
 				6A29CD3FF897239A01ACA114 /* Models.swift in Sources */,
+				362DA9405D900F7A20E91894 /* PlanStore.swift in Sources */,
 				EF3AC9A74F1A3559CE5211E4 /* ProfileStore.swift in Sources */,
 				1593CD309809EE6606F962FC /* ProfileView.swift in Sources */,
 				D8E18F6EB5823073C26E557D /* TodayView.swift in Sources */,
