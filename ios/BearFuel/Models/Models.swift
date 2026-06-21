@@ -87,6 +87,48 @@ struct MenuItem: Codable, Identifiable, Equatable {
     }
 }
 
+extension MenuItem {
+    var diningHallPortionText: String {
+        guard let ounces = servingOunces else {
+            return servingDesc.isEmpty ? "Ask for one scoop" : servingDesc
+        }
+
+        let text = "\(name) \(station)".lowercased()
+
+        if text.contains("bagel") || text.contains("roll") || text.contains("patty")
+            || text.contains("breast") || text.contains("thigh") {
+            let pieces = max(1, Int((ounces / 4).rounded()))
+            return pieces == 1 ? "1 piece" : "\(pieces) pieces"
+        }
+
+        if text.contains("seed") || text.contains("almond") {
+            return "1 topping spoon"
+        }
+
+        if text.contains("dressing") || text.contains("vinaigrette") || text.contains("sauce") {
+            return "1 ladle"
+        }
+
+        if text.contains("stew") || text.contains("curry") || text.contains("soup") {
+            let ladles = max(1, Int((ounces / 4).rounded()))
+            return ladles == 1 ? "1 ladle" : "\(ladles) ladles"
+        }
+
+        let spoons = max(1, Int((ounces / 3).rounded()))
+        return spoons == 1 ? "1 serving spoon" : "\(spoons) serving spoons"
+    }
+
+    private var servingOunces: Double? {
+        let lowercasedServing = servingDesc.lowercased()
+        guard lowercasedServing.contains("oz") else { return nil }
+
+        return lowercasedServing
+            .split(separator: " ")
+            .compactMap { Double(String($0).replacingOccurrences(of: ",", with: "")) }
+            .first
+    }
+}
+
 // MARK: - UserProfile
 
 struct UserProfile: Codable, Equatable {
@@ -97,10 +139,42 @@ struct UserProfile: Codable, Equatable {
     var activityLevel: String = "moderate"
     var goalType: String = "maintain"
     var goalWeightKg: Double? = nil
+    var goalTimelineWeeks: Int? = nil
     var mealsPerDay: Int = 3
     var dietRestrictions: [String] = []
     var excludeAllergens: [String] = []
     var preferredLocations: [String] = []
+    var dislikedFoods: [String] = []
+
+    init(
+        heightCm: Double = 170,
+        weightKg: Double = 65,
+        age: Int = 20,
+        sex: String = "unspecified",
+        activityLevel: String = "moderate",
+        goalType: String = "maintain",
+        goalWeightKg: Double? = nil,
+        goalTimelineWeeks: Int? = nil,
+        mealsPerDay: Int = 3,
+        dietRestrictions: [String] = [],
+        excludeAllergens: [String] = [],
+        preferredLocations: [String] = [],
+        dislikedFoods: [String] = []
+    ) {
+        self.heightCm = heightCm
+        self.weightKg = weightKg
+        self.age = age
+        self.sex = sex
+        self.activityLevel = activityLevel
+        self.goalType = goalType
+        self.goalWeightKg = goalWeightKg
+        self.goalTimelineWeeks = goalTimelineWeeks
+        self.mealsPerDay = mealsPerDay
+        self.dietRestrictions = dietRestrictions
+        self.excludeAllergens = excludeAllergens
+        self.preferredLocations = preferredLocations
+        self.dislikedFoods = dislikedFoods
+    }
 
     enum CodingKeys: String, CodingKey {
         case age, sex
@@ -109,10 +183,46 @@ struct UserProfile: Codable, Equatable {
         case activityLevel = "activity_level"
         case goalType = "goal_type"
         case goalWeightKg = "goal_weight_kg"
+        case goalTimelineWeeks = "goal_timeline_weeks"
         case mealsPerDay = "meals_per_day"
         case dietRestrictions = "diet_restrictions"
         case excludeAllergens = "exclude_allergens"
         case preferredLocations = "preferred_locations"
+        case dislikedFoods = "disliked_foods"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        heightCm = try values.decodeIfPresent(Double.self, forKey: .heightCm) ?? 170
+        weightKg = try values.decodeIfPresent(Double.self, forKey: .weightKg) ?? 65
+        age = try values.decodeIfPresent(Int.self, forKey: .age) ?? 20
+        sex = try values.decodeIfPresent(String.self, forKey: .sex) ?? "unspecified"
+        activityLevel = try values.decodeIfPresent(String.self, forKey: .activityLevel) ?? "moderate"
+        goalType = try values.decodeIfPresent(String.self, forKey: .goalType) ?? "maintain"
+        goalWeightKg = try values.decodeIfPresent(Double.self, forKey: .goalWeightKg)
+        goalTimelineWeeks = try values.decodeIfPresent(Int.self, forKey: .goalTimelineWeeks)
+        mealsPerDay = try values.decodeIfPresent(Int.self, forKey: .mealsPerDay) ?? 3
+        dietRestrictions = try values.decodeIfPresent([String].self, forKey: .dietRestrictions) ?? []
+        excludeAllergens = try values.decodeIfPresent([String].self, forKey: .excludeAllergens) ?? []
+        preferredLocations = try values.decodeIfPresent([String].self, forKey: .preferredLocations) ?? []
+        dislikedFoods = try values.decodeIfPresent([String].self, forKey: .dislikedFoods) ?? []
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encode(heightCm, forKey: .heightCm)
+        try values.encode(weightKg, forKey: .weightKg)
+        try values.encode(age, forKey: .age)
+        try values.encode(sex, forKey: .sex)
+        try values.encode(activityLevel, forKey: .activityLevel)
+        try values.encode(goalType, forKey: .goalType)
+        try values.encodeIfPresent(goalWeightKg, forKey: .goalWeightKg)
+        try values.encodeIfPresent(goalTimelineWeeks, forKey: .goalTimelineWeeks)
+        try values.encode(mealsPerDay, forKey: .mealsPerDay)
+        try values.encode(dietRestrictions, forKey: .dietRestrictions)
+        try values.encode(excludeAllergens, forKey: .excludeAllergens)
+        try values.encode(preferredLocations, forKey: .preferredLocations)
+        try values.encode(dislikedFoods, forKey: .dislikedFoods)
     }
 }
 
@@ -134,10 +244,11 @@ struct MealPlan: Codable, Identifiable {
     var meals: [MealSlot]
     var dayTotals: MacroTotals
     var notes: String
+    var warnings: [String]?
     var disclaimer: String
 
     enum CodingKeys: String, CodingKey {
-        case date, targets, meals, notes, disclaimer
+        case date, targets, meals, notes, warnings, disclaimer
         case dayTotals = "day_totals"
     }
 }

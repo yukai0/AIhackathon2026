@@ -90,6 +90,14 @@ final class TodayViewModel: ObservableObject {
         return warnings
     }
 
+    var allWarnings: [NutritionLimitWarning] {
+        var warnings = plan?.warnings?.enumerated().map { index, message in
+            NutritionLimitWarning(id: "plan-\(index)", message: message)
+        } ?? []
+        warnings.append(contentsOf: limitWarnings)
+        return warnings
+    }
+
     func isEaten(itemID: String, in meal: MealSlot) -> Bool {
         eatenItemKeys.contains(itemKey(itemID: itemID, meal: meal))
     }

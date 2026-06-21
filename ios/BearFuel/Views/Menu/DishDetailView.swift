@@ -24,11 +24,9 @@ struct DishDetailView: View {
                         Text("\(item.location) · \(item.mealPeriod)")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                        if !item.servingDesc.isEmpty {
-                            Text("Serving: \(item.servingDesc)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
+                        Text("Portion: \(item.diningHallPortionText)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                         HStack(spacing: 6) {
                             ForEach(item.dietFlags, id: \.self) { flag in
                                 DietBadge(flag: flag)

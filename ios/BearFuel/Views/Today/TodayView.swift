@@ -11,8 +11,8 @@ struct TodayView: View {
                     headerCard
                     if let plan = vm.plan {
                         targetsCard(plan: plan)
-                        if !vm.limitWarnings.isEmpty {
-                            warningCard(warnings: vm.limitWarnings)
+                        if !vm.allWarnings.isEmpty {
+                            warningCard(warnings: vm.allWarnings)
                         }
                         ForEach(plan.meals) { meal in
                             MealCard(
@@ -128,7 +128,7 @@ struct TodayView: View {
     private func warningCard(warnings: [NutritionLimitWarning]) -> some View {
         CardView {
             VStack(alignment: .leading, spacing: 8) {
-                Label("Target Warnings", systemImage: "exclamationmark.triangle.fill")
+                Label("Plan Warnings", systemImage: "exclamationmark.triangle.fill")
                     .font(.headline)
                     .foregroundColor(.orange)
                 ForEach(warnings) { warning in
@@ -204,18 +204,7 @@ struct TodayView: View {
     }
 
     private var loadingOverlay: some View {
-        ZStack {
-            Color.black.opacity(0.3).ignoresSafeArea()
-            VStack(spacing: 16) {
-                ProgressView()
-                    .scaleEffect(1.4)
-                    .tint(.white)
-                Text("Building your plan with real\nBerkeley dining data…")
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-            }
-        }
+        AnalyzingLoadingOverlay()
     }
 
     private func disclaimerBanner(text: String) -> some View {
@@ -225,6 +214,203 @@ struct TodayView: View {
             .multilineTextAlignment(.center)
             .padding(.horizontal)
             .padding(.bottom, 8)
+    }
+}
+
+struct AnalyzingLoadingOverlay: View {
+    @State private var animate = false
+
+    var body: some View {
+        ZStack {
+            LinearGradient(
+                colors: [
+                    Color.berkeleyBlue.opacity(0.92),
+                    Color(red: 0.04, green: 0.45, blue: 0.55).opacity(0.9),
+                    Color(red: 0.96, green: 0.42, blue: 0.17).opacity(0.88)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+            GeometryReader { proxy in
+                ZStack {
+                    FloatingShape(
+                        color: .berkeleyGold,
+                        size: CGSize(width: 150, height: 52),
+                        cornerRadius: 24,
+                        rotation: -18,
+                        position: CGPoint(x: proxy.size.width * 0.18, y: proxy.size.height * 0.18),
+                        animate: animate
+                    )
+                    FloatingShape(
+                        color: .green,
+                        size: CGSize(width: 118, height: 118),
+                        cornerRadius: 18,
+                        rotation: 16,
+                        position: CGPoint(x: proxy.size.width * 0.86, y: proxy.size.height * 0.25),
+                        animate: animate,
+                        delay: 0.2
+                    )
+                    FloatingShape(
+                        color: .white,
+                        size: CGSize(width: 86, height: 42),
+                        cornerRadius: 12,
+                        rotation: 34,
+                        position: CGPoint(x: proxy.size.width * 0.16, y: proxy.size.height * 0.72),
+                        animate: animate,
+                        delay: 0.1
+                    )
+                    FloatingShape(
+                        color: .berkeleyGold,
+                        size: CGSize(width: 98, height: 98),
+                        cornerRadius: 16,
+                        rotation: -28,
+                        position: CGPoint(x: proxy.size.width * 0.78, y: proxy.size.height * 0.78),
+                        animate: animate,
+                        delay: 0.35
+                    )
+
+                    FloatingSymbol(
+                        symbol: "fork.knife",
+                        color: .white,
+                        position: CGPoint(x: proxy.size.width * 0.27, y: proxy.size.height * 0.31),
+                        animate: animate
+                    )
+                    FloatingSymbol(
+                        symbol: "leaf.fill",
+                        color: .green,
+                        position: CGPoint(x: proxy.size.width * 0.72, y: proxy.size.height * 0.34),
+                        animate: animate,
+                        delay: 0.2
+                    )
+                    FloatingSymbol(
+                        symbol: "flame.fill",
+                        color: .orange,
+                        position: CGPoint(x: proxy.size.width * 0.25, y: proxy.size.height * 0.62),
+                        animate: animate,
+                        delay: 0.35
+                    )
+                    FloatingSymbol(
+                        symbol: "takeoutbag.and.cup.and.straw.fill",
+                        color: .berkeleyGold,
+                        position: CGPoint(x: proxy.size.width * 0.76, y: proxy.size.height * 0.61),
+                        animate: animate,
+                        delay: 0.1
+                    )
+                }
+            }
+            .ignoresSafeArea()
+
+            VStack(spacing: 22) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 30)
+                        .fill(Color.white.opacity(0.16))
+                        .frame(width: 128, height: 128)
+                        .rotationEffect(.degrees(animate ? 10 : -10))
+                    RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color.white.opacity(0.45), lineWidth: 2)
+                        .frame(width: 100, height: 100)
+                        .rotationEffect(.degrees(animate ? -16 : 16))
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 42, weight: .bold))
+                        .foregroundColor(.white)
+                        .scaleEffect(animate ? 1.08 : 0.94)
+                }
+                .animation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true), value: animate)
+
+                VStack(spacing: 8) {
+                    Text("AI is analyzing")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    Text("Matching your stats with today's dining hall menu.")
+                        .font(.subheadline)
+                        .foregroundColor(.white.opacity(0.86))
+                        .multilineTextAlignment(.center)
+                }
+
+                HStack(spacing: 10) {
+                    LoadingBadge(symbol: "person.fill", text: "profile")
+                    LoadingBadge(symbol: "fork.knife", text: "menu")
+                    LoadingBadge(symbol: "chart.bar.fill", text: "macros")
+                }
+
+                ProgressView()
+                    .scaleEffect(1.35)
+                    .tint(.white)
+                    .padding(.top, 4)
+            }
+            .padding(28)
+            .frame(maxWidth: 330)
+            .background(Color.black.opacity(0.18), in: RoundedRectangle(cornerRadius: 28))
+            .overlay(
+                RoundedRectangle(cornerRadius: 28)
+                    .stroke(Color.white.opacity(0.18), lineWidth: 1)
+            )
+            .padding(.horizontal, 28)
+        }
+        .onAppear {
+            animate = true
+        }
+    }
+}
+
+private struct FloatingShape: View {
+    let color: Color
+    let size: CGSize
+    let cornerRadius: CGFloat
+    let rotation: Double
+    let position: CGPoint
+    let animate: Bool
+    var delay: Double = 0
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: cornerRadius)
+            .fill(color.opacity(0.22))
+            .frame(width: size.width, height: size.height)
+            .rotationEffect(.degrees(animate ? rotation : -rotation))
+            .position(position)
+            .offset(y: animate ? -12 : 12)
+            .animation(.easeInOut(duration: 1.8).delay(delay).repeatForever(autoreverses: true), value: animate)
+    }
+}
+
+private struct FloatingSymbol: View {
+    let symbol: String
+    let color: Color
+    let position: CGPoint
+    let animate: Bool
+    var delay: Double = 0
+
+    var body: some View {
+        Image(systemName: symbol)
+            .font(.system(size: 26, weight: .bold))
+            .foregroundColor(color.opacity(0.88))
+            .padding(14)
+            .background(Color.white.opacity(0.18), in: RoundedRectangle(cornerRadius: 16))
+            .position(position)
+            .offset(y: animate ? 10 : -10)
+            .animation(.easeInOut(duration: 1.6).delay(delay).repeatForever(autoreverses: true), value: animate)
+    }
+}
+
+private struct LoadingBadge: View {
+    let symbol: String
+    let text: String
+
+    var body: some View {
+        HStack(spacing: 5) {
+            Image(systemName: symbol)
+                .font(.system(size: 11, weight: .bold))
+            Text(text)
+                .font(.caption)
+                .fontWeight(.semibold)
+        }
+        .foregroundColor(.white)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 7)
+        .background(Color.white.opacity(0.16), in: Capsule())
     }
 }
 
@@ -320,11 +506,9 @@ struct DishRow: View {
                             .cornerRadius(4)
                     }
                 }
-                if !item.servingDesc.isEmpty {
-                    Text(item.servingDesc)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                Text(item.diningHallPortionText)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 FlowLayout(spacing: 4) {
                     ForEach(item.dietFlags, id: \.self) { flag in
                         DietBadge(flag: flag)

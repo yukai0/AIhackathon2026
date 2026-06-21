@@ -76,6 +76,9 @@ struct MenuItemRow: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
                 }
+                Text(item.diningHallPortionText)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 FlowLayout(spacing: 4) {
                     ForEach(item.dietFlags, id: \.self) { flag in
                         DietBadge(flag: flag)

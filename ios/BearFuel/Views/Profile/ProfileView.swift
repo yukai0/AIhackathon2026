@@ -3,6 +3,8 @@ import SwiftUI
 struct ProfileView: View {
     @ObservedObject private var store = ProfileStore.shared
     @State private var profile: UserProfile = ProfileStore.shared.profile
+    @State private var customDislike = ""
+    var onBodyStatsEntered: () -> Void = {}
 
     private let activityLevels = ["sedentary", "light", "moderate", "active", "very_active"]
     private let activityLabels = ["Sedentary", "Light", "Moderate", "Active", "Very Active"]
@@ -12,6 +14,7 @@ struct ProfileView: View {
     private let diningHalls = ["Crossroads", "Foothill", "Clark Kerr", "Unit 1", "Unit 2"]
     private let dietaryOptions = ["vegan", "vegetarian", "halal", "kosher"]
     private let allergenOptions = ["milk", "egg", "fish", "shellfish", "treenut", "wheat", "peanut", "soy", "sesame", "gluten", "pork"]
+    private let dislikedFoodOptions = ["beef", "pork", "chicken", "eggs", "fish", "tofu", "beans", "rice", "pasta", "cheese", "yogurt", "cake", "dessert", "spicy"]
 
     var body: some View {
         NavigationStack {
@@ -19,7 +22,16 @@ struct ProfileView: View {
                 Section("Body Stats") {
                     LabeledContent("Height") {
                         HStack {
-                            Slider(value: $profile.heightCm, in: 140...220, step: 1)
+                            Slider(
+                                value: $profile.heightCm,
+                                in: 140...220,
+                                step: 1,
+                                onEditingChanged: { editing in
+                                    if !editing {
+                                        commitBodyStatsAndReturn()
+                                    }
+                                }
+                            )
                             Text("\(Int(profile.heightCm)) cm")
                                 .frame(width: 60, alignment: .trailing)
                                 .monospacedDigit()
@@ -27,17 +39,32 @@ struct ProfileView: View {
                     }
                     LabeledContent("Weight") {
                         HStack {
-                            Slider(value: $profile.weightKg, in: 40...150, step: 0.5)
+                            Slider(
+                                value: $profile.weightKg,
+                                in: 40...150,
+                                step: 0.5,
+                                onEditingChanged: { editing in
+                                    if !editing {
+                                        commitBodyStatsAndReturn()
+                                    }
+                                }
+                            )
                             Text("\(profile.weightKg, specifier: "%.1f") kg")
                                 .frame(width: 60, alignment: .trailing)
                                 .monospacedDigit()
                         }
                     }
                     Stepper("Age: \(profile.age)", value: $profile.age, in: 13...100)
+                        .onChange(of: profile.age) { _, _ in
+                            commitBodyStatsAndReturn()
+                        }
                     Picker("Sex", selection: $profile.sex) {
                         ForEach(sexOptions, id: \.self) { s in
                             Text(s.capitalized).tag(s)
                         }
+                    }
+                    .onChange(of: profile.sex) { _, _ in
+                        commitBodyStatsAndReturn()
                     }
                 }
 
@@ -52,6 +79,29 @@ struct ProfileView: View {
                             Text(label).tag(val)
                         }
                     }
+                    LabeledContent("Goal Weight") {
+                        HStack {
+                            Slider(
+                                value: Binding(
+                                    get: { profile.goalWeightKg ?? profile.weightKg },
+                                    set: { profile.goalWeightKg = $0 }
+                                ),
+                                in: 40...150,
+                                step: 0.5
+                            )
+                            Text("\(profile.goalWeightKg ?? profile.weightKg, specifier: "%.1f") kg")
+                                .frame(width: 60, alignment: .trailing)
+                                .monospacedDigit()
+                        }
+                    }
+                    Stepper(
+                        "Time to achieve: \(profile.goalTimelineWeeks ?? 12) weeks",
+                        value: Binding(
+                            get: { profile.goalTimelineWeeks ?? 12 },
+                            set: { profile.goalTimelineWeeks = $0 }
+                        ),
+                        in: 1...104
+                    )
                     Stepper("Meals/day: \(profile.mealsPerDay)", value: $profile.mealsPerDay, in: 1...6)
                 }
 
@@ -89,6 +139,23 @@ struct ProfileView: View {
                     FlowToggleSection(title: "Allergens", options: allergenOptions, selected: $profile.excludeAllergens)
                 }
 
+                Section("Food Dislikes") {
+                    FlowToggleSection(title: "Dislikes", options: dislikedFoodOptions, selected: $profile.dislikedFoods)
+                    HStack {
+                        TextField("Add food to avoid", text: $customDislike)
+                            .textInputAutocapitalization(.never)
+                            .autocorrectionDisabled()
+                            .onSubmit(addCustomDislike)
+                        Button("Add", action: addCustomDislike)
+                            .disabled(customDislike.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    }
+                    if !profile.dislikedFoods.isEmpty {
+                        Text("Plans will avoid dishes whose name or station includes these words.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+
                 Section("Resources") {
                     Link("Meet the Berkeley Dietitian",
                          destination: URL(string: "https://dining.berkeley.edu/dietitian/")!)
@@ -104,7 +171,7 @@ struct ProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        store.profile = profile
+                        commitBodyStatsAndReturn()
                     }
                     .fontWeight(.semibold)
                 }
@@ -114,6 +181,22 @@ struct ProfileView: View {
                 store.profile = newProfile
             }
         }
+    }
+
+    private func commitBodyStatsAndReturn() {
+        store.profile = profile
+        onBodyStatsEntered()
+    }
+
+    private func addCustomDislike() {
+        let cleaned = customDislike
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+        guard !cleaned.isEmpty else { return }
+        if !profile.dislikedFoods.contains(cleaned) {
+            profile.dislikedFoods.append(cleaned)
+        }
+        customDislike = ""
     }
 
     private func computeTargets() -> (Double, Double) {
