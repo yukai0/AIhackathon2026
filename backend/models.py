@@ -53,10 +53,12 @@ class UserProfile(BaseModel):
     activity_level: ActivityLevel = "moderate"
     goal_type: GoalType = "maintain"
     goal_weight_kg: Optional[float] = None
+    goal_timeline_weeks: Optional[int] = Field(default=None, ge=1, le=104)
     meals_per_day: int = Field(default=3, ge=1, le=6)
     diet_restrictions: list[DietFlag] = Field(default_factory=list)
     exclude_allergens: list[AllergenFlag] = Field(default_factory=list)
     preferred_locations: list[str] = Field(default_factory=list)
+    disliked_foods: list[str] = Field(default_factory=list)
 
 
 class MacroTotals(BaseModel):
@@ -84,6 +86,7 @@ class MealPlan(BaseModel):
     meals: list[MealSlot]
     day_totals: MacroTotals
     notes: str = ""
+    warnings: list[str] = Field(default_factory=list)
     disclaimer: str = (
         "Nutrition from UC Berkeley dining data; may vary. Not medical advice."
     )
