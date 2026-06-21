@@ -13,6 +13,7 @@ ios/BearFuel.xcodeproj/xcuserdata/
 ios/*.xcworkspace/
 ios/DerivedData/
 ios/.DS_Store
+build/
 
 ## macOS
 .DS_Store

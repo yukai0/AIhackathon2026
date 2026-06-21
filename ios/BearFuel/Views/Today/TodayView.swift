@@ -37,7 +37,7 @@ struct TodayView: View {
                     }
                     .padding()
                 }
-                .background(Color(.systemGroupedBackground).ignoresSafeArea())
+                .background(CampusBackdrop(intensity: 0.7))
                 .navigationTitle("BearFuel")
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
@@ -52,6 +52,7 @@ struct TodayView: View {
                     Text(vm.errorMessage ?? "")
                 }
             }
+            .background(CampusBackdrop(intensity: 0.7))
             if vm.isLoading {
                 loadingOverlay
             }
@@ -61,17 +62,18 @@ struct TodayView: View {
     // MARK: - Hero card
 
     private var heroCard: some View {
-        GradientCardView(gradient: .berkeleyVibrant) {
+        GradientCardView(gradient: .berkeleyHero) {
             ZStack {
-                // Decorative circles for depth (subtle)
-                Circle()
-                    .fill(Color.white.opacity(0.08))
-                    .frame(width: 120, height: 120)
-                    .offset(x: 90, y: -30)
-                Circle()
-                    .fill(Color.white.opacity(0.06))
-                    .frame(width: 80, height: 80)
-                    .offset(x: 110, y: 30)
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(Color.berkeleyGold.opacity(0.16))
+                    .frame(width: 170, height: 58)
+                    .rotationEffect(.degrees(-18))
+                    .offset(x: 86, y: -38)
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(Color.campusMint.opacity(0.14))
+                    .frame(width: 112, height: 48)
+                    .rotationEffect(.degrees(20))
+                    .offset(x: 108, y: 36)
 
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 6) {
@@ -96,10 +98,15 @@ struct TodayView: View {
                         }
                     }
                     Spacer()
-                    Image(systemName: "fork.knife.circle.fill")
-                        .font(.system(size: 50))
-                        .foregroundColor(Color.berkeleyGold)
-                        .shadow(color: Color.berkeleyGold.opacity(0.6), radius: 10)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 24, style: .continuous)
+                            .fill(Color.white.opacity(0.14))
+                            .frame(width: 76, height: 76)
+                        Image(systemName: "fork.knife.circle.fill")
+                            .font(.system(size: 48))
+                            .foregroundColor(Color.berkeleyGold)
+                            .shadow(color: Color.berkeleyGold.opacity(0.5), radius: 10)
+                    }
                 }
                 .padding(20)
             }
@@ -109,9 +116,9 @@ struct TodayView: View {
 
     private var timeOfDayGreeting: String {
         let h = Calendar.current.component(.hour, from: Date())
-        if h < 12 { return "Good morning ☀️" }
-        if h < 17 { return "Good afternoon 🌤️" }
-        return "Good evening 🌙"
+        if h < 12 { return "Good morning" }
+        if h < 17 { return "Good afternoon" }
+        return "Good evening"
     }
 
     // MARK: - Targets card
@@ -204,11 +211,17 @@ struct TodayView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Label("Plan Warnings", systemImage: "exclamationmark.triangle.fill")
                     .font(.headline)
-                    .foregroundColor(Color(red:1.0,green:0.58,blue:0.0))
+                    .foregroundColor(.poppy)
                 ForEach(warnings) { w in
-                    Text("• \(w.message)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: "exclamationmark.circle.fill")
+                            .font(.caption)
+                            .foregroundColor(.poppy)
+                            .padding(.top, 3)
+                        Text(w.message)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
             .padding(16)
@@ -219,38 +232,35 @@ struct TodayView: View {
     // MARK: - Empty state
 
     private var emptyState: some View {
-        VStack(spacing: 24) {
-            ZStack {
-                Circle()
-                    .fill(LinearGradient.berkeleyVibrant.opacity(0.12))
-                    .frame(width: 120, height: 120)
-                Image(systemName: "sparkles")
-                    .font(.system(size: 46, weight: .light))
-                    .foregroundColor(Color(red:0.10,green:0.48,blue:0.92))
-            }
-            VStack(spacing: 8) {
-                Text("Ready to fuel your day?")
-                    .font(.title3.bold())
-                Text("Generate your personalized meal plan\nusing today's real Berkeley dining menu.")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(3)
-            }
-            Button(action: { Task { await vm.generatePlan() } }) {
-                HStack(spacing: 10) {
-                    Image(systemName: "sparkles").font(.system(size: 16, weight: .semibold))
-                    Text("Generate Today's Plan").font(.headline.weight(.semibold))
+        BerkeleyCard(padding: 22) {
+            VStack(spacing: 24) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 34, style: .continuous)
+                        .fill(BerkeleyTheme.vibrantGradient.opacity(0.15))
+                        .frame(width: 128, height: 112)
+                        .rotationEffect(.degrees(-8))
+                    RoundedRectangle(cornerRadius: 26, style: .continuous)
+                        .stroke(Color.berkeleyBlue.opacity(0.18), lineWidth: 1)
+                        .frame(width: 94, height: 94)
+                        .rotationEffect(.degrees(11))
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 46, weight: .light))
+                        .foregroundColor(.berkeleyBlue)
                 }
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 16)
-                .background(LinearGradient.berkeleyVibrant)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .shadow(color: Color(red:0.10,green:0.48,blue:0.92).opacity(0.40), radius: 12, x: 0, y: 6)
+                VStack(spacing: 8) {
+                    Text("Ready to fuel your day?")
+                        .font(.title3.bold())
+                    Text("Generate your personalized meal plan\nusing today's real Berkeley dining menu.")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(3)
+                }
+                PrimaryGradientButton(title: "Generate Today's Plan") {
+                    Task { await vm.generatePlan() }
+                }
+                .padding(.horizontal, 4)
             }
-            .buttonStyle(.plain)
-            .padding(.horizontal, 4)
         }
         .padding(.horizontal, 8)
         .padding(.top, 32)
@@ -288,19 +298,12 @@ struct TodayView: View {
 
 struct AnalyzingLoadingOverlay: View {
     @State private var animate = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    Color.berkeleyBlue,
-                    Color(red: 0.04, green: 0.45, blue: 0.55),
-                    Color(red: 0.96, green: 0.42, blue: 0.17)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+            CampusBackdrop(intensity: 2.0)
+            BerkeleyTheme.judgeGradient.opacity(0.90).ignoresSafeArea()
 
             GeometryReader { proxy in
                 ZStack {
@@ -310,15 +313,15 @@ struct AnalyzingLoadingOverlay: View {
                         cornerRadius: 24,
                         rotation: -18,
                         position: CGPoint(x: proxy.size.width * 0.18, y: proxy.size.height * 0.18),
-                        animate: animate
+                        animate: animate && !reduceMotion
                     )
                     FloatingShape(
-                        color: .green,
+                        color: .campusMint,
                         size: CGSize(width: 118, height: 118),
                         cornerRadius: 18,
                         rotation: 16,
                         position: CGPoint(x: proxy.size.width * 0.86, y: proxy.size.height * 0.25),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.2
                     )
                     FloatingShape(
@@ -327,7 +330,7 @@ struct AnalyzingLoadingOverlay: View {
                         cornerRadius: 12,
                         rotation: 34,
                         position: CGPoint(x: proxy.size.width * 0.16, y: proxy.size.height * 0.72),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.1
                     )
                     FloatingShape(
@@ -336,7 +339,7 @@ struct AnalyzingLoadingOverlay: View {
                         cornerRadius: 16,
                         rotation: -28,
                         position: CGPoint(x: proxy.size.width * 0.78, y: proxy.size.height * 0.78),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.35
                     )
 
@@ -344,27 +347,27 @@ struct AnalyzingLoadingOverlay: View {
                         symbol: "fork.knife",
                         color: .white,
                         position: CGPoint(x: proxy.size.width * 0.27, y: proxy.size.height * 0.31),
-                        animate: animate
+                        animate: animate && !reduceMotion
                     )
                     FloatingSymbol(
                         symbol: "leaf.fill",
-                        color: .green,
+                        color: .campusMint,
                         position: CGPoint(x: proxy.size.width * 0.72, y: proxy.size.height * 0.34),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.2
                     )
                     FloatingSymbol(
                         symbol: "flame.fill",
                         color: .orange,
                         position: CGPoint(x: proxy.size.width * 0.25, y: proxy.size.height * 0.62),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.35
                     )
                     FloatingSymbol(
                         symbol: "takeoutbag.and.cup.and.straw.fill",
                         color: .berkeleyGold,
                         position: CGPoint(x: proxy.size.width * 0.76, y: proxy.size.height * 0.61),
-                        animate: animate,
+                        animate: animate && !reduceMotion,
                         delay: 0.1
                     )
                 }
@@ -376,15 +379,15 @@ struct AnalyzingLoadingOverlay: View {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(Color.white.opacity(0.16))
                         .frame(width: 128, height: 128)
-                        .rotationEffect(.degrees(animate ? 10 : -10))
+                        .rotationEffect(.degrees(animate && !reduceMotion ? 10 : -10))
                     RoundedRectangle(cornerRadius: 24)
                         .stroke(Color.white.opacity(0.45), lineWidth: 2)
                         .frame(width: 100, height: 100)
-                        .rotationEffect(.degrees(animate ? -16 : 16))
+                        .rotationEffect(.degrees(animate && !reduceMotion ? -16 : 16))
                     Image(systemName: "sparkles")
                         .font(.system(size: 42, weight: .bold))
                         .foregroundColor(.white)
-                        .scaleEffect(animate ? 1.08 : 0.94)
+                        .scaleEffect(animate && !reduceMotion ? 1.08 : 1)
                 }
                 .animation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true), value: animate)
 
