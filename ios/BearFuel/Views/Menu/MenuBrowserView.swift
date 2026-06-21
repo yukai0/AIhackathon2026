@@ -17,18 +17,35 @@ struct MenuBrowserView: View {
                     )
                     .frame(maxHeight: .infinity)
                 } else {
-                    List {
-                        ForEach(vm.groupedItems, id: \.0) { station, items in
-                            Section(station) {
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 8, pinnedViews: []) {
+                            ForEach(vm.groupedItems, id: \.0) { station, items in
+                                // Section header
+                                HStack {
+                                    Text(station)
+                                        .font(.subheadline.bold())
+                                        .foregroundColor(.berkeleyBlue)
+                                    Spacer()
+                                    Text("\(items.count) dishes")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(.horizontal, 4)
+                                .padding(.top, 12)
+
+                                // Dish cards
                                 ForEach(items) { item in
                                     NavigationLink(destination: DishDetailView(item: item)) {
-                                        MenuItemRow(item: item)
+                                        MenuDishCard(item: item)
                                     }
+                                    .buttonStyle(.plain)
                                 }
                             }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
                     }
-                    .listStyle(.insetGrouped)
+                    .background(Color(.systemGroupedBackground).ignoresSafeArea())
                     .refreshable { await vm.refresh() }
                 }
             }
@@ -49,7 +66,50 @@ struct MenuBrowserView: View {
     }
 }
 
-// MARK: - MenuItemRow
+// MARK: - MenuDishCard
+
+struct MenuDishCard: View {
+    let item: MenuItem
+
+    var body: some View {
+        HStack(spacing: 12) {
+            FoodAvatar(item: item)
+                .frame(width: 48, height: 48)
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .top) {
+                    Text(item.name)
+                        .font(.subheadline.bold())
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    if let c = item.carbon {
+                        Image(systemName: c == "low" ? "leaf.fill" : c == "medium" ? "exclamationmark.circle.fill" : "exclamationmark.triangle.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(c == "low" ? .green : c == "medium" ? .orange : .red)
+                    }
+                }
+                Text(item.station)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                HStack(spacing: 10) {
+                    Label("\(Int(item.nutrition.kcal)) kcal", systemImage: "flame.fill")
+                        .font(.caption)
+                        .foregroundColor(.orange)
+                    Label("\(Int(item.nutrition.proteinG))g P", systemImage: "bolt.fill")
+                        .font(.caption)
+                        .foregroundColor(Color(red:0.10,green:0.48,blue:0.92))
+                }
+            }
+        }
+        .padding(14)
+        .background(Color(.systemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .shadow(color: .black.opacity(0.07), radius: 8, x: 0, y: 3)
+    }
+}
+
+// MARK: - MenuItemRow (kept for compatibility)
 
 struct MenuItemRow: View {
     let item: MenuItem

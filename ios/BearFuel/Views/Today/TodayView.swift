@@ -2,18 +2,17 @@ import SwiftUI
 
 struct TodayView: View {
     @StateObject private var vm = TodayViewModel()
-    @State private var showDisclaimer = false
 
     var body: some View {
         ZStack {
             NavigationStack {
                 ScrollView {
                     VStack(spacing: 20) {
-                        headerCard
+                        heroCard
                         if let plan = vm.plan {
                             targetsCard(plan: plan)
                             if !vm.allWarnings.isEmpty {
-                                warningCard(warnings: vm.allWarnings)
+                                planWarningsCard(warnings: vm.allWarnings)
                             }
                             ForEach(plan.meals) { meal in
                                 MealCard(
@@ -30,6 +29,7 @@ struct TodayView: View {
                             }
                             if !plan.disclaimer.isEmpty {
                                 disclaimerBanner(text: plan.disclaimer)
+                                    .padding(.top, 8)
                             }
                         } else if !vm.isLoading {
                             emptyState
@@ -37,7 +37,7 @@ struct TodayView: View {
                     }
                     .padding()
                 }
-                .background(Color.subtleBackground.ignoresSafeArea())
+                .background(Color(.systemGroupedBackground).ignoresSafeArea())
                 .navigationTitle("BearFuel")
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
@@ -58,155 +58,221 @@ struct TodayView: View {
         }
     }
 
-    // MARK: - Subviews
+    // MARK: - Hero card
 
-    private var headerCard: some View {
-        CardView {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Today")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+    private var heroCard: some View {
+        GradientCardView(gradient: .berkeleyVibrant) {
+            ZStack {
+                // Decorative circles for depth (subtle)
+                Circle()
+                    .fill(Color.white.opacity(0.08))
+                    .frame(width: 120, height: 120)
+                    .offset(x: 90, y: -30)
+                Circle()
+                    .fill(Color.white.opacity(0.06))
+                    .frame(width: 80, height: 80)
+                    .offset(x: 110, y: 30)
+
+                HStack(alignment: .center) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(timeOfDayGreeting)
+                            .font(.subheadline.weight(.medium))
+                            .foregroundColor(.white.opacity(0.85))
                         Text(vm.displayDate)
-                            .font(.title3)
-                            .fontWeight(.semibold)
+                            .font(.title2.bold())
+                            .foregroundColor(.white)
+                        if let plan = vm.plan {
+                            let locs = Set(plan.meals.map { $0.location }).sorted()
+                            HStack(spacing: 6) {
+                                ForEach(locs, id: \.self) { loc in
+                                    Label(loc, systemImage: "mappin.circle.fill")
+                                        .font(.caption.weight(.semibold))
+                                        .padding(.horizontal, 10).padding(.vertical, 5)
+                                        .background(Color.white.opacity(0.20))
+                                        .foregroundColor(.white)
+                                        .clipShape(Capsule())
+                                }
+                            }
+                        }
                     }
                     Spacer()
                     Image(systemName: "fork.knife.circle.fill")
-                        .font(.largeTitle)
-                        .foregroundColor(.berkeleyGold)
+                        .font(.system(size: 50))
+                        .foregroundColor(Color.berkeleyGold)
+                        .shadow(color: Color.berkeleyGold.opacity(0.6), radius: 10)
                 }
-                if let plan = vm.plan {
-                    let locs = Set(plan.meals.map { $0.location })
-                    Text(locs.joined(separator: " · "))
-                        .font(.subheadline)
-                        .foregroundColor(.berkeleyBlue)
-                }
+                .padding(20)
             }
-            .padding()
         }
+        .cardEntrance(delay: 0.05)
     }
+
+    private var timeOfDayGreeting: String {
+        let h = Calendar.current.component(.hour, from: Date())
+        if h < 12 { return "Good morning ☀️" }
+        if h < 17 { return "Good afternoon 🌤️" }
+        return "Good evening 🌙"
+    }
+
+    // MARK: - Targets card
 
     private func targetsCard(plan: MealPlan) -> some View {
-        let totals = vm.progressTotals
+        let eaten = vm.progressTotals
+        let pct = Int(min(eaten.kcal / max(plan.targets.kcal, 1), 1.0) * 100)
         return CardView {
-            VStack(alignment: .leading, spacing: 14) {
-                Text("Daily Progress")
-                    .font(.headline)
-                HStack(spacing: 22) {
-                    ringWithLabel(
-                        current: totals.kcal,
-                        target: plan.targets.kcal,
-                        label: "kcal",
-                        color: .orange
-                    )
-                    ringWithLabel(
-                        current: totals.proteinG,
-                        target: plan.targets.proteinG,
-                        label: "protein",
-                        color: .berkeleyBlue
-                    )
-                    ringWithLabel(
-                        current: totals.carbG,
-                        target: plan.targets.carbG,
-                        label: "carbs",
-                        color: .green
-                    )
-                    ringWithLabel(
-                        current: totals.fatG,
-                        target: plan.targets.fatG,
-                        label: "fat",
-                        color: .berkeleyGold
-                    )
+            VStack(spacing: 20) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Daily Progress")
+                            .font(.title3.bold())
+                        Text("Tap items to mark as eaten")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Text("\(pct)%")
+                        .font(.headline.bold())
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 14).padding(.vertical, 7)
+                        .background(LinearGradient.berkeleyVibrant)
+                        .clipShape(Capsule())
                 }
-                .frame(maxWidth: .infinity)
+
+                HStack(spacing: 20) {
+                    // Large calorie ring
+                    ZStack {
+                        GradientProgressRing(
+                            current: eaten.kcal,
+                            target: plan.targets.kcal,
+                            colors: [Color(red:0.10,green:0.48,blue:0.92),
+                                     Color(red:0.02,green:0.65,blue:0.80)],
+                            lineWidth: 16
+                        )
+                        .frame(width: 116, height: 116)
+                        VStack(spacing: 1) {
+                            AnimatedCounter(value: eaten.kcal, format: "%.0f", color: .primary)
+                                .font(.system(size: 24, weight: .bold))
+                            Text("/ \(Int(plan.targets.kcal))")
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundColor(.secondary)
+                            Text("kcal")
+                                .font(.system(size: 10))
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    // Three smaller rings stacked
+                    VStack(spacing: 12) {
+                        miniRing(current: eaten.proteinG, target: plan.targets.proteinG, label: "protein",
+                                 colors: [Color(red:0.10,green:0.75,blue:0.45), Color(red:0.04,green:0.88,blue:0.55)])
+                        miniRing(current: eaten.carbG, target: plan.targets.carbG, label: "carbs",
+                                 colors: [Color(red:1.00,green:0.70,blue:0.00), Color(red:1.00,green:0.85,blue:0.15)])
+                        miniRing(current: eaten.fatG, target: plan.targets.fatG, label: "fat",
+                                 colors: [Color(red:1.00,green:0.38,blue:0.25), Color(red:1.00,green:0.55,blue:0.35)])
+                    }
+                }
             }
-            .padding()
+            .padding(20)
+        }
+        .cardEntrance(delay: 0.12)
+    }
+
+    private func miniRing(current: Double, target: Double, label: String, colors: [Color]) -> some View {
+        HStack(spacing: 10) {
+            ZStack {
+                GradientProgressRing(current: current, target: target, colors: colors, lineWidth: 7)
+                    .frame(width: 42, height: 42)
+                Text("\(Int(min(current / max(target, 1), 1.0) * 100))%")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundColor(.primary)
+            }
+            VStack(alignment: .leading, spacing: 1) {
+                AnimatedCounter(value: current, format: "%.0f", color: .primary)
+                    .font(.system(size: 14, weight: .bold))
+                Text("/ \(Int(target))g \(label)")
+                    .font(.system(size: 11))
+                    .foregroundColor(.secondary)
+            }
+            Spacer()
         }
     }
 
-    private func warningCard(warnings: [NutritionLimitWarning]) -> some View {
+    // MARK: - Plan warnings card
+
+    private func planWarningsCard(warnings: [NutritionLimitWarning]) -> some View {
         CardView {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 10) {
                 Label("Plan Warnings", systemImage: "exclamationmark.triangle.fill")
                     .font(.headline)
-                    .foregroundColor(.orange)
-                ForEach(warnings) { warning in
-                    Text(warning.message)
-                        .font(.caption)
+                    .foregroundColor(Color(red:1.0,green:0.58,blue:0.0))
+                ForEach(warnings) { w in
+                    Text("• \(w.message)")
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .padding()
+            .padding(16)
         }
+        .cardEntrance(delay: 0.08)
     }
 
-    private func ringWithLabel(current: Double, target: Double, label: String, color: Color) -> some View {
-        VStack(spacing: 6) {
-            ZStack {
-                ProgressRing(current: current, target: target, color: color)
-                    .frame(width: 60, height: 60)
-                VStack(spacing: 1) {
-                    Text(Int(current).formatted(.number))
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.75)
-                    Text("/ \(Int(target).formatted(.number))")
-                        .font(.system(size: 9, weight: .semibold))
-                        .foregroundColor(.secondary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.75)
-                }
-                .frame(width: 44)
-            }
-            Text(label)
-                .font(.caption)
-                .foregroundColor(.secondary)
-        }
-    }
+    // MARK: - Empty state
 
     private var emptyState: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "figure.run")
-                .font(.system(size: 56))
-                .foregroundColor(.berkeleyBlue.opacity(0.4))
-            Text("Ready to fuel your day?")
-                .font(.title3)
-                .fontWeight(.semibold)
-            Text("Generate your personalized meal plan using today's real Berkeley dining menu.")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-            Button(action: { Task { await vm.generatePlan() } }) {
-                Label("Generate Today's Plan", systemImage: "sparkles")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.berkeleyBlue)
-                    .cornerRadius(CornerRadius.button)
+        VStack(spacing: 24) {
+            ZStack {
+                Circle()
+                    .fill(LinearGradient.berkeleyVibrant.opacity(0.12))
+                    .frame(width: 120, height: 120)
+                Image(systemName: "sparkles")
+                    .font(.system(size: 46, weight: .light))
+                    .foregroundColor(Color(red:0.10,green:0.48,blue:0.92))
             }
-            .disabled(vm.isLoading)
-            .padding(.horizontal)
+            VStack(spacing: 8) {
+                Text("Ready to fuel your day?")
+                    .font(.title3.bold())
+                Text("Generate your personalized meal plan\nusing today's real Berkeley dining menu.")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(3)
+            }
+            Button(action: { Task { await vm.generatePlan() } }) {
+                HStack(spacing: 10) {
+                    Image(systemName: "sparkles").font(.system(size: 16, weight: .semibold))
+                    Text("Generate Today's Plan").font(.headline.weight(.semibold))
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(LinearGradient.berkeleyVibrant)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(color: Color(red:0.10,green:0.48,blue:0.92).opacity(0.40), radius: 12, x: 0, y: 6)
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 4)
         }
-        .padding(.top, 40)
+        .padding(.horizontal, 8)
+        .padding(.top, 32)
     }
+
+    // MARK: - Generate button
 
     private var generateButton: some View {
         Button(action: { Task { await vm.generatePlan() } }) {
             Image(systemName: "arrow.clockwise.circle.fill")
-                .foregroundColor(.berkeleyBlue)
+                .font(.system(size: 22))
+                .foregroundStyle(LinearGradient.berkeleyVibrant)
         }
-        .disabled(vm.isLoading)
     }
+
+    // MARK: - Loading overlay
 
     private var loadingOverlay: some View {
         AnalyzingLoadingOverlay()
     }
+
+    // MARK: - Disclaimer banner
 
     private func disclaimerBanner(text: String) -> some View {
         Text(text)
@@ -217,6 +283,8 @@ struct TodayView: View {
             .padding(.bottom, 8)
     }
 }
+
+// MARK: - AnalyzingLoadingOverlay
 
 struct AnalyzingLoadingOverlay: View {
     @State private var animate = false
@@ -447,21 +515,42 @@ struct MealCard: View {
     let onDelete: (String) -> Void
     let alternatives: (String) -> [MenuItem]
     let onSubstitute: (String, MenuItem) -> Void
+    @State private var appeared = false
 
     var body: some View {
-        CardView {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Label(meal.label, systemImage: mealIcon(meal.label))
-                        .font(.headline)
-                        .foregroundColor(.berkeleyBlue)
+        VStack(spacing: 0) {
+            // Header strip — vibrant gradient, ~68pt tall
+            ZStack(alignment: .bottomLeading) {
+                mealGradient(for: meal.label)
+                    .frame(height: 68)
+                HStack(alignment: .bottom) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(meal.label)
+                            .font(.headline.bold())
+                            .foregroundColor(.white)
+                        Text(meal.location)
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.85))
+                    }
                     Spacer()
-                    Text(meal.location)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    Image(systemName: mealIcon(for: meal.label))
+                        .font(.system(size: 26, weight: .semibold))
+                        .foregroundColor(.white.opacity(0.90))
                 }
-                MacroRow(totals: meal.totals, compact: true)
-                Divider()
+                .padding(.horizontal, 16)
+                .padding(.bottom, 12)
+            }
+
+            // Macro summary row
+            MacroRow(totals: meal.totals, compact: true)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(Color(.systemBackground))
+
+            Divider()
+
+            // Dish rows
+            VStack(spacing: 0) {
                 ForEach(meal.items, id: \.self) { itemId in
                     if let item = itemMap[itemId] {
                         DishRow(
@@ -472,18 +561,33 @@ struct MealCard: View {
                             alternatives: alternatives(itemId),
                             onSubstitute: { replacement in onSubstitute(itemId, replacement) }
                         )
+                        .padding(.horizontal, 16)
+                        if itemId != meal.items.last {
+                            Divider().padding(.leading, 70)
+                        }
                     } else {
                         MissingDishRow()
+                            .padding(.horizontal, 16)
                     }
                 }
             }
-            .padding()
+            .background(Color(.systemBackground))
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black.opacity(0.09), radius: 12, x: 0, y: 5)
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 22)
+        .onAppear {
+            withAnimation(.spring(response: 0.55, dampingFraction: 0.78)) {
+                appeared = true
+            }
         }
     }
 
-    private func mealIcon(_ label: String) -> String {
+    private func mealIcon(for label: String) -> String {
         switch label.lowercased() {
-        case "brunch", "breakfast": return "sunrise.fill"
+        case "breakfast": return "sunrise.fill"
+        case "brunch": return "sun.haze.fill"
         case "lunch": return "sun.max.fill"
         case "dinner": return "moon.stars.fill"
         default: return "fork.knife"

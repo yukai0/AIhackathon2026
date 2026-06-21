@@ -223,6 +223,119 @@ struct SectionHeader: View {
     }
 }
 
+// MARK: - Vibrant gradients
+
+extension LinearGradient {
+    // Vibrant hero gradient (sky blue → teal)
+    static let berkeleyVibrant = LinearGradient(
+        colors: [Color(red: 0.10, green: 0.48, blue: 0.92),
+                 Color(red: 0.02, green: 0.65, blue: 0.80)],
+        startPoint: .topLeading, endPoint: .bottomTrailing
+    )
+}
+
+func mealGradient(for label: String) -> LinearGradient {
+    switch label.lowercased() {
+    case "breakfast", "brunch":
+        return LinearGradient(
+            colors: [Color(red:1.00,green:0.58,blue:0.00), Color(red:1.00,green:0.76,blue:0.15)],
+            startPoint: .topLeading, endPoint: .bottomTrailing)
+    case "dinner":
+        return LinearGradient(
+            colors: [Color(red:0.50,green:0.20,blue:0.88), Color(red:0.68,green:0.42,blue:0.98)],
+            startPoint: .topLeading, endPoint: .bottomTrailing)
+    default: // lunch and anything else
+        return LinearGradient(
+            colors: [Color(red:0.10,green:0.48,blue:0.92), Color(red:0.02,green:0.65,blue:0.80)],
+            startPoint: .topLeading, endPoint: .bottomTrailing)
+    }
+}
+
+struct GradientCardView<Content: View>: View {
+    var gradient: LinearGradient = .berkeleyVibrant
+    @ViewBuilder let content: () -> Content
+    var body: some View {
+        content()
+            .background(gradient)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: Color(red:0.10,green:0.48,blue:0.92).opacity(0.30), radius: 14, x: 0, y: 7)
+    }
+}
+
+// MARK: - Animated counter
+
+struct AnimatedCounter: View {
+    let value: Double
+    let format: String
+    var color: Color = .primary
+    @State private var displayed: Double = 0
+
+    var body: some View {
+        Text(String(format: format, displayed))
+            .foregroundColor(color)
+            .onAppear {
+                withAnimation(.easeOut(duration: 1.0)) { displayed = value }
+            }
+            .onChange(of: value) { _, new in
+                withAnimation(.easeOut(duration: 0.7)) { displayed = new }
+            }
+    }
+}
+
+// MARK: - Gradient progress ring
+
+struct GradientProgressRing: View {
+    let current: Double
+    let target: Double
+    let colors: [Color]
+    var lineWidth: CGFloat = 12
+
+    var body: some View {
+        let fraction = min(current / max(target, 1), 1.0)
+        ZStack {
+            Circle()
+                .stroke(colors[0].opacity(0.15), lineWidth: lineWidth)
+            Circle()
+                .trim(from: 0, to: fraction)
+                .stroke(
+                    AngularGradient(
+                        colors: colors,
+                        center: .center,
+                        startAngle: .degrees(-90),
+                        endAngle: .degrees(360 * fraction - 90)
+                    ),
+                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
+                )
+                .rotationEffect(.degrees(-90))
+                .animation(.spring(response: 0.9, dampingFraction: 0.7), value: fraction)
+        }
+    }
+}
+
+// MARK: - Card entrance animation
+
+struct CardEntrance: ViewModifier {
+    let delay: Double
+    @State private var appeared = false
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(appeared ? 1 : 0)
+            .offset(y: appeared ? 0 : 28)
+            .onAppear {
+                withAnimation(.spring(response: 0.55, dampingFraction: 0.78).delay(delay)) {
+                    appeared = true
+                }
+            }
+    }
+}
+
+extension View {
+    func cardEntrance(delay: Double = 0) -> some View {
+        modifier(CardEntrance(delay: delay))
+    }
+}
+
 // MARK: - Simple flow layout for chips
 
 struct FlowLayout: Layout {
