@@ -28,9 +28,17 @@ struct ContentView: View {
             MenuBrowserView()
                 .tabItem { Label("Menu", systemImage: "fork.knife") }
                 .tag(AppTab.menu)
-            ProfileView {
-                withAnimation { selectedTab = .today }
-            }
+            ProfileView(
+                onBodyStatsEntered: {
+                    withAnimation { selectedTab = .today }
+                },
+                onLogout: {
+                    withAnimation {
+                        selectedTab = .today
+                        isLoggedIn = false
+                    }
+                }
+            )
             .tabItem { Label("Profile", systemImage: "person.fill") }
             .tag(AppTab.profile)
         }

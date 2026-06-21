@@ -5,6 +5,7 @@ struct ProfileView: View {
     @State private var profile: UserProfile = ProfileStore.shared.profile
     @State private var customDislike = ""
     var onBodyStatsEntered: () -> Void = {}
+    var onLogout: () -> Void = {}
 
     private let activityLevels = ["sedentary", "light", "moderate", "active", "very_active"]
     private let activityLabels = ["Sedentary", "Light", "Moderate", "Active", "Very Active"]
@@ -34,6 +35,7 @@ struct ProfileView: View {
                         diningHallCard
                         preferencesCard
                         resourcesCard
+                        logoutButton
                         disclaimerCard
                     }
                     .padding(16)
@@ -312,13 +314,26 @@ struct ProfileView: View {
         .cardEntrance(delay: 0.28)
     }
 
+    private var logoutButton: some View {
+        Button(role: .destructive, action: onLogout) {
+            Label("Log Out", systemImage: "rectangle.portrait.and.arrow.right")
+                .font(.headline.weight(.semibold))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 14)
+                .background(Color.poppy.opacity(0.10), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .foregroundColor(.poppy)
+        .cardEntrance(delay: 0.30)
+    }
+
     private var disclaimerCard: some View {
         Text("Nutrition estimates only. Not medical advice. If you have health concerns, please consult a medical professional.")
             .font(.caption)
             .foregroundColor(.secondary)
             .multilineTextAlignment(.center)
             .padding(.horizontal, 10)
-            .cardEntrance(delay: 0.32)
+            .cardEntrance(delay: 0.34)
     }
 
     private var goalPaceText: String {
